@@ -1,11 +1,22 @@
+* {
+  transition: all ease-in-out 0.3s;
+  box-sizing: border-box;
+}
+
 .App {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    background-color: #f8f8f8;
-    min-height: 100vh;
-    color: #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  color: #5d4d4d;
 }
 
 .MainContainer {
-    padding-top: 5rem;
+  padding-top: 5rem;
+}
+
+a:hover,
+a:hover i {
+  text-decoration: none;
+  color: #f78215;
 }
