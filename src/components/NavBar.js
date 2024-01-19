@@ -2,13 +2,14 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
   return (
-    <Navbar expand="md" fixed="top">
+    <Navbar expand="md" fixed="top" className={styles.NavBar}>
       <Container>
         <Nav.Link to="/">
-          <Navbar.Brand>
+          <Navbar.Brand className={styles.Logo}>
             <span>Paint Pictures</span>
           </Navbar.Brand>
         </Nav.Link>

@@ -1,0 +1,9 @@
+.NavBar {
+    background: #ffffff;
+    border: 1px solid #dadadf;
+    box-shadow: inset 0px 0px 62px -20px #00fa4b;
+  }
+  
+  .NavBar:hover {
+    box-shadow: inset 0px 0px 62px -20px #8224e5;
+  }
