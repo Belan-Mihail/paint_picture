@@ -4,10 +4,11 @@ import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import styles from "../../styles/SignInUpForm.module.css";
 
 const SignUpForm = () => {
   return (
-    <Row>
+    <Row className={styles.FormRow}>
       <Col>
         <Container>
           <h1>Sign Up</h1>
