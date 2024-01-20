@@ -22,3 +22,8 @@
     border: 1px dotted #f78215bd;
     }
   }
+
+  .SignUpInPicture {
+    object-fit: contain;
+    max-width: 100%;
+  }

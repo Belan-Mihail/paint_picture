@@ -4,10 +4,22 @@ import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import styles from "../../styles/SignInUpForm.module.css";
+import SignUpPicture from '../../assets/signuppicture.png'
 
 const SignUpForm = () => {
   return (
+    <>
+    <Row className={styles.FormRow}>
+      <Col>
+      <Image
+      className={styles.SignUpInPicture} 
+      src={SignUpPicture}
+      alt="sign up picture"
+      />
+      </Col>
+    </Row>
     <Row className={styles.FormRow}>
       <Col>
         <Container>
@@ -48,6 +60,7 @@ const SignUpForm = () => {
         </Container>
       </Col>
     </Row>
+    </>
   );
 };
 
