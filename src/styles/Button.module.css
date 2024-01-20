@@ -1,0 +1,27 @@
+.Button {
+  font-size: 0.8rem;
+  font-weight: 700;
+  align-self: center;
+  border-color: transparent;
+  padding: 0.5rem 1.2rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  color: #fff;
+}
+
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.Main {
+  background: #02be3a;
+}
+
+.Main:hover,
+.Main:hover:active,
+.Main:active,
+.Main:focus {
+  background: #f78215 !important;
+}

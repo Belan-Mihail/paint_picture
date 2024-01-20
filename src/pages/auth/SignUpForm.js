@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import styles from "../../styles/SignInUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import SignUpPicture from '../../assets/signuppicture.png'
 
 const SignUpForm = () => {
@@ -56,6 +57,7 @@ const SignUpForm = () => {
 
             <Button
               type="submit"
+              className={`${btnStyles.Button} ${btnStyles.Main}`}
             >
               Sign up
             </Button>
