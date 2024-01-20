@@ -1,8 +1,24 @@
 .FormRow {
-    max-width: 30rem;
-    width: 100%;
-    border: 1px dotted #f78215;
-    padding: 1rem;
-    margin: 0 auto;
-    margin-top: 2rem;
+  max-width: 30rem;
+  width: 100%;
+  border: 1px dotted #f78215;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
+
+.FormRow:hover {
+  animation-duration: 1.5s;
+  animation-name: changeBorderColor;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes changeBorderColor {
+    from {
+      border: 1px dotted #8124e5b9;
+    }
+    to {
+    border: 1px dotted #f78215bd;
+    }
+  }
