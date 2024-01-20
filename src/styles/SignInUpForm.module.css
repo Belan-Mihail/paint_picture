@@ -1,13 +1,29 @@
-.FormRow {
+.SignUpInPicture {
+    object-fit: contain;
+    max-width: 100%;
+  }
+
+  .Input {
+    border: 1px solid #f78215bd;
+  }
+
+  .Input:focus {
+    border: 1px solid #8224e5;
+    box-shadow: 1px 1px 1px #8224e5;
+  }
+
+
+
+.SignFormRow {
   max-width: 30rem;
   width: 100%;
   border: 1px dotted #f78215;
   padding: 1rem;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: 2rem auto;
+
 }
 
-.FormRow:hover {
+.SignFormRow:hover {
   animation-duration: 1.5s;
   animation-name: changeBorderColor;
   animation-iteration-count: infinite;
@@ -23,16 +39,4 @@
     }
   }
 
-  .SignUpInPicture {
-    object-fit: contain;
-    max-width: 100%;
-  }
-
-  .Input {
-    border: 1px solid #f78215bd;
-  }
-
-  .Input:focus {
-    border: 1px solid #8224e5;
-    box-shadow: 1px 1px 1px #8224e5;
-  }
+  

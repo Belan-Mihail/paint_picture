@@ -12,7 +12,7 @@ import SignUpPicture from '../../assets/signuppicture.png'
 const SignUpForm = () => {
   return (
     <>
-    <Row className={styles.FormRow}>
+    <Row className={styles.SignFormRow}>
       <Col>
       <Image
       className={styles.SignUpInPicture} 
@@ -21,7 +21,7 @@ const SignUpForm = () => {
       />
       </Col>
     </Row>
-    <Row className={styles.FormRow}>
+    <Row className={styles.SignFormRow}>
       <Col>
         <Container>
           <h1>Sign Up</h1>
