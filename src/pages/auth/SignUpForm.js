@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -10,6 +10,15 @@ import btnStyles from "../../styles/Button.module.css";
 import SignUpPicture from '../../assets/signuppicture.png'
 
 const SignUpForm = () => {
+
+  const [signUpData, setSignUpData] = useState({
+    username: "",
+    password1: "",
+    password2: "",
+  });
+
+  const { username, password1, password2 } = signUpData;
+
   return (
     <>
     <Row className={styles.SignFormRow}>
@@ -32,6 +41,8 @@ const SignUpForm = () => {
                 className={styles.Input}
                 type="text"
                 placeholder="Username"
+                name="username"
+                value={username}
               />
             </Form.Group>
 
@@ -41,6 +52,8 @@ const SignUpForm = () => {
                 className={styles.Input}
                 type="password"
                 placeholder="Password"
+                name="password1"
+                value={password1}
               />
             </Form.Group>
 
@@ -51,7 +64,8 @@ const SignUpForm = () => {
                 className={styles.Input}
                 type="password"
                 placeholder="Confirm password"
-
+                name="password2"
+                value={password2}
               />
             </Form.Group>
 
