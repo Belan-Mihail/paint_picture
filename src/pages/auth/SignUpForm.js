@@ -103,6 +103,13 @@ const SignUpForm = () => {
             </Button>
           </Form>
         </Container>
+        <Container className="mt-3">
+        <span>Already have an account?
+        <Link to="/signin">
+            Sign in
+          </Link>
+        </span>
+        </Container>
       </Col>
     </Row>
     </>
