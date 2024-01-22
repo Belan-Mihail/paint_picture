@@ -11,8 +11,11 @@ import btnStyles from "../../styles/Button.module.css";
 import SignInPicture from '../../assets/signinpicture.png'
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import { useSetCurrentUser } from "../../context/CurrentUserContext";
 
 const SignInForm = () => {
+
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -36,6 +39,7 @@ const SignInForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/login/", signInData);
+      setCurrentUser(data.user);
       history.push("/");
     } catch (err) {
       setErrors(err.response?.data);
