@@ -13,19 +13,41 @@ import appStyles from "../../App.module.css";
 const PictureCreateForm = () => {
   const [errors, setErrors] = useState({});
 
+  const [postData, setPostData] = useState({
+    title: "",
+    description: "",
+    image: "",
+    picture_category: "",
+  });
+  const { title, description, image, picture_category } = postData;
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="title" />
+        <Form.Control
+          type="text"
+          name="title"
+          value={title}
+          onChange={handleChange}
+        />
       </Form.Group>
       <Form.Group>
         <Form.Label>Description</Form.Label>
-        <Form.Control as="textarea" rows={6} name="description" />
+        <Form.Control as="textarea" rows={6} name="description" value={description}
+          onChange={handleChange} />
       </Form.Group>
       <Form.Group controlId="picture_category">
         <Form.Label>Category</Form.Label>
-        <Form.Control as="select" name="picture_category">
+        <Form.Control as="select" name="picture_category" value={picture_category}
+          onChange={handleChange}>
           <option>other</option>
           <option>landscapes</option>
           <option>animals</option>
@@ -51,19 +73,13 @@ const PictureCreateForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    message="Click or tap to upload an image"
-                  />
-                </Form.Label>
-              <Form.File
-                id="image-upload"
-                accept="image/*"
-              />
+              <Form.Label
+                className="d-flex justify-content-center"
+                htmlFor="image-upload"
+              >
+                <Asset src={Upload} message="Click or tap to upload an image" />
+              </Form.Label>
+              <Form.File id="image-upload" accept="image/*" />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
