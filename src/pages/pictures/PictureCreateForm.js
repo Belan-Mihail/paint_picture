@@ -28,6 +28,16 @@ const PictureCreateForm = () => {
     });
   };
 
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -41,13 +51,22 @@ const PictureCreateForm = () => {
       </Form.Group>
       <Form.Group>
         <Form.Label>Description</Form.Label>
-        <Form.Control as="textarea" rows={6} name="description" value={description}
-          onChange={handleChange} />
+        <Form.Control
+          as="textarea"
+          rows={6}
+          name="description"
+          value={description}
+          onChange={handleChange}
+        />
       </Form.Group>
       <Form.Group controlId="picture_category">
         <Form.Label>Category</Form.Label>
-        <Form.Control as="select" name="picture_category" value={picture_category}
-          onChange={handleChange}>
+        <Form.Control
+          as="select"
+          name="picture_category"
+          value={picture_category}
+          onChange={handleChange}
+        >
           <option>other</option>
           <option>landscapes</option>
           <option>animals</option>
@@ -79,7 +98,11 @@ const PictureCreateForm = () => {
               >
                 <Asset src={Upload} message="Click or tap to upload an image" />
               </Form.Label>
-              <Form.File id="image-upload" accept="image/*" />
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+              />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
