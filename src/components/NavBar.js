@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";
 import { useCurrentUser } from "../context/CurrentUserContext";
 
+
 const NavBar = () => {
   const currentUser = useCurrentUser();
 
