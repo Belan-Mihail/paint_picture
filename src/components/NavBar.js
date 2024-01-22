@@ -2,12 +2,36 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import { NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";
 import { useCurrentUser } from "../context/CurrentUserContext";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+
+  const addPictureOrPlan = (
+    <>
+      
+      <NavDropdown title="Add" id="basic-nav-dropdown" className={styles.NavLink}
+        >
+        <NavDropdown.Item
+        exact
+        to="/pictures/create"
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        ><i className="far fa-plus-square"></i>Picture</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item
+        exact
+        to="/plans/create"
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        ><i className="far fa-plus-square"></i>Plan</NavDropdown.Item>
+      </NavDropdown>
+    </>
+  );
+
   const loggedInIcons = <>{currentUser?.username}</>;
   const loggedOutIcons = (
     <>
@@ -42,6 +66,7 @@ const NavBar = () => {
             <span>Paint Pictures</span>
           </Navbar.Brand>
         </NavLink>
+        {currentUser && addPictureOrPlan}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
