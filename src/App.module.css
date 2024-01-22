@@ -40,3 +40,9 @@ input[type="file"] {
 .Content:hover {
   box-shadow: inset 0px 0px 62px -20px #8224e5;
 }
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  object-fit: contain;
+}
