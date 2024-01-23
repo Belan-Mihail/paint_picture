@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../../styles/PictureCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Upload from "../../assets/upload.png";
@@ -10,6 +10,8 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import appStyles from "../../App.module.css";
+import { useHistory } from "react-router";
+import { axiosReq } from "../../api/axiosDefaults";
 
 const PictureCreateForm = () => {
   const [errors, setErrors] = useState({});
@@ -21,6 +23,9 @@ const PictureCreateForm = () => {
     picture_category: "",
   });
   const { title, description, image, picture_category } = postData;
+
+  const imageInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (event) => {
     setPostData({
@@ -76,7 +81,7 @@ const PictureCreateForm = () => {
         </Form.Control>
       </Form.Group>
 
-      <Button className={`${btnStyles.Button} ${btnStyles.Main}`}>
+      <Button className={`${btnStyles.Button} ${btnStyles.Main}`} onClick={() => history.goBack()}>
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Main}`} type="submit">
@@ -121,6 +126,7 @@ const PictureCreateForm = () => {
               <Form.File
                 id="image-upload"
                 accept="image/*"
+                ref={imageInput}
                 onChange={handleChangeImage}
               />
             </Form.Group>
