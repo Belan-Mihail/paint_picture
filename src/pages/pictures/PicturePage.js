@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router";
+import Picture from "./Picture";
 
 function PicturePage() {
   const { id } = useParams();
@@ -29,7 +30,7 @@ function PicturePage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <p>Post component</p>
+        <Picture {...picture.results[0]} setPictures={setPicture} PicturePage />
         <Container className={appStyles.Content}>Comments</Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
