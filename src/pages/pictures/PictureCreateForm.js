@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
 import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
@@ -52,7 +53,6 @@ const PictureCreateForm = () => {
     formData.append("description", description);
     formData.append("image", imageInput.current.files[0]);
     formData.append("picture_category", picture_category);
-    
 
     try {
       const { data } = await axiosReq.post("/pictures/", formData);
@@ -76,6 +76,12 @@ const PictureCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -86,6 +92,12 @@ const PictureCreateForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group controlId="picture_category">
         <Form.Label>Category</Form.Label>
         <Form.Control
@@ -101,6 +113,11 @@ const PictureCreateForm = () => {
           <option>abstraction</option>
         </Form.Control>
       </Form.Group>
+      {errors?.picture_category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Main}`}
@@ -154,6 +171,11 @@ const PictureCreateForm = () => {
                 onChange={handleChangeImage}
               />
             </Form.Group>
+            {errors.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
