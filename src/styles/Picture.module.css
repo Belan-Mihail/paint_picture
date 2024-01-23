@@ -1,0 +1,43 @@
+.Picture {
+  /* background-color: #ffffff;
+    border: 1px solid #dadadf; */
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-align: center;
+  box-shadow: inset 0px 0px 62px -20px #00fa4b;
+}
+
+.Picture:hover {
+    box-shadow: inset 0px 0px 62px -20px #8224e5;
+    border: 2px solid orange;
+  }
+
+/* .Post figure,
+  h5 {
+    margin: 0 0;
+  } */
+
+.Heart {
+  color: #f85032;
+}
+
+.Heart:hover {
+  color: #2142b2;
+}
+
+.HeartOutline:hover {
+  color: #f85032;
+}
+
+.CardBody {
+  position: relative;
+}
+
+.Category {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  padding: 0.5rem 2rem;
+  opacity: 0.9;
+  color: #fff;
+}
