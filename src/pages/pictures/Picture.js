@@ -50,7 +50,23 @@ const Picture = (props) => {
           <Card.Body>
             {title && <Card.Title className="text-center">{title}</Card.Title>}
             {description && <Card.Text>{description}</Card.Text>}
-            <div className={styles.PostBar}>
+            <div
+          className={styles.Category}
+          style={
+            picture_category === "landscapes"
+              ? { backgroundColor: "#00fa4b" }
+              : picture_category === "animals"
+              ? { backgroundColor: "#8224e5" }
+              : picture_category === "plants"
+              ? { backgroundColor: "#f85032" }
+              : picture_category === "abstraction"
+              ? { backgroundColor: "#2142b2" }
+              : { backgroundColor: "#c4fa00" }
+          }
+        >
+          {picture_category}
+        </div>
+            <div>
               {is_owner ? (
                 <OverlayTrigger
                   placement="top"
