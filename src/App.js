@@ -7,6 +7,7 @@ import "./api/axiosDefaults.js";
 import SignUpForm from "./pages/auth/SignUpForm.js";
 import SignInForm from "./pages/auth/SignInForm.js";
 import PictureCreateForm from "./pages/pictures/PictureCreateForm.js";
+import PicturePage from "./pages/pictures/PicturePage.js";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/pictures/create" render={() => <PictureCreateForm />} />
+          <Route exact path="/pictures/:id" render={() => <PicturePage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
 
