@@ -33,22 +33,26 @@ const NavBar = () => {
         id="basic-nav-dropdown"
         className={styles.NavLink}
       >
-        <NavDropdown.Item
-          exact
-          to="/pictures/create"
-          className={styles.NavLink}
-          activeClassName={styles.Active}
-        >
-          <i className="far fa-plus-square"></i>Picture
+        <NavDropdown.Item>
+          <NavLink
+            exact
+            to="/pictures/create"
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+          >
+            <i className="far fa-plus-square"></i>Picture
+          </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item
-          exact
-          to="/plans/create"
-          className={styles.NavLink}
-          activeClassName={styles.Active}
-        >
-          <i className="far fa-plus-square"></i>Plan
+        <NavDropdown.Item>
+          <NavLink
+            exact
+            to="/plans/create"
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+          >
+            <i className="far fa-plus-square"></i>Plan
+          </NavLink>
         </NavDropdown.Item>
       </NavDropdown>
     </>

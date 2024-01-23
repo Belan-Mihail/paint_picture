@@ -121,7 +121,7 @@ const SignUpForm = () => {
         </Container>
         <Container className="mt-3">
         <span>Already have an account?
-        <Link to="/signin">
+        <Link to="/signin" className={styles.LinkSpecial}>
             Sign in
           </Link>
         </span>
