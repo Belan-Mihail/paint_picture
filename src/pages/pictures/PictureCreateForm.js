@@ -44,6 +44,27 @@ const PictureCreateForm = () => {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("image", imageInput.current.files[0]);
+    formData.append("picture_category", picture_category);
+    
+
+    try {
+      const { data } = await axiosReq.post("/pictures/", formData);
+      history.push(`/pictures/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -81,7 +102,10 @@ const PictureCreateForm = () => {
         </Form.Control>
       </Form.Group>
 
-      <Button className={`${btnStyles.Button} ${btnStyles.Main}`} onClick={() => history.goBack()}>
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Main}`}
+        onClick={() => history.goBack()}
+      >
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Main}`} type="submit">
@@ -91,14 +115,14 @@ const PictureCreateForm = () => {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-            {image ? (
+              {image ? (
                 <>
                   <figure>
                     <Image className={appStyles.Image} src={image} rounded />
