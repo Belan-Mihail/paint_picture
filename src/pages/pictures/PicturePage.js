@@ -16,8 +16,10 @@ function PicturePage() {
       try {
         const [{ data: picture }] = await Promise.all([
           axiosReq.get(`/pictures/${id}`),
+          
         ]);
         setPicture({ results: [picture] });
+        console.log(picture)
       } catch (err) {
         console.log(err);
       }
