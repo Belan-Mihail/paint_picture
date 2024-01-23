@@ -48,8 +48,8 @@ input[type="file"] {
 }
 
 i {
-  color: #363636;
-  font-size: 1.6rem;
+  /* color: #363636;
+  font-size: 1.6rem; */
   padding: 7px;
   vertical-align: middle;
 }

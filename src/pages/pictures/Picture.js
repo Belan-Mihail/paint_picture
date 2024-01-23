@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Picture = (props) => {
     const {
@@ -24,11 +25,28 @@ const Picture = (props) => {
         image,
         updated_at,
         PicturePage,
+        setPictures,
       } = props;
     
       const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
 
+      const handleLike = async () => {
+        try {
+          const { data } = await axiosRes.post("/likes/", { picture: id });
+          setPictures((prevPictures) => ({
+            ...prevPictures,
+            results: prevPictures.results.map((picture) => {
+              return picture.id === id
+                ? { ...picture, likes_count: picture.likes_count + 1, like_id: data.id }
+                : picture;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
+    
 
       return (
         <Card className={styles.Picture}>
@@ -79,7 +97,7 @@ const Picture = (props) => {
                   <i className={`fas fa-heart ${styles.Heart}`} />
                 </span>
               ) : currentUser ? (
-                <span onClick={() => {}}>
+                <span onClick={handleLike}>
                   <i className={`far fa-heart ${styles.HeartOutline}`} />
                 </span>
               ) : (
