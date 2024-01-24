@@ -34,14 +34,14 @@ function PicturesPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <i className="fas fa-search" />
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
             type="text"
-            className="mr-sm-2"
+            className={`mr-sm-2 ${styles.SearchInput}`}
             placeholder="Search pictures by title or author"
           />
         </Form>
