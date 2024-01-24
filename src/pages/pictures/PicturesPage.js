@@ -1,5 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../styles/PicturesPage.module.css";
+import { axiosReq } from "../../api/axiosDefaults";
+import Picture from "./Picture";
+import NotFound from '../../assets/notfound.png'
+
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
