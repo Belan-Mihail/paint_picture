@@ -29,7 +29,14 @@ function PicturesPage({ message, filter = "" }) {
     };
 
     setHasLoaded(false);
-    fetchPictures();
+    const timer = setTimeout(() => {
+      fetchPictures();
+    }, 1000);
+    // clear timer
+    return () => {
+      clearTimeout(timer);
+    };
+    
   }, [filter, query, pathname]);
 
   return (
