@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -71,7 +72,7 @@ function PicturesPage({ message, filter = "" }) {
                 dataLength={pictures.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!pictures.next}
-                next={() => {}}
+                next={() => fetchMoreData(pictures, setPictures)}
               />
             ) : (
               <Container className={appStyles.Content}>
