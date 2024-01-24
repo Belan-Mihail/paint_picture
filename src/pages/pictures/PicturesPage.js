@@ -15,11 +15,12 @@ function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchPictures = async () => {
       try {
-        const { data } = await axiosReq.get(`/pictures/?${filter}`);
+        const { data } = await axiosReq.get(`/pictures/?${filter}search=${query}`);
         setPictures(data);
         setHasLoaded(true);
       } catch (err) {
@@ -29,7 +30,7 @@ function PicturesPage({ message, filter = "" }) {
 
     setHasLoaded(false);
     fetchPictures();
-  }, [filter, pathname]);
+  }, [filter, query, pathname]);
 
   return (
     <Row className="h-100">
@@ -40,6 +41,8 @@ function PicturesPage({ message, filter = "" }) {
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
             type="text"
             className={`mr-sm-2 ${styles.SearchInput}`}
             placeholder="Search pictures by title or author"
