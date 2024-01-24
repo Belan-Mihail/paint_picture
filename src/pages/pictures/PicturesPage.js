@@ -10,6 +10,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -20,7 +21,9 @@ function PicturesPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPictures = async () => {
       try {
-        const { data } = await axiosReq.get(`/pictures/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+          `/pictures/?${filter}search=${query}`
+        );
         setPictures(data);
         setHasLoaded(true);
       } catch (err) {
@@ -36,7 +39,6 @@ function PicturesPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-    
   }, [filter, query, pathname]);
 
   return (
@@ -48,8 +50,8 @@ function PicturesPage({ message, filter = "" }) {
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
             type="text"
             className={`mr-sm-2 ${styles.SearchInput}`}
             placeholder="Search pictures by title or author"
@@ -58,13 +60,19 @@ function PicturesPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {pictures.results.length ? (
-              pictures.results.map((picture) => (
-                <Picture
-                  key={picture.id}
-                  {...picture}
-                  setPictures={setPictures}
-                />
-              ))
+              <InfiniteScroll
+                children={pictures.results.map((picture) => (
+                  <Picture
+                    key={picture.id}
+                    {...picture}
+                    setPictures={setPictures}
+                  />
+                ))}
+                dataLength={pictures.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!pictures.next}
+                next={() => {}}
+              />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NotFound} message={message} />
