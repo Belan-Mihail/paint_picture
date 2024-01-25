@@ -8,6 +8,7 @@ import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from '../../components/MoreDropdown';
 
 const Picture = (props) => {
     const {
@@ -75,7 +76,7 @@ const Picture = (props) => {
               </Link>
               <div className="d-flex align-items-center">
                 <span>{updated_at}</span>
-                {is_owner && PicturePage && "..."}
+                {is_owner && PicturePage && <MoreDropdown />}
               </div>
             </Media>
           </Card.Body>
