@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "../../styles/PictureCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Upload from "../../assets/upload.png";
@@ -28,14 +28,16 @@ const PictureEditForm = () => {
 
   const imageInput = useRef(null);
   const history = useHistory();
-  const { id } = useParams()
+  const { id } = useParams();
 
   useEffect(() => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/pictures/${id}/`);
         const { title, description, image, is_owner, picture_category } = data;
-        is_owner ? setPostData({ title, description, image, picture_category }) : history.push("/");
+        is_owner
+          ? setPostData({ title, description, image, picture_category })
+          : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -67,12 +69,15 @@ const PictureEditForm = () => {
 
     formData.append("title", title);
     formData.append("description", description);
-    formData.append("image", imageInput.current.files[0]);
     formData.append("picture_category", picture_category);
 
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
+
     try {
-      const { data } = await axiosReq.post("/pictures/", formData);
-      history.push(`/pictures/${data.id}`);
+      await axiosReq.put(`/pictures/${id}/`, formData);
+      history.push(`/pictures/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
