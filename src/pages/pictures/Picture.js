@@ -9,6 +9,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from '../../components/MoreDropdown';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Picture = (props) => {
     const {
@@ -31,6 +32,11 @@ const Picture = (props) => {
     
       const currentUser = useCurrentUser();
       const is_owner = currentUser?.username === owner;
+      const history = useHistory();
+
+      const handleEdit = () => {
+        history.push(`/pictures/${id}/edit`);
+      };
 
       const handleLike = async () => {
         try {
@@ -76,7 +82,9 @@ const Picture = (props) => {
               </Link>
               <div className="d-flex align-items-center">
                 <span>{updated_at}</span>
-                {is_owner && PicturePage && <MoreDropdown />}
+                {is_owner && PicturePage && <MoreDropdown 
+                handleEdit={handleEdit}
+                />}
               </div>
             </Media>
           </Card.Body>
