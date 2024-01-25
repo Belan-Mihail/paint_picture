@@ -13,6 +13,7 @@ import Image from "react-bootstrap/Image";
 import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const PictureEditForm = () => {
   const [errors, setErrors] = useState({});
@@ -27,6 +28,21 @@ const PictureEditForm = () => {
 
   const imageInput = useRef(null);
   const history = useHistory();
+  const { id } = useParams()
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/pictures/${id}/`);
+        const { title, description, image, is_owner, picture_category } = data;
+        is_owner ? setPostData({ title, description, image, picture_category }) : history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    handleMount();
+  }, [history, id]);
 
   const handleChange = (event) => {
     setPostData({
