@@ -25,3 +25,13 @@
 .Main:focus {
   background: #f78215 !important;
 }
+
+.CommentButton {
+  background: #f78215;
+  color: #fff;
+}
+
+.CommentButton:hover {
+  scale: 1.05;
+  color: #fff;
+}

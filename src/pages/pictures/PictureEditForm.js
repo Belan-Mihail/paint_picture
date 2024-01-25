@@ -147,7 +147,7 @@ const PictureEditForm = () => {
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Main}`} type="submit">
-        create
+        edit
       </Button>
     </div>
   );
