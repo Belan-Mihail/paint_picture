@@ -38,6 +38,15 @@ const Picture = (props) => {
         history.push(`/pictures/${id}/edit`);
       };
 
+      const handleDelete = async () => {
+        try {
+          await axiosRes.delete(`/pictures/${id}/`);
+          history.goBack();
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
       const handleLike = async () => {
         try {
           const { data } = await axiosRes.post("/likes/", { picture: id });
@@ -84,6 +93,7 @@ const Picture = (props) => {
                 <span>{updated_at}</span>
                 {is_owner && PicturePage && <MoreDropdown 
                 handleEdit={handleEdit}
+                handleDelete={handleDelete}
                 />}
               </div>
             </Media>
