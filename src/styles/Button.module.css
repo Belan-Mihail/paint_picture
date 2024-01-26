@@ -35,3 +35,14 @@
   scale: 1.05;
   color: #fff;
 }
+
+.SaveButton {
+  background: #02be3a;
+}
+
+.SaveButton:hover,
+.SaveButton:hover:active,
+.SaveButton:active,
+.SaveButton:focus {
+  background: #079531 !important;
+}
