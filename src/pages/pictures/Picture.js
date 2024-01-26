@@ -82,7 +82,7 @@ const Picture = (props) => {
 
       return (
         
-        <Card className={`${styles.Picture} mt-2`}>
+        <Card className={`${styles.Picture} mt-4`}>
           <Card.Body>
             <Media className="align-items-center justify-content-between">
               <Link to={`/profiles/${profile_id}`}>

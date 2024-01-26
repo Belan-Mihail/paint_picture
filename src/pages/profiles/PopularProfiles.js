@@ -34,7 +34,7 @@ const PopularProfiles = ({ mobile }) => {
   return (
     <Container className={`${appStyles.Content} ${
       mobile && "d-lg-none text-center mb-3"
-    } mt-4`}>
+    } mt-2`}>
       {popularProfiles.results.length ? (
         <>
           <p>Most followed profiles.</p>
