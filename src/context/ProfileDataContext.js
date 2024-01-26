@@ -36,7 +36,11 @@ export const ProfileDataProvider = ({ children }) => {
       }, [currentUser]);
 
   return (
-    <div></div>
+    <ProfileDataContext.Provider value={profileData}>
+      <SetProfileDataContext.Provider value={setProfileData}>
+        {children}
+      </SetProfileDataContext.Provider>
+    </ProfileDataContext.Provider>
   )
 }
 
