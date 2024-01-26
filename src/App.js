@@ -11,6 +11,7 @@ import PictureEditForm from "./pages/pictures/PictureEditForm.js";
 import PicturePage from "./pages/pictures/PicturePage.js";
 import PicturesPage from "./pages/pictures/PicturesPage.js";
 import { useCurrentUser } from "./context/CurrentUserContext";
+import ProfilePage from "./pages/profiles/ProfilePage.js";
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
           <Route exact path="/pictures/create" render={() => <PictureCreateForm />} />
           <Route exact path="/pictures/:id/edit" render={() => <PictureEditForm />} />
           <Route exact path="/pictures/:id" render={() => <PicturePage />} />
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
 
