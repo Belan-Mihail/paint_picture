@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Form from "react-bootstrap/Form";
 import btnStyles from "../../styles/Button.module.css";
+import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
@@ -12,8 +13,32 @@ function CommentEditForm(props) {
     setFormContent(event.target.value);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axiosRes.put(`/comments/${id}/`, {
+        content: formContent.trim(),
+      });
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: prevComments.results.map((comment) => {
+          return comment.id === id
+            ? {
+                ...comment,
+                content: formContent.trim(),
+                updated_at: "now",
+              }
+            : comment;
+        }),
+      }));
+      setShowEditForm(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group className="pr-1">
         <Form.Control
           className={styles.Form}
