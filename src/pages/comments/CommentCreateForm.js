@@ -1,5 +1,5 @@
 
-import styles from '../../styles/CommentCreateForm.module.css'
+import styles from '../../styles/CommentCreateEditForm.module.css'
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
