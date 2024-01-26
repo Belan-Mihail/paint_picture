@@ -52,7 +52,11 @@ function PicturePage() {
             "Comments"
           ) : null}
           {comments.results.length ? (
-            "comments will go here"
+            comments.results.map((comment) => (
+              <p key={comment.id}>
+                {comment.owner} : {comment.content}
+              </p>
+            ))
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (
