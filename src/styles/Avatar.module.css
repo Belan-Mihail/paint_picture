@@ -2,3 +2,38 @@
   margin: -8px 8px 0px 0px;
   object-fit: cover;
 }
+
+.Avatar:hover {
+  border: 2px solid #f78215;
+  animation-duration: 1.5s;
+  animation-name: changeBorderColor;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.ParentSpan {
+  position: relative;
+}
+
+.Greeting {
+  position: absolute;
+  top: -30px;
+  left: 60%;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  z-index: 20;
+  border-radius: 8px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+
+@keyframes changeBorderColor {
+  from {
+    border: 2px solid #8124e5b9;
+  }
+  to {
+  border: 2px solid #f78215bd;
+  }
+}
