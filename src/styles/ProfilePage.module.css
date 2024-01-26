@@ -1,0 +1,52 @@
+.Card {
+  height: 380px;
+  width: 350px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Front,
+.Back {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: 1s;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+}
+
+.Front {
+  gap: 10px;
+  align-items: center;
+}
+
+.Back {
+  justify-content: space-between;
+  transform: rotateY(180deg);
+}
+
+.ProfileInfoFront {
+  display: flex;
+  gap: 20px;
+}
+
+.ProfileButton {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.Card:hover .Back {
+  transform: rotateY(0deg);
+  box-shadow: inset 0px 0px 62px -20px #8224e5;
+}
+.Card:hover .Front {
+  transform: rotateY(-180deg);
+}
