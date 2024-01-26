@@ -16,10 +16,10 @@ import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../context/CurrentUserContext";
 import { useParams } from "react-router";
 import {
-    useProfileData,
-    useSetProfileData,
-  } from "../../context/ProfileDataContext";
-  import { axiosReq } from "../../api/axiosDefaults";
+  useProfileData,
+  useSetProfileData,
+} from "../../context/ProfileDataContext";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -53,25 +53,31 @@ function ProfilePage() {
       <Row noGutters className="justify-content-center">
         <Col className={styles.Card}>
           <Col className={styles.Front}>
-            <Image />
-            <h3>Profile Name</h3>
+            <Image
+              className={styles.ProfileImage}
+              
+              src={profile?.image}
+            />
+            <h3>{profile?.owner}</h3>
             <div className={styles.ProfileInfoFront}>
               <div>
-                <p>posts</p>
+                <p>pictures</p>
                 <p>followers</p>
                 <p>following</p>
               </div>
 
               <div>
-                <p>3</p>
-                <p>3</p>
-                <p>3</p>
+                <p>{profile?.pictures_count}</p>
+                <p>{profile?.followers_count}</p>
+                <p>{profile?.following_count}</p>
               </div>
             </div>
           </Col>
           <Row className={styles.Back}>
             <span className="text-center m-2">Bio</span>
-            <Col className={styles.Content}>Content</Col>
+            {profile?.content && (
+              <Col className={styles.Content}>{profile.content}</Col>
+            )}
             <Col className={styles.ProfileButton}>
               <Button>Follow</Button>
             </Col>
