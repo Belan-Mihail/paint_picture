@@ -45,4 +45,5 @@
 .SaveButton:active,
 .SaveButton:focus {
   background: #079531 !important;
+  scale: 1.05;
 }
