@@ -33,10 +33,16 @@ const PopularProfiles = () => {
 
   return (
     <Container className={`${appStyles.Content} mt-4`}>
-      <p>Popular profiles</p>
-      {popularProfiles.results.map((profile) => (
-        <p key={profile.id}>{profile.owner}</p>
-      ))}
+      {popularProfiles.results.length ? (
+        <>
+          <p>Most followed profiles.</p>
+          {popularProfiles.results.map((profile) => (
+            <p key={profile.id}>{profile.owner}</p>
+          ))}
+        </>
+      ) : (
+        <Asset spinner />
+      )}
     </Container>
   );
 };
