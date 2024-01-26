@@ -77,7 +77,7 @@ function PicturesPage({ message, filter = "" }) {
                 next={() => fetchMoreData(pictures, setPictures)}
               />
             ) : (
-              <Container className={appStyles.Content}>
+              <Container className={` ${appStyles.Content} mt-2`}>
                 <Asset src={NotFound} message={message} />
               </Container>
             )}
