@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 import Picture from "./Picture";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../context/CurrentUserContext";
+import Comment from "../comments/Comment";
 
 function PicturePage() {
   const { id } = useParams();
@@ -53,9 +54,7 @@ function PicturePage() {
           ) : null}
           {comments.results.length ? (
             comments.results.map((comment) => (
-              <p key={comment.id}>
-                {comment.owner} : {comment.content}
-              </p>
+              <Comment key={comment.id} {...comment} />
             ))
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
