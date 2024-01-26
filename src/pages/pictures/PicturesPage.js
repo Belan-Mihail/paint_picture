@@ -12,6 +12,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -86,7 +87,9 @@ function PicturesPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2"></Col>
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+        <PopularProfiles />
+      </Col>
     </Row>
   );
 }
