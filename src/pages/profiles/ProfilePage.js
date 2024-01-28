@@ -20,6 +20,10 @@ import {
   useSetProfileData,
 } from "../../context/ProfileDataContext";
 import { axiosReq } from "../../api/axiosDefaults";
+import Picture from "../pictures/Picture";
+import NotFound from "../../assets/notfound.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -29,17 +33,20 @@ function ProfilePage() {
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+  const [profilePictures, setProfilePictures] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] = await Promise.all([
+        const [{ data: pageProfile }, { data: profilePictures }] = await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/pictures/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setProfilePictures(profilePictures);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -102,6 +109,22 @@ function ProfilePage() {
       <hr />
       <p className="text-center">Profile owner's posts</p>
       <hr />
+      {profilePictures.results.length ? (
+        <InfiniteScroll
+          children={profilePictures.results.map((picture) => (
+            <Picture key={picture.id} {...picture} setPictures={setProfilePictures} />
+          ))}
+          dataLength={profilePictures.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profilePictures.next}
+          next={() => fetchMoreData(profilePictures, setProfilePictures)}
+        />
+      ) : (
+        <Asset
+          src={NotFound}
+          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+        />
+      )}
     </>
   );
 
