@@ -12,9 +12,9 @@ import PicturePage from "./pages/pictures/PicturePage.js";
 import PicturesPage from "./pages/pictures/PicturesPage.js";
 import { useCurrentUser } from "./context/CurrentUserContext";
 import ProfilePage from "./pages/profiles/ProfilePage.js";
+import UsernameForm from "./pages/profiles/UsernameForm";
 
 function App() {
-
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
 
@@ -23,13 +23,13 @@ function App() {
       <NavBar />
 
       <Container className={styles.MainContainer}>
-      <Switch>
+        <Switch>
           <Route exact path="/" render={() => <PicturesPage />} />
           <Route
             exact
             path="/feed"
             render={() => (
-              <PicturesPage 
+              <PicturesPage
                 message="No results found. Adjust the search keyword or follow a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
@@ -39,7 +39,7 @@ function App() {
             exact
             path="/liked"
             render={() => (
-              <PicturesPage 
+              <PicturesPage
                 message="No results found. Adjust the search keyword or like a post."
                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
               />
@@ -47,13 +47,25 @@ function App() {
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
-          <Route exact path="/pictures/create" render={() => <PictureCreateForm />} />
-          <Route exact path="/pictures/:id/edit" render={() => <PictureEditForm />} />
+          <Route
+            exact
+            path="/pictures/create"
+            render={() => <PictureCreateForm />}
+          />
+          <Route
+            exact
+            path="/pictures/:id/edit"
+            render={() => <PictureEditForm />}
+          />
           <Route exact path="/pictures/:id" render={() => <PicturePage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
-
       </Container>
     </div>
   );
