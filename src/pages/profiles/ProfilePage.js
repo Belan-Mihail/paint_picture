@@ -82,11 +82,11 @@ function ProfilePage() {
             {currentUser &&
           !is_owner &&
           (profile?.following_id ? (
-            <Button className={btnStyles.Button} onClick={() => {}}>
+            <Button className={`${btnStyles.Button} ${btnStyles.Unfollow}`} onClick={() => {}}>
               unfollow
             </Button>
           ) : (
-            <Button className={btnStyles.Button} onClick={() => {}}>
+            <Button className={`${btnStyles.Button} ${btnStyles.Follow}`} onClick={() => {}}>
               follow
             </Button>
           ))}
