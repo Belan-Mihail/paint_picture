@@ -11,7 +11,6 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router";
 
-
 const PlanCreateForm = () => {
   const { id } = useParams();
   const [errors, setErrors] = useState({});
@@ -26,7 +25,6 @@ const PlanCreateForm = () => {
   const { plans_title, plans_description, plans_date, until } = planData;
 
   const history = useHistory();
-
 
   const handleChange = (event) => {
     setPlanData({
@@ -46,7 +44,8 @@ const PlanCreateForm = () => {
 
     try {
       await axiosReq.post("/plans/", formData);
-      history.push(`/profiles/${id}/`);
+      history.push(`/`);
+      //   history.push(`/profiles/${id}/`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -69,6 +68,11 @@ const PlanCreateForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.plans_title?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group>
               <Form.Label>Plan Description</Form.Label>
               <Form.Control
@@ -78,6 +82,11 @@ const PlanCreateForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.plans_description?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group>
               <Form.Label>Plan Date</Form.Label>
               <Form.Control
@@ -87,6 +96,11 @@ const PlanCreateForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
+            {errors.plans_date?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <Form.Group>
               <Form.Label>Add until</Form.Label>
               <Form.Control
@@ -99,6 +113,11 @@ const PlanCreateForm = () => {
                 <option>true</option>
               </Form.Control>
             </Form.Group>
+            {errors.until?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
             <Button
               className={`${btnStyles.Button} ${btnStyles.Main}`}

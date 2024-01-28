@@ -25,6 +25,7 @@ import NotFound from "../../assets/notfound.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import Plan from "../plans/Plan";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -35,19 +36,23 @@ function ProfilePage() {
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePictures, setProfilePictures] = useState({ results: [] });
+  const [profilePlans, setProfilePlans] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }, { data: profilePictures }] = await Promise.all([
+        const [{ data: pageProfile }, { data: profilePictures }, {data: profilePlans}] = await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
           axiosReq.get(`/pictures/?owner__profile=${id}`),
+          axiosReq.get(`/plans/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
         setProfilePictures(profilePictures);
+        setProfilePlans(profilePlans);
+        console.log(profilePlans)
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -130,6 +135,32 @@ function ProfilePage() {
     </>
   );
 
+  const mainProfilePlans = (
+    <>
+      <hr />
+      <p className="text-center">Profile owner's plans</p>
+      <hr />
+      {profilePlans.results.length ? (
+        <InfiniteScroll
+          children={profilePlans.results.map((plan) => (
+            <Plan key={plan.id} {...plan} setPlans={setProfilePlans} />
+          ))}
+          dataLength={profilePlans.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profilePlans.next}
+          next={() => fetchMoreData(profilePlans, setProfilePlans)}
+        />
+      ) : (
+        <Asset
+          src={NotFound}
+          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+        />
+      )}
+    </>
+  );
+
+
+
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
@@ -138,6 +169,7 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
               {mainProfile}
+              {mainProfilePlans}
               {mainProfilePosts}
             </>
           ) : (
