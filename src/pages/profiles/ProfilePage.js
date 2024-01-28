@@ -24,6 +24,7 @@ import Picture from "../pictures/Picture";
 import NotFound from "../../assets/notfound.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -57,6 +58,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="justify-content-center">
         <Col className={styles.Card}>
           <Col className={styles.Front}>
