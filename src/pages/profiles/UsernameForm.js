@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, { useEffect, useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -10,36 +9,74 @@ import Row from "react-bootstrap/Row";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
-const UsernameForm = () => {
-    return (
-        <Row>
-          <Col className="py-2 mx-auto text-center" md={6}>
-            <Container className={appStyles.Content}>
-              <Form onSubmit={() => {}} className="my-2">
-                <Form.Group>
-                  <Form.Label>Change username</Form.Label>
-                  <Form.Control
-                    placeholder="username"
-                    type="text"
-                  />
-                </Form.Group>
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Main}`}
-                  onClick={() => {}}
-                >
-                  cancel
-                </Button>
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Main}`}
-                  type="submit"
-                >
-                  save
-                </Button>
-              </Form>
-            </Container>
-          </Col>
-        </Row>
-      );
-    };
+import { useHistory, useParams } from "react-router-dom";
+import { axiosRes } from "../../api/axiosDefaults";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../../context/CurrentUserContext";
 
-export default UsernameForm
+const UsernameForm = () => {
+  const [username, setUsername] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const history = useHistory();
+  const { id } = useParams();
+
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
+
+  useEffect(() => {
+    if (currentUser?.profile_id?.toString() === id) {
+      setUsername(currentUser.username);
+    } else {
+      history.push("/");
+    }
+  }, [currentUser, history, id]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axiosRes.put("/dj-rest-auth/user/", {
+        username,
+      });
+      setCurrentUser((prevUser) => ({
+        ...prevUser,
+        username,
+      }));
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+      setErrors(err.response?.data);
+    }
+  };
+
+  return (
+    <Row>
+      <Col className="py-2 mx-auto text-center" md={6}>
+        <Container className={appStyles.Content}>
+          <Form onSubmit={() => {}} className="my-2">
+            <Form.Group>
+              <Form.Label>Change username</Form.Label>
+              <Form.Control placeholder="username" type="text" />
+            </Form.Group>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Main}`}
+              onClick={() => {}}
+            >
+              cancel
+            </Button>
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Main}`}
+              type="submit"
+            >
+              save
+            </Button>
+          </Form>
+        </Container>
+      </Col>
+    </Row>
+  );
+};
+
+export default UsernameForm;
