@@ -2,17 +2,12 @@ import React from "react";
 import { useCurrentUser } from "../../context/CurrentUserContext";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
-
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
+import styles from "../../styles/Plan.module.css";
+import { Container } from "react-bootstrap";
 
 const Plan = (props) => {
   const {
-    id,
     owner,
-    profile_id,
-    profile_image,
     plans_title,
     plans_description,
     plans_date,
@@ -25,18 +20,35 @@ const Plan = (props) => {
   const is_owner = currentUser?.username === owner;
 
   return (
-    <>
+    
+    <Container>
       <Row>
+        
         <Col className="text-center mt-2">
-          {plans_title && <p className="text-center">{plans_title}</p>}
+          {plans_title && (
+            <p className={`${styles.PlansTitle} text-center`}>{plans_title}</p>
+          )}
         </Col>
+        
       </Row>
-      <Row className="mb-2">
-        {plans_description && <Col xs={8} className="text-center">{plans_description}</Col>}
-        {until && <Col className="text-center">until</Col>}
-        {plans_date && <Col className="text-center">{plans_date}</Col>}
+      <Row className={`${styles.DescRow} d-flex mb-2`}>
+        
+          {plans_description && (
+            <Col className={`${styles.PlansCol} text-center`}>
+              {plans_description}
+            </Col>
+          )}
+          {until && (
+            <Col className={`${styles.PlansCol} ${styles.Until} text-center`}>
+              until
+            </Col>
+          )}
+          {plans_date && <Col className="text-center">{plans_date}</Col>}
+        
       </Row>
-    </>
+      <hr className={styles.PlansDivider}></hr>
+      </Container>
+    
   );
 };
 

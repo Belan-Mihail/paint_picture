@@ -1,0 +1,19 @@
+.PlansTitle {
+    background: #f78215;
+    font-weight: 700;
+    
+    
+}
+
+.PlansDivider {
+    background: #8224e5;
+}
+
+
+.Until {
+    color: red;
+}
+
+.DescRow {
+    flex-direction: column
+  }
