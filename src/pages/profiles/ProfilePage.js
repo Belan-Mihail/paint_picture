@@ -93,7 +93,7 @@ function ProfilePage() {
               unfollow
             </Button>
           ) : (
-            <Button className={`${btnStyles.Button} ${btnStyles.Follow}`} onClick={handleFollow(profile)}>
+            <Button className={`${btnStyles.Button} ${btnStyles.Follow}`} onClick={() => handleFollow(profile)}>
               follow
             </Button>
           ))}
