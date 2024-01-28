@@ -79,7 +79,17 @@ function ProfilePage() {
               <Col className={styles.Content}>{profile.content}</Col>
             )}
             <Col className={styles.ProfileButton}>
-              <Button>Follow</Button>
+            {currentUser &&
+          !is_owner &&
+          (profile?.following_id ? (
+            <Button className={btnStyles.Button} onClick={() => {}}>
+              unfollow
+            </Button>
+          ) : (
+            <Button className={btnStyles.Button} onClick={() => {}}>
+              follow
+            </Button>
+          ))}
             </Col>
           </Row>
         </Col>
