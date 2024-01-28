@@ -13,6 +13,7 @@ import PicturesPage from "./pages/pictures/PicturesPage.js";
 import { useCurrentUser } from "./context/CurrentUserContext";
 import ProfilePage from "./pages/profiles/ProfilePage.js";
 import UsernameForm from "./pages/profiles/UsernameForm";
+import PlanCreateForm from "./pages/plans/PlanCreateForm.js";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -51,6 +52,11 @@ function App() {
             exact
             path="/pictures/create"
             render={() => <PictureCreateForm />}
+          />
+          <Route
+            exact
+            path="/plans/create"
+            render={() => <PlanCreateForm />}
           />
           <Route
             exact
