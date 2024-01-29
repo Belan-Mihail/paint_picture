@@ -27,6 +27,7 @@ import { fetchMoreData } from "../../utils/utils";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import Plan from "../plans/Plan";
 import Wallitem from "../wallitems/Wallitem";
+import WallitemCreateForm from "../wallitems/WallitemCreateForm";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -40,6 +41,7 @@ function ProfilePage() {
   const [profilePlans, setProfilePlans] = useState({ results: [] });
   const [profileWallItems, setProfileWallItems] = useState({ results: [] });
   const [showWall, setShowWall] = useState(false);
+  const profile_image = currentUser?.profile_image;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -180,6 +182,15 @@ function ProfilePage() {
       <hr />
       <p className="text-center">{profile?.owner} Wall</p>
       <hr />
+      {currentUser ? (
+        <WallitemCreateForm
+          profile_id={currentUser.profile_id}
+          profileImage={profile_image}
+          setProfileWallItems={setProfileWallItems}
+        />
+      ) : profileWallItems.results.length ? (
+        "Messages"
+      ) : null}
       {profileWallItems.results.length ? (
         <InfiniteScroll
           children={profileWallItems.results.map((wallitem) => (
@@ -194,11 +205,10 @@ function ProfilePage() {
           hasMore={!!profileWallItems.next}
           next={() => fetchMoreData(profileWallItems, setProfileWallItems)}
         />
+      ) : currentUser ? (
+        <span>No messages yet, be the first!</span>
       ) : (
-        <Asset
-          src={NotFound}
-          message={`No results found, ${profile?.owner} Wall hasn't content yet.`}
-        />
+        <span>No masseges... yet</span>
       )}
     </>
   );
