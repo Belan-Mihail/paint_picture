@@ -34,7 +34,7 @@ const PlanEditForm = (props) => {
         const { plans_title, plans_description, plans_date, owner, until } = data;
         owner 
         ? setPlanData({ plans_title, plans_description, plans_date, until })
-        : history.push(`/profiles/${profile_id}/`)
+        : history.push(`/`)
         
       } catch (err) {
         console.log(err);
@@ -42,7 +42,7 @@ const PlanEditForm = (props) => {
     };
 
     handleMount();
-  }, [id]);
+  }, [history, id]);
 
   
 
@@ -53,11 +53,31 @@ const PlanEditForm = (props) => {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("plans_title", plans_title);
+    formData.append("plans_description", plans_description);
+    formData.append("plans_date", plans_date);
+    formData.append("until", until);
+
+    try {
+      await axiosReq.put(`/plans/${id}/`, formData);
+        history.push(`/profiles/${profile_id}/`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
+    }
+  };
+
   return (
     <Row>
       <Col className="py-2 mx-auto text-center mt-4" md={6}>
         <Container className={appStyles.Content}>
-          <Form onSubmit={() => {}} className="my-2">
+          <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
               <Form.Label>Plan Title</Form.Label>
               <Form.Control
