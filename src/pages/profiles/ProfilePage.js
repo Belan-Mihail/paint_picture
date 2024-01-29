@@ -73,6 +73,7 @@ function ProfilePage() {
               src={profile?.image}
             />
             <h3>{profile?.owner}</h3>
+            {profile?.name && <span>{profile?.name}</span>}
             <div className={styles.ProfileInfoFront}>
               <div>
                 <p>pictures</p>

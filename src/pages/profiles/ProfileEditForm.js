@@ -7,6 +7,7 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -92,6 +93,21 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
+      <Form.Group>
+        <Form.Label>Nickname</Form.Label>
+        <Form.Control
+          as="input"
+          name="name"
+          value={name}
+          rows={1}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.name?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Main}`}
@@ -108,7 +124,7 @@ const ProfileEditForm = () => {
   return (
     <Form onSubmit={() => {}}>
       <Row>
-        <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
+        <Col className="py-2 p-0 p-md-2 text-center mt-2" md={7} lg={6}>
           <Container className={appStyles.Content}>
             <Form.Group>
               {image && (
@@ -139,11 +155,11 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
-            <div className="d-md-none">{textFields}</div>
+            <div className="d-md-none mt-2">{textFields}</div>
           </Container>
         </Col>
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-          <Container className={appStyles.Content}>{textFields}</Container>
+          <Container className={`${appStyles.Content} mt-2`}>{textFields}</Container>
         </Col>
       </Row>
     </Form>
