@@ -37,6 +37,9 @@ function ProfilePage() {
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePictures, setProfilePictures] = useState({ results: [] });
   const [profilePlans, setProfilePlans] = useState({ results: [] });
+  const [showWall, setShowWall] = useState(false)
+
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -160,6 +163,15 @@ function ProfilePage() {
     </>
   );
 
+  const mainProfileWall = (
+    <>
+    <hr />
+      <p className="text-center">{profile?.owner} Wall</p>
+      <hr />
+    </>
+  )
+
+
 
 
   return (
@@ -171,11 +183,34 @@ function ProfilePage() {
             <>
               {mainProfile}
               {mainProfilePlans}
-              {mainProfilePosts}
+              {!showWall ? (
+            <>
+            <Row>
+              <Col>
+              <Button onClick={() => setShowWall(true)}>Show {profile?.owner} Wall </Button>
+              </Col>
+            </Row>
+            {mainProfilePosts}
             </>
+          ) : (
+            <>
+            <Row>
+              <Col>
+              <Button onClick={() => setShowWall(false)}>Show {profile?.owner} Post </Button>
+              </Col>
+            </Row>
+            {mainProfileWall}
+            </>
+          ) }
+            </>
+            
+              
+              
+            
           ) : (
             <Asset spinner />
           )}
+          
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
