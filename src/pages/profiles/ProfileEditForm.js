@@ -61,6 +61,31 @@ const ProfileEditForm = () => {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("content", content);
+    formData.append("greeting", greeting);
+
+    if (imageFile?.current?.files[0]) {
+      formData.append("image", imageFile?.current?.files[0]);
+    }
+
+    try {
+      const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
+      setCurrentUser((currentUser) => ({
+        ...currentUser,
+        profile_image: data.image,
+      }));
+      
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+      setErrors(err.response?.data);
+    }
+  };
+
   const textFields = (
     <>
       <Form.Group>
@@ -111,7 +136,7 @@ const ProfileEditForm = () => {
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Main}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
@@ -122,7 +147,7 @@ const ProfileEditForm = () => {
   );
 
   return (
-    <Form onSubmit={() => {}}>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center mt-2" md={7} lg={6}>
           <Container className={appStyles.Content}>
