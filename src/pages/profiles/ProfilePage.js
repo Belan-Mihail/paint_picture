@@ -55,7 +55,7 @@ function ProfilePage() {
           axiosReq.get(`/profiles/${id}/`),
           axiosReq.get(`/pictures/?owner__profile=${id}`),
           axiosReq.get(`/plans/?owner__profile=${id}`),
-          axiosReq.get(`/wallitems/?owner__profile=${id}`),
+          axiosReq.get(`/wallitems/?profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
@@ -64,7 +64,9 @@ function ProfilePage() {
         setProfilePictures(profilePictures);
         setProfilePlans(profilePlans);
         setProfileWallItems(profileWallItems);
+        
         setHasLoaded(true);
+        
       } catch (err) {
         console.log(err);
       }
@@ -184,6 +186,7 @@ function ProfilePage() {
       <hr />
       {currentUser ? (
         <WallitemCreateForm
+          current_profile = {pageProfile}
           profile_id={currentUser.profile_id}
           profileImage={profile_image}
           setProfileWallItems={setProfileWallItems}
