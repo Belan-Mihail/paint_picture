@@ -6,6 +6,7 @@ import styles from "../../styles/Plan.module.css";
 import { Container } from "react-bootstrap";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Plan = (props) => {
   const {
@@ -16,7 +17,6 @@ const Plan = (props) => {
     plans_date,
     until,
     updated_at,
-    setProfilePlans,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -27,8 +27,19 @@ const Plan = (props) => {
     history.push(`/plans/${id}/edit`);
   };
 
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/plans/${id}/`);
+      history.goBack();
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Container>
+      <small>{updated_at}</small>
       <Row>
         <Col className="text-center mt-2">
           {plans_title && (
@@ -37,7 +48,7 @@ const Plan = (props) => {
         </Col>
 
         {is_owner && (
-          <MoreDropdown handleEdit={handleEdit} handleDelete={() => {}} />
+          <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />
         )}
       </Row>
       <Row className={`${styles.DescRow} d-flex mb-2`}>
