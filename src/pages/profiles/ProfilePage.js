@@ -26,28 +26,34 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import Plan from "../plans/Plan";
+import Wallitem from "../wallitems/Wallitem";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
   const { id } = useParams();
-  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePictures, setProfilePictures] = useState({ results: [] });
   const [profilePlans, setProfilePlans] = useState({ results: [] });
-  const [showWall, setShowWall] = useState(false)
-
-  
+  const [profileWallItems, setProfileWallItems] = useState({ results: [] });
+  const [showWall, setShowWall] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }, { data: profilePictures }, {data: profilePlans}] = await Promise.all([
+        const [
+          { data: pageProfile },
+          { data: profilePictures },
+          { data: profilePlans },
+          { data: profileWallItems },
+        ] = await Promise.all([
           axiosReq.get(`/profiles/${id}/`),
           axiosReq.get(`/pictures/?owner__profile=${id}`),
           axiosReq.get(`/plans/?owner__profile=${id}`),
+          axiosReq.get(`/wallitems/?owner__profile=${id}`),
         ]);
         setProfileData((prevState) => ({
           ...prevState,
@@ -55,7 +61,7 @@ function ProfilePage() {
         }));
         setProfilePictures(profilePictures);
         setProfilePlans(profilePlans);
-        console.log(profilePlans)
+        setProfileWallItems(profileWallItems);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -66,15 +72,11 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="justify-content-center">
         <Col className={styles.Card}>
           <Col className={styles.Front}>
-            <Image
-              className={styles.ProfileImage}
-              
-              src={profile?.image}
-            />
+            <Image className={styles.ProfileImage} src={profile?.image} />
             <h3>{profile?.owner}</h3>
             {profile?.name && <span>Nickname:{profile?.name}</span>}
             <div className={styles.ProfileInfoFront}>
@@ -97,17 +99,23 @@ function ProfilePage() {
               <Col className={styles.Content}>{profile.content}</Col>
             )}
             <Col className={styles.ProfileButton}>
-            {currentUser &&
-          !is_owner &&
-          (profile?.following_id ? (
-            <Button className={`${btnStyles.Button} ${btnStyles.Unfollow}`} onClick={() => handleUnfollow(profile)}>
-              unfollow
-            </Button>
-          ) : (
-            <Button className={`${btnStyles.Button} ${btnStyles.Follow}`} onClick={() => handleFollow(profile)}>
-              follow
-            </Button>
-          ))}
+              {currentUser &&
+                !is_owner &&
+                (profile?.following_id ? (
+                  <Button
+                    className={`${btnStyles.Button} ${btnStyles.Unfollow}`}
+                    onClick={() => handleUnfollow(profile)}
+                  >
+                    unfollow
+                  </Button>
+                ) : (
+                  <Button
+                    className={`${btnStyles.Button} ${btnStyles.Follow}`}
+                    onClick={() => handleFollow(profile)}
+                  >
+                    follow
+                  </Button>
+                ))}
             </Col>
           </Row>
         </Col>
@@ -123,7 +131,11 @@ function ProfilePage() {
       {profilePictures.results.length ? (
         <InfiniteScroll
           children={profilePictures.results.map((picture) => (
-            <Picture key={picture.id} {...picture} setPictures={setProfilePictures} />
+            <Picture
+              key={picture.id}
+              {...picture}
+              setPictures={setProfilePictures}
+            />
           ))}
           dataLength={profilePictures.results.length}
           loader={<Asset spinner />}
@@ -165,14 +177,31 @@ function ProfilePage() {
 
   const mainProfileWall = (
     <>
-    <hr />
+      <hr />
       <p className="text-center">{profile?.owner} Wall</p>
       <hr />
+      {profileWallItems.results.length ? (
+        <InfiniteScroll
+          children={profileWallItems.results.map((wallitem) => (
+            <Wallitem
+              key={wallitem.id}
+              {...wallitem}
+              setProfileWallItems={setProfileWallItems}
+            />
+          ))}
+          dataLength={profileWallItems.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profileWallItems.next}
+          next={() => fetchMoreData(profileWallItems, setProfileWallItems)}
+        />
+      ) : (
+        <Asset
+          src={NotFound}
+          message={`No results found, ${profile?.owner} Wall hasn't content yet.`}
+        />
+      )}
     </>
-  )
-
-
-
+  );
 
   return (
     <Row>
@@ -184,33 +213,38 @@ function ProfilePage() {
               {mainProfile}
               {mainProfilePlans}
               {!showWall ? (
-            <>
-            <Row>
-              <Col>
-              <Button className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`} onClick={() => setShowWall(true)}>Show {profile?.owner} Wall </Button>
-              </Col>
-            </Row>
-            {mainProfilePosts}
+                <>
+                  <Row>
+                    <Col>
+                      <Button
+                        className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`}
+                        onClick={() => setShowWall(true)}
+                      >
+                        Show {profile?.owner} Wall{" "}
+                      </Button>
+                    </Col>
+                  </Row>
+                  {mainProfilePosts}
+                </>
+              ) : (
+                <>
+                  <Row>
+                    <Col>
+                      <Button
+                        className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`}
+                        onClick={() => setShowWall(false)}
+                      >
+                        Show {profile?.owner} Post{" "}
+                      </Button>
+                    </Col>
+                  </Row>
+                  {mainProfileWall}
+                </>
+              )}
             </>
-          ) : (
-            <>
-            <Row>
-              <Col>
-              <Button className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`} onClick={() => setShowWall(false)}>Show {profile?.owner} Post </Button>
-              </Col>
-            </Row>
-            {mainProfileWall}
-            </>
-          ) }
-            </>
-            
-              
-              
-            
           ) : (
             <Asset spinner />
           )}
-          
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
