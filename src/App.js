@@ -57,7 +57,7 @@ function App() {
           <Route
             exact
             path="/plans/create"
-            render={() => <PlanCreateForm />}
+            render={() => <PlanCreateForm profile_id={profile_id}/>}
           />
           <Route
             exact

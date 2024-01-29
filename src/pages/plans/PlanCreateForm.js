@@ -9,11 +9,11 @@ import Alert from "react-bootstrap/Alert";
 import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useParams } from "react-router";
 
-const PlanCreateForm = () => {
-  const { id } = useParams();
+
+const PlanCreateForm = (props) => {
   const [errors, setErrors] = useState({});
+  const { profile_id } = props
 
   const [planData, setPlanData] = useState({
     plans_title: "",
@@ -44,8 +44,7 @@ const PlanCreateForm = () => {
 
     try {
       await axiosReq.post("/plans/", formData);
-      history.push(`/`);
-      //   history.push(`/profiles/${id}/`);
+        history.push(`/profiles/${profile_id}/`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
