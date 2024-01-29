@@ -117,3 +117,21 @@
 .Unfollow:hover:before {
   left: 100%;
 }
+
+.Wide {
+  width: 100%;
+}
+
+.WallPostsButton {
+  background: #8224e5;
+}
+
+.WallPostsButton:hover {
+  background: #f78215 !important;
+}
+
+.WallPostsButton:active,
+.WallPostsButton:focus {
+  background: #8224e5 !important;
+  opacity: .9;
+}
