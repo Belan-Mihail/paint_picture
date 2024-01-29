@@ -67,7 +67,7 @@ function App() {
           <Route
             exact
             path="/plans/:id/edit"
-            render={() => <PlanEditForm />}
+            render={() => <PlanEditForm profile_id={profile_id}/>}
           />
           <Route exact path="/pictures/:id" render={() => <PicturePage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
