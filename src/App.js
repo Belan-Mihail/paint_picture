@@ -15,6 +15,7 @@ import ProfilePage from "./pages/profiles/ProfilePage.js";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import PlanCreateForm from "./pages/plans/PlanCreateForm.js";
 import PlanEditForm from "./pages/plans/PlanEditForm.js";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm.js";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -75,6 +76,11 @@ function App() {
             exact
             path="/profiles/:id/edit/username"
             render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
           />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
