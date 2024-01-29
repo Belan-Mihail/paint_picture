@@ -14,6 +14,7 @@ import { useCurrentUser } from "./context/CurrentUserContext";
 import ProfilePage from "./pages/profiles/ProfilePage.js";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import PlanCreateForm from "./pages/plans/PlanCreateForm.js";
+import PlanEditForm from "./pages/plans/PlanEditForm.js";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -62,6 +63,11 @@ function App() {
             exact
             path="/pictures/:id/edit"
             render={() => <PictureEditForm />}
+          />
+          <Route
+            exact
+            path="/plans/:id/edit"
+            render={() => <PlanEditForm />}
           />
           <Route exact path="/pictures/:id" render={() => <PicturePage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />

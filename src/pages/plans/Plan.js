@@ -5,9 +5,11 @@ import Row from "react-bootstrap/Row";
 import styles from "../../styles/Plan.module.css";
 import { Container } from "react-bootstrap";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Plan = (props) => {
   const {
+    id,
     owner,
     plans_title,
     plans_description,
@@ -19,6 +21,11 @@ const Plan = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/plans/${id}/edit`);
+  };
 
   return (
     <Container>
@@ -30,7 +37,7 @@ const Plan = (props) => {
         </Col>
 
         {is_owner && (
-          <MoreDropdown handleEdit={() => {}} handleDelete={() => {}} />
+          <MoreDropdown handleEdit={handleEdit} handleDelete={() => {}} />
         )}
       </Row>
       <Row className={`${styles.DescRow} d-flex mb-2`}>
