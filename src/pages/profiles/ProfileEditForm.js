@@ -18,7 +18,7 @@ import {
 } from "../../context/CurrentUserContext";
 
 const ProfileEditForm = () => {
-    const currentUser = useCurrentUser();
+  const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
   const { id } = useParams();
   const history = useHistory();
@@ -34,16 +34,64 @@ const ProfileEditForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    const handleMount = async () => {
+      if (currentUser?.profile_id?.toString() === id) {
+        try {
+          const { data } = await axiosReq.get(`/profiles/${id}/`);
+          const { name, content, image, greeting } = data;
+          setProfileData({ name, content, image, greeting });
+        } catch (err) {
+          console.log(err);
+          history.push("/");
+        }
+      } else {
+        history.push("/");
+      }
+    };
+
+    handleMount();
+  }, [currentUser, history, id]);
+
+  const handleChange = (event) => {
+    setProfileData({
+      ...profileData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const textFields = (
     <>
       <Form.Group>
         <Form.Label>Bio</Form.Label>
-        <Form.Control as="textarea" name="content" rows={7} />
+        <Form.Control
+          as="textarea"
+          rows={7}
+          onChange={handleChange}
+          name="content"
+          value={content}
+        />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Greeting</Form.Label>
-        <Form.Control as="input" name="greeting" rows={2} />
+        <Form.Control
+          as="input"
+          name="greeting"
+          value={greeting}
+          rows={2}
+          onChange={handleChange}
+        />
       </Form.Group>
+      {errors?.greeting?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Main}`}
