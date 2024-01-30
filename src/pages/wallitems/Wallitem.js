@@ -26,6 +26,7 @@ const Wallitem = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+
   
   const handleDelete = async () => {
     try {
@@ -51,10 +52,11 @@ const Wallitem = (props) => {
             <WallitemEditForm
               id={id}
               profile_id={profile_id}
-              content={message}
+              message={message}
               profileImage={profile_image}
               setProfileWallItems={setProfileWallItems}
               setShowEditForm={setShowEditForm}
+              
             />
           ) : (
             <p>{message}</p>

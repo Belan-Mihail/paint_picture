@@ -64,7 +64,6 @@ function ProfilePage() {
         setProfilePictures(profilePictures);
         setProfilePlans(profilePlans);
         setProfileWallItems(profileWallItems);
-        console.log(profileWallItems)
         setHasLoaded(true);
         
       } catch (err) {
@@ -201,6 +200,7 @@ function ProfilePage() {
               key={wallitem.id}
               {...wallitem}
               setProfileWallItems={setProfileWallItems}
+              
             />
           ))}
           dataLength={profileWallItems.results.length}
