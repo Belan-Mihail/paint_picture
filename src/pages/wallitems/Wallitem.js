@@ -7,6 +7,7 @@ import { useCurrentUser } from "../../context/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import  WallitemEditForm  from './WallitemEditForm'
 
 
 const Wallitem = (props) => {
@@ -26,8 +27,6 @@ const Wallitem = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
   
-
-
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/wallitems/${id}/`);
@@ -48,11 +47,22 @@ const Wallitem = (props) => {
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
+          {showEditForm ? (
+            <WallitemEditForm
+              id={id}
+              profile_id={profile_id}
+              content={message}
+              profileImage={profile_image}
+              setProfileWallItems={setProfileWallItems}
+              setShowEditForm={setShowEditForm}
+            />
+          ) : (
             <p>{message}</p>
+          )}
         </Media.Body>
         {is_owner && !showEditForm && (
           <MoreDropdown
-            handleEdit={() => {}}
+            handleEdit={() => setShowEditForm(true)}
             handleDelete={handleDelete}
           />
         )}
