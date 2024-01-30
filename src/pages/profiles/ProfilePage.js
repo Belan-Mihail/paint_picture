@@ -64,7 +64,7 @@ function ProfilePage() {
         setProfilePictures(profilePictures);
         setProfilePlans(profilePlans);
         setProfileWallItems(profileWallItems);
-        
+        console.log(profileWallItems)
         setHasLoaded(true);
         
       } catch (err) {
@@ -186,7 +186,7 @@ function ProfilePage() {
       <hr />
       {currentUser ? (
         <WallitemCreateForm
-          current_profile = {pageProfile}
+          current_profile = {id}
           profile_id={currentUser.profile_id}
           profileImage={profile_image}
           setProfileWallItems={setProfileWallItems}

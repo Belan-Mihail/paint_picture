@@ -41,7 +41,7 @@ const handleSubmit = async (event) => {
     const formData = new FormData();
 
     formData.append("message", message);
-    // formData.append("profile", 6);
+    formData.append("profile", current_profile);
 
 
     try {
