@@ -18,18 +18,23 @@ import PlanEditForm from "./pages/plans/PlanEditForm.js";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm.js";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm.js";
 import PictureOrderingFilter from "./components/PictureOrderingFilter.js";
+import { ThemesModeContext } from "./context/ThemesModeContext.js";
+import { useContext } from "react";
+import ModeSwitch from './components/ModeSwitch.js'
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+  const {ThemesMode} = useContext(ThemesModeContext)
 
   return (
-    <div className={styles.App}>
+    <div className={ThemesMode === 'orange' ? (`${styles.App} ${styles.AppOrange}`) : (ThemesMode === 'turquoise') ? (`${styles.App} ${styles.AppTurquoise}`) : (`${styles.App} ${styles.AppLight}`)}>
       <NavBar />
       
 
       <Container className={styles.MainContainer}>
       <PictureOrderingFilter />
+      <ModeSwitch />
         <Switch>
           <Route exact path="/" render={() => <PicturesPage />} />
           <Route

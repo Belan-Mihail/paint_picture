@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./context/CurrentUserContext";
 import { ProfileDataProvider } from "./context/ProfileDataContext";
 import { PictureOrderingFilterProvider } from "./context/PictureOrderingFiltersContext";
+import { ThemesModeProvider } from "./context/ThemesModeContext";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.render(
       <CurrentUserProvider>
         <ProfileDataProvider>
           <PictureOrderingFilterProvider>
-            <App />
+            <ThemesModeProvider>
+              <App />
+            </ThemesModeProvider>
           </PictureOrderingFilterProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>

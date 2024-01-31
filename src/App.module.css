@@ -58,6 +58,17 @@ i:hover {
   transition: color ease-in-out 0.3s;
 }
 
+.AppLight {
+  background-color: #f8f8f8;
+}
+
+.AppTurquoise {
+  background-color: #4eff9e33;
+}
+
+.AppOrange {
+  background-color: #fa850073;
+}
 
 
 @media screen and (max-width: 504px) {
