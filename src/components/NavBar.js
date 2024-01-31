@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";
 import { useCurrentUser } from "../context/CurrentUserContext";
@@ -10,6 +11,7 @@ import { useSetCurrentUser } from "../context/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import btnStyles from "../styles/Button.module.css";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -57,6 +59,23 @@ const NavBar = () => {
       </NavDropdown>
     </>
   );
+
+  const selectCategory = (
+    <Dropdown>
+      <Dropdown.Toggle className={btnStyles.WallCategoryButton} id="dropdown-basic">
+        Categories
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="/category/landscapes">landscapes</Dropdown.Item>
+        <Dropdown.Item href="/category/animals">animals</Dropdown.Item>
+        <Dropdown.Item href="/category/plants">plants</Dropdown.Item>
+        <Dropdown.Item href="/category/abstraction">abstraction</Dropdown.Item>
+        <Dropdown.Item href="/category/other">other</Dropdown.Item>
+        <Dropdown.Item href="/">all</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  )
 
   const loggedInIcons = (
     <>
@@ -129,6 +148,7 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPictureOrPlan}
+        {selectCategory}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}

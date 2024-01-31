@@ -230,7 +230,7 @@ function ProfilePage() {
                   <Row>
                     <Col>
                       <Button
-                        className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`}
+                        className={`${btnStyles.Button} ${btnStyles.WallCategoryButton} ${btnStyles.Wide}`}
                         onClick={() => setShowWall(true)}
                       >
                         Show {profile?.owner} Wall{" "}
@@ -244,7 +244,7 @@ function ProfilePage() {
                   <Row>
                     <Col>
                       <Button
-                        className={`${btnStyles.Button} ${btnStyles.WallPostsButton} ${btnStyles.Wide}`}
+                        className={`${btnStyles.Button} ${btnStyles.WallCategoryButton} ${btnStyles.Wide}`}
                         onClick={() => setShowWall(false)}
                       >
                         Show {profile?.owner} Post{" "}

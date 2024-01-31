@@ -122,16 +122,17 @@
   width: 100%;
 }
 
-.WallPostsButton {
+.WallCategoryButton {
   background: #8224e5;
+  border: 1px solid #f78215;
 }
 
-.WallPostsButton:hover {
+.WallCategoryButton:hover {
   background: #f78215 !important;
 }
 
-.WallPostsButton:active,
-.WallPostsButton:focus {
+.WallCategoryButton:active,
+.WallCategoryButton:focus {
   background: #8224e5 !important;
   opacity: .9;
 }
