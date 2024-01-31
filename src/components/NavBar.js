@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Container } from "react-bootstrap";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
@@ -12,6 +12,8 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import btnStyles from "../styles/Button.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -28,12 +30,18 @@ const NavBar = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const addPictureOrPlan = (
     <>
       <NavDropdown
         title="Add"
         id="basic-nav-dropdown"
         className={styles.NavLink}
+        data-aos="fade-down"
       >
         <NavDropdown.Item>
           <NavLink
@@ -61,7 +69,7 @@ const NavBar = () => {
   );
 
   const selectCategory = (
-    <Dropdown>
+    <Dropdown data-aos="fade-down">
       <Dropdown.Toggle className={btnStyles.WallCategoryButton} id="dropdown-basic">
         Categories
       </Dropdown.Toggle>
@@ -143,7 +151,7 @@ const NavBar = () => {
           className={styles.NavLink}
           activeClassName={styles.Active}
         >
-          <Navbar.Brand className={styles.Logo}>
+          <Navbar.Brand className={styles.Logo} data-aos="fade-down">
             <span>Paint Pictures</span>
           </Navbar.Brand>
         </NavLink>
@@ -154,7 +162,7 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" data-aos="fade-down">
           <Nav className="ml-auto text-left">
             <NavLink
               exact

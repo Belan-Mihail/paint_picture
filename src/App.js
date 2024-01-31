@@ -24,10 +24,13 @@ import ModeSwitch from "./components/ModeSwitch.js";
 import Row from "react-bootstrap/Row";
 import GreetingModal from "./components/GreetingModal.js";
 
+
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
   const { ThemesMode } = useContext(ThemesModeContext);
+
+
 
   return (
     <div
