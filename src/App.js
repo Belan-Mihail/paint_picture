@@ -31,6 +31,41 @@ function App() {
           <Route exact path="/" render={() => <PicturesPage />} />
           <Route
             exact
+            path="/category/landscapes"
+            render={() => (
+              <PicturesPage filter={`picture_category=landscapes&`} />
+            )}
+          />
+           <Route
+            exact
+            path="/category/animals"
+            render={() => (
+              <PicturesPage filter={`picture_category=animals&`} />
+            )}
+          />
+          <Route
+            exact
+            path="/category/plants"
+            render={() => (
+              <PicturesPage filter={`picture_category=plants&`} />
+            )}
+          />
+          <Route
+            exact
+            path="/category/abstraction"
+            render={() => (
+              <PicturesPage filter={`picture_category=abstraction&`} />
+            )}
+          />
+          <Route
+            exact
+            path="/category/other"
+            render={() => (
+              <PicturesPage filter={`picture_category=other&`} />
+            )}
+          />
+          <Route
+            exact
             path="/feed"
             render={() => (
               <PicturesPage
