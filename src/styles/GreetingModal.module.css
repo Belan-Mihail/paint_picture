@@ -1,6 +1,6 @@
 .Modal {
     position: absolute;
-    max-width: 60rem;
+    max-width: 80%;
     width: 100%;
     padding: 2rem;
     top: 25%;
@@ -19,3 +19,4 @@
 .LinkSpecialGreen {
     color: #00fa4b;
 }
+

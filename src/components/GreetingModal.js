@@ -31,8 +31,8 @@ function GreetingModal() {
         Here you can find different cool pictures, meet their authors, and also
         share the results of your creativity!
       </p>
-      <p>All you need to do is register on the site (<Link to="/signup" className={styles.LinkSpecial}>Sign Up</Link>)</p>
-      <p>If you already have an account then just log in to the site (<Link to="/signin" className={styles.LinkSpecialGreen}>Sign In</Link>)</p>
+      <p>All you need to do is register on the site (<Link to="/signup" onClick={() => setViewPopup(false)} className={styles.LinkSpecial}>Sign Up</Link>)</p>
+      <p>If you already have an account then just log in to the site (<Link to="/signin" onClick={() => setViewPopup(false)} className={styles.LinkSpecialGreen}>Sign In</Link>)</p>
       <p>If you just want to look at the site first, then close this welcome window</p>
       <Button
         className={`${btnStyles.Button} ${btnStyles.WallCategoryButton}`}
