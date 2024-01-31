@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "../../styles/PicturesPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import Picture from "./Picture";
@@ -13,18 +13,21 @@ import Form from "react-bootstrap/Form";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { PictureOrderingFilterContext } from "../../context/PictureOrderingFiltersContext";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
+  const { PictureOrderingFilter } =
+    useContext(PictureOrderingFilterContext);
 
   useEffect(() => {
     const fetchPictures = async () => {
       try {
         const { data } = await axiosReq.get(
-          `/pictures/?${filter}search=${query}`
+          `/pictures/?${filter}search=${query}&ordering=${PictureOrderingFilter}`
         );
         setPictures(data);
         setHasLoaded(true);
@@ -41,7 +44,7 @@ function PicturesPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, PictureOrderingFilter]);
 
   return (
     <Row className="h-100">

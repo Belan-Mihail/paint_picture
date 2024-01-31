@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { CurrentUserProvider } from "./context/CurrentUserContext";
 import { ProfileDataProvider } from "./context/ProfileDataContext";
+import { PictureOrderingFilterProvider } from "./context/PictureOrderingFiltersContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <CurrentUserProvider>
         <ProfileDataProvider>
-          <App />
+          <PictureOrderingFilterProvider>
+            <App />
+          </PictureOrderingFilterProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>

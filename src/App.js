@@ -17,6 +17,7 @@ import PlanCreateForm from "./pages/plans/PlanCreateForm.js";
 import PlanEditForm from "./pages/plans/PlanEditForm.js";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm.js";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm.js";
+import PictureOrderingFilter from "./components/PictureOrderingFilter.js";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -25,8 +26,10 @@ function App() {
   return (
     <div className={styles.App}>
       <NavBar />
+      
 
       <Container className={styles.MainContainer}>
+      <PictureOrderingFilter />
         <Switch>
           <Route exact path="/" render={() => <PicturesPage />} />
           <Route

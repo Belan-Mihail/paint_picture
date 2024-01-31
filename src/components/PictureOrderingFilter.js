@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { PictureOrderingFilterContext } from "./../context/PictureOrderingFiltersContext";
 
 
@@ -33,7 +33,7 @@ const { setPictureOrderingFilter } =
   
 
   return (
-    <div>
+    <div className="mt-2">
 
       <select value={selected} onChange={handleChange}>
         {options.map(option => (
