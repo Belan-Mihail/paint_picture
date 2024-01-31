@@ -10,7 +10,7 @@ const { setThemesMode } =
 
 
   const options = [
-    {value: '', text: '--choose theme--'},
+    
     {value: 'light', text: 'Light'},
     {value: 'turquoise', text: 'Turquoise'},
     {value: 'orange', text: 'Orange'},

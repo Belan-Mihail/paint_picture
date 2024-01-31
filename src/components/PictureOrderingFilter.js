@@ -34,7 +34,7 @@ const { setPictureOrderingFilter } =
   
 
   return (
-    <div className="mt-2">
+    <div className="m-2">
 
       <select value={selected} onChange={handleChange} className={styles.Select}>
         {options.map(option => (

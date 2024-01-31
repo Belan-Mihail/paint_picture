@@ -20,21 +20,32 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm.js";
 import PictureOrderingFilter from "./components/PictureOrderingFilter.js";
 import { ThemesModeContext } from "./context/ThemesModeContext.js";
 import { useContext } from "react";
-import ModeSwitch from './components/ModeSwitch.js'
+import ModeSwitch from "./components/ModeSwitch.js";
+import Row from "react-bootstrap/Row";
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
-  const {ThemesMode} = useContext(ThemesModeContext)
+  const { ThemesMode } = useContext(ThemesModeContext);
 
   return (
-    <div className={ThemesMode === 'orange' ? (`${styles.App} ${styles.AppOrange}`) : (ThemesMode === 'turquoise') ? (`${styles.App} ${styles.AppTurquoise}`) : (`${styles.App} ${styles.AppLight}`)}>
+    <div
+      className={
+        ThemesMode === "orange"
+          ? `${styles.App} ${styles.AppOrange}`
+          : ThemesMode === "turquoise"
+          ? `${styles.App} ${styles.AppTurquoise}`
+          : `${styles.App} ${styles.AppLight}`
+      }
+    >
       <NavBar />
-      
 
       <Container className={styles.MainContainer}>
-      <PictureOrderingFilter />
-      <ModeSwitch />
+        <Row>
+          <PictureOrderingFilter />
+          <ModeSwitch />
+        </Row>
+
         <Switch>
           <Route exact path="/" render={() => <PicturesPage />} />
           <Route
@@ -44,19 +55,15 @@ function App() {
               <PicturesPage filter={`picture_category=landscapes&`} />
             )}
           />
-           <Route
+          <Route
             exact
             path="/category/animals"
-            render={() => (
-              <PicturesPage filter={`picture_category=animals&`} />
-            )}
+            render={() => <PicturesPage filter={`picture_category=animals&`} />}
           />
           <Route
             exact
             path="/category/plants"
-            render={() => (
-              <PicturesPage filter={`picture_category=plants&`} />
-            )}
+            render={() => <PicturesPage filter={`picture_category=plants&`} />}
           />
           <Route
             exact
@@ -68,9 +75,7 @@ function App() {
           <Route
             exact
             path="/category/other"
-            render={() => (
-              <PicturesPage filter={`picture_category=other&`} />
-            )}
+            render={() => <PicturesPage filter={`picture_category=other&`} />}
           />
           <Route
             exact
@@ -102,7 +107,7 @@ function App() {
           <Route
             exact
             path="/plans/create"
-            render={() => <PlanCreateForm profile_id={profile_id}/>}
+            render={() => <PlanCreateForm profile_id={profile_id} />}
           />
           <Route
             exact
@@ -112,7 +117,7 @@ function App() {
           <Route
             exact
             path="/plans/:id/edit"
-            render={() => <PlanEditForm profile_id={profile_id}/>}
+            render={() => <PlanEditForm profile_id={profile_id} />}
           />
           <Route exact path="/pictures/:id" render={() => <PicturePage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
