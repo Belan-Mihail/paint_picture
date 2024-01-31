@@ -22,6 +22,7 @@ import { ThemesModeContext } from "./context/ThemesModeContext.js";
 import { useContext } from "react";
 import ModeSwitch from "./components/ModeSwitch.js";
 import Row from "react-bootstrap/Row";
+import GreetingModal from "./components/GreetingModal.js";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -45,6 +46,7 @@ function App() {
           <PictureOrderingFilter />
           <ModeSwitch />
         </Row>
+        <GreetingModal />
 
         <Switch>
           <Route exact path="/" render={() => <PicturesPage />} />

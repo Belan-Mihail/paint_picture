@@ -1,0 +1,21 @@
+.Modal {
+    position: absolute;
+    max-width: 60rem;
+    width: 100%;
+    padding: 2rem;
+    top: 25%;
+    left: 10%;
+    background: #000000c2;
+    z-index: 30;
+    min-height: 300px;
+    width: 100%;
+    color: #fff;
+}
+
+.LinkSpecial {
+    color: #8224e5;
+}
+
+.LinkSpecialGreen {
+    color: #00fa4b;
+}
