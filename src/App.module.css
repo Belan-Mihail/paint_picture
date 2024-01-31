@@ -58,6 +58,8 @@ i:hover {
   transition: color ease-in-out 0.3s;
 }
 
+
+
 @media screen and (max-width: 504px) {
   .MainContainer {
     padding-top: 7.8rem;

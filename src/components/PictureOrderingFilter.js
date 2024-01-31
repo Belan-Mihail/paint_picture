@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { PictureOrderingFilterContext } from "./../context/PictureOrderingFiltersContext";
+import styles from '../styles/Select.module.css'
 
 
 function PictureOrderingFilter() {
@@ -35,7 +36,7 @@ const { setPictureOrderingFilter } =
   return (
     <div className="mt-2">
 
-      <select value={selected} onChange={handleChange}>
+      <select value={selected} onChange={handleChange} className={styles.Select}>
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.text}
