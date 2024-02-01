@@ -38,4 +38,32 @@ describe("Asset renders", () => {
     expect(renderAsset.getByRole("img")).toBeInTheDocument();
     expect(assetImageAlt).toBeInTheDocument();
   });
+
+  test("renders Asset component prop spinner if true ", () => {
+    const renderComponent = () =>
+      render(
+        <Router>
+          <Asset spinner={true} />
+        </Router>
+      );
+
+    const renderAsset = renderComponent();
+
+    expect(renderAsset.container.querySelector(".Spinner")).toBeInTheDocument();
+  });
+
+  test("renders Asset component prop spinner if false ", () => {
+    const renderComponent = () =>
+      render(
+        <Router>
+          <Asset spinner={false} />
+        </Router>
+      );
+
+    const renderAsset = renderComponent();
+
+    expect(renderAsset.container.querySelector(".Spinner")).not.toBeInTheDocument();
+    expect(renderAsset.container.querySelector(".Spinner")).not.toBeTruthy();
+    expect(renderAsset.container.querySelector(".Spinner")).toBeNull();
+  });
 });
