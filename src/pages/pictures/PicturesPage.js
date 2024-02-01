@@ -14,6 +14,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { PictureOrderingFilterContext } from "../../context/PictureOrderingFiltersContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -35,7 +37,8 @@ function PicturesPage({ message, filter = "" }) {
         console.log(err);
       }
     };
-
+    AOS.init();
+    AOS.refresh();
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPictures();
@@ -44,11 +47,12 @@ function PicturesPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
+    
   }, [filter, query, pathname, PictureOrderingFilter]);
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 mt-2" lg={8}>
+      <Col className="py-2 p-0 p-lg-2 mt-2" lg={8} data-aos="fade-right" data-aos-duration="1000">
       <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
@@ -91,7 +95,7 @@ function PicturesPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
         <PopularProfiles />
       </Col>
     </Row>

@@ -13,6 +13,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 function PicturePage() {
@@ -38,11 +40,13 @@ function PicturePage() {
     };
 
     handleMount();
+    AOS.init();
+    AOS.refresh();
   }, [id]);
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Col className="py-2 p-0 p-lg-2" lg={8} data-aos="fade-right" data-aos-duration="1000">
       <PopularProfiles mobile />
         <Picture {...picture.results[0]} setPictures={setPicture} PicturePage />
         <Container className={appStyles.Content}>
@@ -80,7 +84,7 @@ function PicturePage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
       <PopularProfiles />
       </Col>
     </Row>
