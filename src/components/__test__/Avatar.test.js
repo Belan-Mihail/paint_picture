@@ -15,4 +15,19 @@ describe("Avatar renders", () => {
     expect(avatarImageAlt).toBeInTheDocument();
     expect(renderAvatar).not.toBeNull();
   });
+
+  test("renders avatar component prop text if define ", () => {
+    const renderComponent = () =>
+      render(
+        <Router>
+          <Avatar text="User" />
+        </Router>
+      );
+
+    const renderAvatar = renderComponent();
+    const screenHasText = screen.getByText("User");
+
+    expect(renderAvatar.getByText("User")).toBeInTheDocument();
+    expect(screenHasText).toBeInTheDocument();
+  });
 });
