@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -12,6 +12,8 @@ import SignInPicture from "../../assets/signinpicture.png";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
@@ -45,10 +47,15 @@ const SignInForm = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Row className={styles.SignFormRow}>
-        <Col>
+        <Col data-aos="fade-left" data-aos-duration="2000">
           <Image
             className={styles.SignUpInPicture}
             src={SignInPicture}
@@ -57,7 +64,7 @@ const SignInForm = () => {
         </Col>
       </Row>
       <Row className={styles.SignFormRow}>
-        <Col>
+        <Col data-aos="fade-right" data-aos-duration="2000">
           <Container>
             <h1>Sign In</h1>
             <Form onSubmit={handleSubmit}>

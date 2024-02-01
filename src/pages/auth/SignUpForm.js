@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Container } from "react-bootstrap";
@@ -11,6 +11,8 @@ import btnStyles from "../../styles/Button.module.css";
 import SignUpPicture from '../../assets/signuppicture.png'
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SignUpForm = () => {
 
@@ -43,10 +45,15 @@ const SignUpForm = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <>
     <Row className={styles.SignFormRow}>
-      <Col>
+      <Col data-aos="fade-right" data-aos-duration="2000">
       <Image
       className={styles.SignUpInPicture} 
       src={SignUpPicture}
@@ -55,7 +62,7 @@ const SignUpForm = () => {
       </Col>
     </Row>
     <Row className={styles.SignFormRow}>
-      <Col>
+      <Col data-aos="fade-left" data-aos-duration="2000">
         <Container>
           <h1>Sign Up</h1>
           <Form onSubmit={handleSubmit}>
