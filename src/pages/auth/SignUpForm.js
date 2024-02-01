@@ -13,6 +13,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
 
@@ -23,6 +24,7 @@ const SignUpForm = () => {
   });
 
   const { username, password1, password2 } = signUpData;
+  useRedirect("loggedIn");
 
   const [errors, setErrors] = useState({});
 

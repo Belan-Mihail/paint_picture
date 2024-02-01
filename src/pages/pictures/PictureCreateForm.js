@@ -15,8 +15,10 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const PictureCreateForm = () => {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({

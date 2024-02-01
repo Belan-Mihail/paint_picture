@@ -11,9 +11,11 @@ import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 
 const PlanCreateForm = (props) => {
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const { profile_id } = props
 
