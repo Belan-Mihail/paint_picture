@@ -10,6 +10,8 @@ import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PlanEditForm = (props) => {
     const [errors, setErrors] = useState({});
@@ -42,6 +44,8 @@ const PlanEditForm = (props) => {
     };
 
     handleMount();
+    AOS.init();
+    AOS.refresh();
   }, [history, id]);
 
   
@@ -75,7 +79,7 @@ const PlanEditForm = (props) => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-4" md={6}>
+      <Col className="py-2 mx-auto text-center mt-4" md={6} data-aos="flip-down" data-aos-duration="1000">
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
