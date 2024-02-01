@@ -9,8 +9,10 @@ test("renders SignInForm", () => {
     </Router>
   );
 
-  const buttomSignIn = screen.getByRole("button", { name: "Sign in" });
-  expect(buttomSignIn).toBeInTheDocument();
+  const buttonSignIn = screen.getByRole("button", { name: "Sign in" });
+  const linkToSignUp = screen.getByRole("link", { name: "Sign up" });
+  expect(buttonSignIn).toBeInTheDocument();
+  expect(linkToSignUp).toBeInTheDocument();
   expect(screen.getByRole("img")).toBeInTheDocument();
   expect(screen.getByAltText("sign in picture")).toBeInTheDocument();
   expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();

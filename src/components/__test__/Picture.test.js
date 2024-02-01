@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { CurrentUserProvider } from "../../context/CurrentUserContext";
+
 
 import Picture from "../../pages/pictures/Picture";
 
