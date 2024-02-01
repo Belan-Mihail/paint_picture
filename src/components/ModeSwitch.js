@@ -36,7 +36,7 @@ const { setThemesMode } =
   
 
   return (
-    <div className="mt-2" data-aos="fade-right">
+    <div className="mt-2" data-aos="fade-left">
       <select className={styles.Select} value={selected} onChange={handleChange}>
         {options.map(option => (
           <option key={option.value} value={option.value}>

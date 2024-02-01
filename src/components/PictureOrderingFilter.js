@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { PictureOrderingFilterContext } from "./../context/PictureOrderingFiltersContext";
 import styles from '../styles/Select.module.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 function PictureOrderingFilter() {
@@ -29,12 +31,14 @@ const { setPictureOrderingFilter } =
 
   useEffect(() => {
     setPictureOrderingFilter(selected)
+    AOS.init();
+        AOS.refresh();
     }, [setPictureOrderingFilter, selected]);
 
   
 
   return (
-    <div className="m-2">
+    <div className="m-2" data-aos="fade-right">
 
       <select value={selected} onChange={handleChange} className={styles.Select}>
         {options.map(option => (
