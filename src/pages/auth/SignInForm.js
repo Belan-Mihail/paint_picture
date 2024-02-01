@@ -14,9 +14,11 @@ import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
