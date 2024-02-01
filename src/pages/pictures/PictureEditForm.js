@@ -14,6 +14,8 @@ import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PictureEditForm = () => {
   const [errors, setErrors] = useState({});
@@ -44,6 +46,8 @@ const PictureEditForm = () => {
     };
 
     handleMount();
+    AOS.init();
+    AOS.refresh();
   }, [history, id]);
 
   const handleChange = (event) => {
@@ -155,7 +159,7 @@ const PictureEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+        <Col className="py-2 p-0 p-md-2" md={7} lg={8} data-aos="fade-right" data-aos-duration="1000">
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
@@ -200,7 +204,7 @@ const PictureEditForm = () => {
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2" data-aos="fade-left" data-aos-duration="1000">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>

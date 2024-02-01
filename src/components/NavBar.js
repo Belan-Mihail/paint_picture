@@ -41,7 +41,7 @@ const NavBar = () => {
         title="Add"
         id="basic-nav-dropdown"
         className={styles.NavLink}
-        data-aos="fade-down"
+        
       >
         <NavDropdown.Item>
           <NavLink
@@ -69,7 +69,7 @@ const NavBar = () => {
   );
 
   const selectCategory = (
-    <Dropdown data-aos="fade-down">
+    <Dropdown>
       <Dropdown.Toggle className={btnStyles.WallCategoryButton} id="dropdown-basic">
         Categories
       </Dropdown.Toggle>
