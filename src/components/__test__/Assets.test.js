@@ -22,6 +22,7 @@ describe("Asset renders", () => {
 
     expect(renderAsset.getByText("test")).toBeInTheDocument();
     expect(screenHasMessage).toBeInTheDocument();
+    expect(renderAsset.container.querySelector(".Spinner")).toBeNull();
   });
 
   test("renders Asset component prop src if it is define and alt if message prop is define ", () => {
