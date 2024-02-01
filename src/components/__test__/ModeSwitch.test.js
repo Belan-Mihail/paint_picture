@@ -13,8 +13,6 @@ describe("ModeSwitch renders", () => {
       </Router>
     );
 
-    screen.debug();
-
     const select = container.querySelector("select");
     expect(select).not.toBeNull();
     expect(select).toBeInTheDocument();
