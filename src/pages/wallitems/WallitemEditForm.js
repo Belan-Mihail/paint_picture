@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
@@ -6,9 +6,8 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { axiosRes } from "../../api/axiosDefaults";
 
-
 const WallitemEditForm = (props) => {
-    const { id, message, setShowEditForm, setProfileWallItems } = props;
+  const { id, message, setShowEditForm, setProfileWallItems } = props;
 
   const [messageData, setMessageData] = useState(message);
 
@@ -16,7 +15,6 @@ const WallitemEditForm = (props) => {
     setMessageData(event.target.value);
   };
 
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -35,67 +33,12 @@ const WallitemEditForm = (props) => {
       }));
       setShowEditForm(false);
     } catch (err) {
-        setErrors(err);
-        console.log(err.response)
+      setErrors(err);
+      console.log(err.response);
     }
   };
 
-const [errors, setErrors] = useState({});
-  
-
-//   const [wallitemData, setWallitemData] = useState({
-//     message: "",
-//   });
-
-//   const { message } = wallitemData;
-
-//   const history = useHistory();
-//   const { id } = useParams();
-
-//   useEffect(() => {
-//     const handleMount = async () => {
-//       try {
-//         const { data } = await axiosReq.get(`/wallitems/${id}/`);
-//         const { message, owner } = data;
-//         owner 
-//         ? setWallitemData({ message })
-//         : history.push(`/`)
-        
-//       } catch (err) {
-//         console.log(err);
-//       }
-//     };
-
-//     handleMount();
-//   }, [history, id]);
-
-  
-
-//   const handleChange = (event) => {
-//     setWallitemData({
-      
-//       [event.target.name]: event.target.value,
-//     });
-//   };
-
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     const formData = new FormData();
-
-//     formData.append("message", message);
-//     formData.append("profile", current_profile);
-
-//     try {
-//       await axiosReq.put(`/wallitems/${id}/`, formData);
-//       setShowEditForm(false)
-//         history.push(`/profiles/${profile_id}/`);
-//     } catch (err) {
-//       console.log(err);
-//       if (err.response?.status !== 401) {
-//         setErrors(err.response?.data);
-//       }
-//     }
-//   };
+  const [errors, setErrors] = useState({});
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -109,10 +52,10 @@ const [errors, setErrors] = useState({});
         />
       </Form.Group>
       {errors.messageData?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
-            ))}
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <div className="text-right">
         <button
           className={`${btnStyles.Button} ${btnStyles.CommentButton}`}
@@ -129,7 +72,7 @@ const [errors, setErrors] = useState({});
         </button>
       </div>
     </Form>
-  )
-}
+  );
+};
 
-export default WallitemEditForm
+export default WallitemEditForm;

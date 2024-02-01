@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../styles/Comment.module.css";
 import Media from "react-bootstrap/Media";
 import Link from "react-router-dom/Link";
@@ -8,6 +8,8 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import  WallitemEditForm  from './WallitemEditForm'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const Wallitem = (props) => {
@@ -38,10 +40,15 @@ const Wallitem = (props) => {
     }
   };
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <div>
       <hr />
-      <Media>
+      <Media data-aos="fade-left" data-aos-duration="1000">
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={40} />
         </Link>

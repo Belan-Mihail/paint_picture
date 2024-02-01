@@ -237,7 +237,7 @@ function ProfilePage() {
                         className={`${btnStyles.Button} ${btnStyles.WallCategoryButton} ${btnStyles.Wide}`}
                         onClick={() => setShowWall(true)}
                       >
-                        Show {profile?.owner} Wall{" "}
+                        Show {profile?.owner} Wall
                       </Button>
                     </Col>
                   </Row>
