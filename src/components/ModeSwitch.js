@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { ThemesModeContext } from "./../context/ThemesModeContext";
 import styles from '../styles/Select.module.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function ModeSwitch() {
 
@@ -26,12 +28,15 @@ const { setThemesMode } =
 
   useEffect(() => {
     setThemesMode(selected)
+    AOS.init();
+      AOS.refresh();
     }, [setThemesMode, selected]);
 
+    
   
 
   return (
-    <div className="mt-2">
+    <div className="mt-2" data-aos="fade-right">
       <select className={styles.Select} value={selected} onChange={handleChange}>
         {options.map(option => (
           <option key={option.value} value={option.value}>
