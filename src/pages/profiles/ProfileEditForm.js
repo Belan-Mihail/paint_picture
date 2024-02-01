@@ -17,6 +17,8 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../context/CurrentUserContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -52,6 +54,8 @@ const ProfileEditForm = () => {
     };
 
     handleMount();
+    AOS.init();
+    AOS.refresh();
   }, [currentUser, history, id]);
 
   const handleChange = (event) => {
@@ -149,7 +153,7 @@ const ProfileEditForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Row>
-        <Col className="py-2 p-0 p-md-2 text-center mt-2" md={7} lg={6}>
+        <Col className="py-2 p-0 p-md-2 text-center mt-2" md={7} lg={6} data-aos="flip-left" data-aos-duration="1000">
           <Container className={appStyles.Content}>
             <Form.Group>
               {image && (
@@ -183,7 +187,7 @@ const ProfileEditForm = () => {
             <div className="d-md-none mt-2">{textFields}</div>
           </Container>
         </Col>
-        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
+        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center" data-aos="flip-right" data-aos-duration="1000">
           <Container className={`${appStyles.Content} mt-2`}>{textFields}</Container>
         </Col>
       </Row>

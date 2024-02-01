@@ -14,6 +14,8 @@ import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../context/CurrentUserContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const UserPasswordForm = () => {
   const history = useHistory();
@@ -36,6 +38,8 @@ const UserPasswordForm = () => {
   };
 
   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
     if (currentUser?.profile_id?.toString() !== id) {
       history.push("/");
     }
@@ -54,7 +58,7 @@ const UserPasswordForm = () => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center" md={6}>
+      <Col className="py-2 mx-auto text-center" md={6} data-aos="flip-down" data-aos-duration="1000">
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
@@ -89,7 +93,7 @@ const UserPasswordForm = () => {
             ))}
             <Button
               className={`${btnStyles.Button} ${btnStyles.Main}`}
-              onClick={() => {}}
+              onClick={() => history.goBack()}
             >
               cancel
             </Button>

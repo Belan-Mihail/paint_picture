@@ -16,6 +16,8 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../context/CurrentUserContext";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const UsernameForm = () => {
   const [username, setUsername] = useState("");
@@ -28,6 +30,8 @@ const UsernameForm = () => {
   const setCurrentUser = useSetCurrentUser();
 
   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
     if (currentUser?.profile_id?.toString() === id) {
       setUsername(currentUser.username);
     } else {
@@ -54,7 +58,7 @@ const UsernameForm = () => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-4" md={6}>
+      <Col className="py-2 mx-auto text-center mt-4" md={6} data-aos="flip-down" data-aos-duration="1000">
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
