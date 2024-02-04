@@ -88,6 +88,8 @@ function PicturePage() {
       <PopularProfiles />
       </Col>
     </Row>
+    
+    
   );
 }
 

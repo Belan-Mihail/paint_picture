@@ -13,7 +13,7 @@ const { setPictureOrderingFilter } =
 
 
   const options = [
-    {value: '', text: '--filtred by default--'},
+    {value: '', text: '--filtered by default--'},
     {value: 'likes_count', text: 'Likes (Low to High)'},
     {value: '-likes_count', text: 'Likes (High to Low)'},
     {value: 'comments_count', text: 'Comments (Low to High)'},

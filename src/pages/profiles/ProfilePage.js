@@ -198,7 +198,7 @@ function ProfilePage() {
         "Messages"
       ) : null}
       {profileWallItems.results.length ? (
-        <InfiniteScroll
+        <InfiniteScroll className="overflow-hidden"
           children={profileWallItems.results.map((wallitem) => (
             <Wallitem
               key={wallitem.id}
@@ -215,7 +215,7 @@ function ProfilePage() {
       ) : currentUser ? (
         <span>No messages yet, be the first!</span>
       ) : (
-        <span>No masseges... yet</span>
+        <span>No messeges... yet</span>
       )}
     </>
   );
