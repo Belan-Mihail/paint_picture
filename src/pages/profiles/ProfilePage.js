@@ -30,6 +30,7 @@ import Wallitem from "../wallitems/Wallitem";
 import WallitemCreateForm from "../wallitems/WallitemCreateForm";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ToTop from "../../components/ToTop";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -267,6 +268,7 @@ function ProfilePage() {
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
         <PopularProfiles />
       </Col>
+      <ToTop />
     </Row>
   );
 }

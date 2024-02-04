@@ -16,6 +16,7 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import { PictureOrderingFilterContext } from "../../context/PictureOrderingFiltersContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ToTop from "../../components/ToTop";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -98,6 +99,7 @@ function PicturesPage({ message, filter = "" }) {
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
         <PopularProfiles />
       </Col>
+      <ToTop />
     </Row>
   );
 }

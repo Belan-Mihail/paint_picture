@@ -136,3 +136,21 @@
   background: #8224e5 !important;
   opacity: .9;
 }
+
+.ToTop {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  color: #fff;
+  font-size: .8rem;
+  background: #8224e5;
+  border: 1px solid #f78215;
+}
+
+.ToTop:hover,
+.ToTop:hover:active,
+.ToTop:active,
+.ToTop:focus {
+  background: #f78215 !important;
+  border: 1px solid #8224e5;
+}
