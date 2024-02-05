@@ -43,7 +43,7 @@ input[type="file"] {
 }
 
 .Image {
-  max-height: 40vh;
+  max-height: 50vh;
   max-width: 100%;
   object-fit: contain;
 }
@@ -71,15 +71,3 @@ i:hover {
 }
 
 
-@media screen and (max-width: 504px) {
-  .MainContainer {
-    padding-top: 7.8rem;
-  }
-}
-
-
-@media screen and (max-width: 333px) {
-  .MainContainer {
-    padding-top: 8.5rem;
-  }
-}
