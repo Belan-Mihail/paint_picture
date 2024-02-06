@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
-import { Container } from "react-bootstrap";
-import { Navbar } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
-import { NavDropdown } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Dropdown from "react-bootstrap/Dropdown";
 import { NavLink } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";

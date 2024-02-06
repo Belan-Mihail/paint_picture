@@ -1,5 +1,3 @@
-// 122 setupTests.js
-// 121
 import { rest } from "msw";
 
 const baseURL = "https://paint-picture-backend-6b0b98f6459e.herokuapp.com/";

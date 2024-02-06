@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Container } from "react-bootstrap";
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import { Alert } from "react-bootstrap";
+import Row  from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import SignInPicture from "../../assets/signinpicture.png";

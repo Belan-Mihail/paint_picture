@@ -3,7 +3,7 @@ import { useCurrentUser } from "../../context/CurrentUserContext";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import styles from "../../styles/Plan.module.css";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { axiosRes } from "../../api/axiosDefaults";
