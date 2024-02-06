@@ -22,10 +22,6 @@ Developer: Bilan Mykhailo
         5. [Wireframes](#wireframes)
 
 
-
-
-
-
 ## About
 
 PainPicture is a platform where users can share pictures they made with Paint.
@@ -155,6 +151,11 @@ Paint Picture app handles data with full CRUD Functionality:
 - Delete - Users can delete pictures, comments, plans, wallitems.
 
 ### Colors
+- The main colors used in the sites were selected using the application [Coolors](https://coolors.co/?home). 
+
+<details><summary>Colors Palette</summary>
+<img src="docs/colors.jpg">
+</details>
 
 ### Fonts
 
