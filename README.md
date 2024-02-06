@@ -11,6 +11,7 @@ Developer: Bilan Mykhailo
   2. [Project Goals](#project-goals)
   3. [User Experience](#user-experience)
     1. [Target Audience](#target-audience)
+    2. [User Requirements and Expectations](#user-requirements-and-expectations)
 
 
 ## About
@@ -39,3 +40,12 @@ The key functionality aspects:
 - People who likes graphics editor Piant 
 - People who love to draw and want to share their creativity with others
 - People who are looking for interesting content and additional communication with creative people
+
+### User Requirements and Expectations
+
+- A site which provides a high level of interactiveness between users
+- A site with a clear purpose
+- An user-friendly interface that allows quick and efficient navigation
+- Responsive and visually good design
+- User interaction and app feedback through the use of animations and notifications
+- Сontent of a certain category
