@@ -162,3 +162,64 @@ Paint Picture app handles data with full CRUD Functionality:
 
 ### Wireframes
  
+- [Balsamiq](https://balsamiq.com/) was used to create frame of project
+
+<details><summary>Home Page</summary>
+
+<details><summary>Home Page Fullscreen</summary>
+<img src="docs/wireframes/home-page.png">
+</details>
+
+<details><summary>Home Page Ipad</summary>
+<img src="docs/wireframes/home-page-ipad.png">
+</details>
+
+<details><summary>Home Page Mobile</summary>
+<img src="docs/wireframes/home-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Add Picture Page</summary>
+
+<details><summary>Add Picture Page Fullscreen</summary>
+<img src="docs/wireframes/add-picture-page.png">
+</details>
+
+<details><summary>Add Picture Page Ipad</summary>
+<img src="docs/wireframes/add-picture-page-ipad.png">
+</details>
+
+<details><summary>Add Picture Page Mobile</summary>
+<img src="docs/wireframes/add-picture-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Add Plan Page</summary>
+
+<details><summary>Add Plan Page Fullscreen</summary>
+<img src="docs/wireframes/add-plan-page.png">
+</details>
+
+<details><summary>Add Plan Page Ipad</summary>
+<img src="docs/wireframes/add-plan-page-ipad.png">
+</details>
+
+<details><summary>Add Plan Page Mobile</summary>
+<img src="docs/wireframes/add-plan-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Picture Page</summary>
+
+<details><summary>Picture Page Fullscreen</summary>
+<img src="docs/wireframes/picture-page.png">
+</details>
+
+<details><summary>Picture Page Ipad</summary>
+<img src="docs/wireframes/picture-page-ipad.png">
+</details>
+
+<details><summary>Picture Page Mobile</summary>
+<img src="docs/wireframes/picture-page-iphone.png">
+</details>
+</details>
