@@ -23,6 +23,7 @@ import { useContext } from "react";
 import ModeSwitch from "./components/ModeSwitch.js";
 import Row from "react-bootstrap/Row";
 import GreetingModal from "./components/GreetingModal.js";
+import NotFound from "./components/NotFound.js";
 
 
 function App() {
@@ -141,7 +142,7 @@ function App() {
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFound />} />
         </Switch>
       </Container>
     </div>
