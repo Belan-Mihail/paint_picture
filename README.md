@@ -158,6 +158,7 @@ Paint Picture app handles data with full CRUD Functionality:
 </details>
 
 ### Fonts
+- Google Fonts were implemented on the website. The main font used on the site is Lato. For individual elements of the site, different font weights were used.
 
 ### Wireframes
  
