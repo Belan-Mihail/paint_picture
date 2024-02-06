@@ -35,7 +35,7 @@ function PicturesPage({ message, filter = "" }) {
         setPictures(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     AOS.init();

@@ -45,7 +45,7 @@ const ProfileEditForm = () => {
           const { name, content, image, greeting } = data;
           setProfileData({ name, content, image, greeting });
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           history.push("/");
         }
       } else {
@@ -85,7 +85,7 @@ const ProfileEditForm = () => {
       
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };

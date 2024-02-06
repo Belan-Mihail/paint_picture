@@ -36,7 +36,7 @@ const Wallitem = (props) => {
       history.goBack();
       
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

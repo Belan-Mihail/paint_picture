@@ -36,7 +36,7 @@ function PicturePage() {
         setPicture({ results: [picture] });
         setComments(comments);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

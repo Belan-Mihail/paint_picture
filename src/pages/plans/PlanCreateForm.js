@@ -50,7 +50,7 @@ const PlanCreateForm = (props) => {
       await axiosReq.post("/plans/", formData);
         history.push(`/profiles/${profile_id}/`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

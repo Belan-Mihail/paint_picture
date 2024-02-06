@@ -33,7 +33,7 @@ const Plan = (props) => {
       history.goBack();
       
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

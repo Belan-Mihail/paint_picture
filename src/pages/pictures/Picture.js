@@ -43,7 +43,7 @@ const Picture = (props) => {
           await axiosRes.delete(`/pictures/${id}/`);
           history.goBack();
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       };
 
@@ -59,7 +59,7 @@ const Picture = (props) => {
             }),
           }));
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       };
 
@@ -75,7 +75,7 @@ const Picture = (props) => {
             }),
           }));
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       };
     

@@ -41,7 +41,7 @@ const PictureEditForm = () => {
           ? setPostData({ title, description, image, picture_category })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -83,7 +83,7 @@ const PictureEditForm = () => {
       await axiosReq.put(`/pictures/${id}/`, formData);
       history.push(`/pictures/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

@@ -34,7 +34,7 @@ const WallitemEditForm = (props) => {
       setShowEditForm(false);
     } catch (err) {
       setErrors(err);
-      console.log(err.response);
+      // console.log(err.response);
     }
   };
 

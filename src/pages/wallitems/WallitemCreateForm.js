@@ -20,7 +20,7 @@ function WallitemCreateForm(props) {
     setMessage(event.target.value);
   };
 
-  console.log(current_profile);
+  
   const history = useHistory();
 
   const handleSubmit = async (event) => {
@@ -34,10 +34,7 @@ function WallitemCreateForm(props) {
       await axiosReq.post("/wallitems/", formData);
       history.push(`/`);
     } catch (err) {
-      console.log(err);
-      if (err.response?.status !== 401) {
-        console.log(err.response?.data);
-      }
+      // console.log(err);
     }
   };
 
