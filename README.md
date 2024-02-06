@@ -9,6 +9,8 @@ Developer: Bilan Mykhailo
 ## Table of Contents
   1. [About](#about)
   2. [Project Goals](#project-goals)
+  3. [User Experience](#user-experience)
+    1. [Target Audience](#target-audience)
 
 
 ## About
@@ -29,3 +31,11 @@ The key functionality aspects:
 - CRUD functionality for pictures, comments, likes, followers, planns, wallitems and profile information
 - pictures filtering by title, author and category, liked posts and followed users posts, likea and comments count (low to high and high to low)
 - responsiveness to allow users use the app on various devices
+
+## User Experience
+
+### Target Audience
+
+- People who likes graphics editor Piant 
+- People who love to draw and want to share their creativity with others
+- People who are looking for interesting content and additional communication with creative people
