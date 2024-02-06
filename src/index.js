@@ -10,7 +10,6 @@ import { PictureOrderingFilterProvider } from "./context/PictureOrderingFiltersC
 import { ThemesModeProvider } from "./context/ThemesModeContext";
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <CurrentUserProvider>
         <ProfileDataProvider>
@@ -21,8 +20,7 @@ ReactDOM.render(
           </PictureOrderingFilterProvider>
         </ProfileDataProvider>
       </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
 

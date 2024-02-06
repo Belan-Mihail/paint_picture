@@ -151,7 +151,7 @@ const NavBar = () => {
           activeClassName={styles.Active}
         >
           <Navbar.Brand className={styles.Logo} data-aos="fade-down">
-            <span>Paint Pictures</span>
+            <span>Paint Picture</span>
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPictureOrPlan}
