@@ -223,3 +223,123 @@ Paint Picture app handles data with full CRUD Functionality:
 <img src="docs/wireframes/picture-page-iphone.png">
 </details>
 </details>
+
+<details><summary>Profile Page</summary>
+
+<details><summary>Profile Page Fullscreen</summary>
+<img src="docs/wireframes/profile-page.png">
+</details>
+
+<details><summary>Profile Page Ipad</summary>
+<img src="docs/wireframes/profile-page-ipad.png">
+</details>
+
+<details><summary>Profile Page Mobile</summary>
+<img src="docs/wireframes/profile-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Sign In Page</summary>
+
+<details><summary>Sign In Page Fullscreen</summary>
+<img src="docs/wireframes/sign-in-page.png">
+</details>
+
+<details><summary>Sign In Page Ipad</summary>
+<img src="docs/wireframes/sign-in-page-ipad.png">
+</details>
+
+<details><summary>Sign In Page Mobile</summary>
+<img src="docs/wireframes/sign-in-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Sign Up Page</summary>
+
+<details><summary>Sign Up Page Fullscreen</summary>
+<img src="docs/wireframes/sign-up-page.png">
+</details>
+
+<details><summary>Sign Up Page Ipad</summary>
+<img src="docs/wireframes/sign-up-page-ipad.png">
+</details>
+
+<details><summary>Sign Up Page Mobile</summary>
+<img src="docs/wireframes/sign-up-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Edit Profile Page</summary>
+
+<details><summary>Edit Profile Page Fullscreen</summary>
+<img src="docs/wireframes/edit-profile-page.png">
+</details>
+
+<details><summary>Edit Profile Page Ipad</summary>
+<img src="docs/wireframes/edit-profile-page-ipad.png">
+</details>
+
+<details><summary>Edit Profile Page Mobile</summary>
+<img src="docs/wireframes/edit-profile-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Edit Username Page</summary>
+
+<details><summary>Edit Username Page Fullscreen</summary>
+<img src="docs/wireframes/edit-username-page.png">
+</details>
+
+<details><summary>Edit Username Page Ipad</summary>
+<img src="docs/wireframes/edit-username-page-ipad.png">
+</details>
+
+<details><summary>Edit Username Page Mobile</summary>
+<img src="docs/wireframes/edit-username-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Edit Password Page</summary>
+
+<details><summary>Edit Password Page Fullscreen</summary>
+<img src="docs/wireframes/edit-password-page.png">
+</details>
+
+<details><summary>Edit Password Page Ipad</summary>
+<img src="docs/wireframes/edit-password-page-ipad.png">
+</details>
+
+<details><summary>Edit Password Page Mobile</summary>
+<img src="docs/wireframes/edit-password-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Edit Picture Page</summary>
+
+<details><summary>Edit Picture Page Fullscreen</summary>
+<img src="docs/wireframes/edit-picture-page.png">
+</details>
+
+<details><summary>Edit Picture Page Ipad</summary>
+<img src="docs/wireframes/edit-picture-page-ipad.png">
+</details>
+
+<details><summary>Edit Picture Page Mobile</summary>
+<img src="docs/wireframes/edit-picture-page-iphone.png">
+</details>
+</details>
+
+<details><summary>Edit Plan Page</summary>
+
+<details><summary>Edit Plan Page Fullscreen</summary>
+<img src="docs/wireframes/edit-plan-page.png">
+</details>
+
+<details><summary>Edit Plan Page Ipad</summary>
+<img src="docs/wireframes/edit-plan-page-ipad.png">
+</details>
+
+<details><summary>Edit Plan Page Mobile</summary>
+<img src="docs/wireframes/edit-plan-page-iphone.png">
+</details>
+</details>
