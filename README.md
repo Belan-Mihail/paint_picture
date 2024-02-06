@@ -10,15 +10,16 @@ Developer: Bilan Mykhailo
   1. [About](#about)
   2. [Project Goals](#project-goals)
   3. [User Experience](#user-experience)
-    1. [Target Audience](#target-audience)
-    2. [User Requirements and Expectations](#user-requirements-and-expectations)
-    3. [User Stories](#user-stories)
-    4. [Site owner Stories](#site-owner-stories)
+        1. [Target Audience](#target-audience)
+        2. [User Requirements and Expectations](#user-requirements-and-expectations)
+        3. [User Stories](#user-stories)
+        4. [Site owner Stories](#site-owner-stories)
   4. [Design](#design)
-    1. [Agile Design](#agile-design)
-    2. [Colurs](#colors)
-    3. [Fonts](#fonts)
-    4. [Wireframes](#wireframes)
+        1. [Agile Design](#agile-design)
+        2. [CRUD Functionality](#crud-functionality)
+        3. [Colors](#colors)
+        4. [Fonts](#fonts)
+        5. [Wireframes](#wireframes)
 
 
 
@@ -128,7 +129,7 @@ The key functionality aspects:
    <img src="docs/agile/milestones.jpg">
    </details>
 - create project [Link to project](https://github.com/users/Belan-Mihail/projects/8)
-- create issues (based on the template). A total of 48 issues were created
+- create issues (based on the template). A total of 46 issues were created
    <details><summary>Issues</summary>
    <img src="docs/agile/issues.jpg">
    </details>
@@ -144,6 +145,14 @@ The key functionality aspects:
    </details>
 
 This project was the second time I used agile development methods. The importance of these principles is beyond doubt. There may have been certain inaccuracies in the use of all the principles of this methodology.
+
+### CRUD Functionality
+
+Paint Picture app handles data with full CRUD Functionality:
+- Create -  Users can create, an account, profile, pictures, comments, plans, wallitems messages and watch objects.
+- Read - Users can view the pictures, comments, plans, wallitems of other users and also the profiles of these users.
+- Update - Users can update their profile, password, username, pictures, comments, plans, wallitems 
+- Delete - Users can delete pictures, comments, plans, wallitems.
 
 ### Colors
 
