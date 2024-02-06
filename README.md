@@ -13,6 +13,15 @@ Developer: Bilan Mykhailo
     1. [Target Audience](#target-audience)
     2. [User Requirements and Expectations](#user-requirements-and-expectations)
     3. [User Stories](#user-stories)
+    4. [Site owner Stories](#site-owner-stories)
+  4. [Design](#design)
+    1. [Agile Design](#agile-design)
+    2. [Colours](#colours)
+    3. [Fonts](#fonts)
+    4. [Wireframes](#wireframes)
+
+
+
 
 
 
@@ -98,11 +107,20 @@ The key functionality aspects:
 
 
 ### Site Owner Stories
+
 42. As a site owner I can provide full access to logged in user so that they can interact with the pages more independently
 43. As a site owner I can restrict the interaction with website so that an unauthorised user cannot make changes in the app
 44. As a site ownerI can when loading for the first time, display only the last 20 picture-posts so that I can avoid overloading the server and speed up the loading of the site
 45. As a site owner I can use infinite scroll so that I can achieve display of new picture-posts after the user views previously loaded picture-posts
 46. As a site owner, I would want the site to be fully responsive so that users can use it across multiple devices and create a good user experience.
 
+## Design
 
+### Agile Design
+
+### Colours
+
+### Fonts
+
+### Wireframes
  
