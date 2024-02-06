@@ -16,7 +16,7 @@ Developer: Bilan Mykhailo
     4. [Site owner Stories](#site-owner-stories)
   4. [Design](#design)
     1. [Agile Design](#agile-design)
-    2. [Colours](#colours)
+    2. [Colurs](#colors)
     3. [Fonts](#fonts)
     4. [Wireframes](#wireframes)
 
@@ -118,7 +118,34 @@ The key functionality aspects:
 
 ### Agile Design
 
-### Colours
+- create Issue Template
+   <details><summary>Issue template</summary>
+   <img src="docs/agile/issue-template.jpg">
+   </details>
+
+- create Milestones
+   <details><summary>Milestones</summary>
+   <img src="docs/agile/milestones.jpg">
+   </details>
+- create project [Link to project](https://github.com/users/Belan-Mihail/projects/8)
+- create issues (based on the template). A total of 48 issues were created
+   <details><summary>Issues</summary>
+   <img src="docs/agile/issues.jpg">
+   </details>
+
+- create main labels and mark issues in accordance with Moscow Prioritisation
+   <details><summary>Labels</summary>
+   <img src="docs/agile/labels.jpg">
+   </details>
+
+- create Kanban Board to visualize the process of completing tasks
+   <details><summary>Kanban Board</summary>
+   <img src="docs/agile/kanban-board.jpg">
+   </details>
+
+This project was the second time I used agile development methods. The importance of these principles is beyond doubt. There may have been certain inaccuracies in the use of all the principles of this methodology.
+
+### Colors
 
 ### Fonts
 
