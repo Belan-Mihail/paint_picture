@@ -54,7 +54,6 @@ The key functionality aspects:
 
 ### User Stories
 
-
 1. As User I can registrate on the site so that I can use the full functionality of the site
 2. As User I can Logout from the site so that I can prevent others from using my site
 3. As User I can see Navbar on every page of the site so that I can easily go to another page on the site
@@ -81,7 +80,29 @@ The key functionality aspects:
 24. As User I can see number of comments which a picture-post has so that I can see which posts are the most popular
 25. As User I can see picture-post detail so that I can view a specific picture-post
 26. As User I can see date of picture-post so that I can understand the relevance of the content
-27. 
+27. As User I can see all post-pictures on the home page so that I can immediately familiarize myself with the main content of the site
+28. As User I can filter picture-posts by category so that I can view picture-posts of the category I'm interested in
+29. As User I can filter picture-posts by number of likes so that I can filter the most interesting posts for viewing
+30. As User I can filter picture-posts by number of comments so that I can see the most commented picture-posts
+31. As User I can I can filter picture-posts based on the likes I gave so that I can see picture-posts that I like
+32. As User I can Search picture-posts by title and author's name so that I can find certain picture-posts
+33. As User I can create WallItem so that I can leave public messages on the wall
+34. As User I can edit WallItem so that I can edit public messages on the wall
+35. As User I can delete WallItem so that I can delete my own public messages on the wall
+36. As User I can create Plans so that I can tell other users about my plans
+37. As User I can edit Plans so that I can change my own plans
+38. As User I can delete Plans so that I can delete plans that are no longer relevant to me
+39. As User I can create Comments so that I can express your opinion about other users' pictures-post
+40. As User I can edit Comments so that I can change my opinion about other users' pictures-post
+41. As User I can delete Comments so that I can delete my opinion about other users' pictures-post
+
+
+### Site Owner Stories
+42. As a site owner I can provide full access to logged in user so that they can interact with the pages more independently
+43. As a site owner I can restrict the interaction with website so that an unauthorised user cannot make changes in the app
+44. As a site ownerI can when loading for the first time, display only the last 20 picture-posts so that I can avoid overloading the server and speed up the loading of the site
+45. As a site owner I can use infinite scroll so that I can achieve display of new picture-posts after the user views previously loaded picture-posts
+46. As a site owner, I would want the site to be fully responsive so that users can use it across multiple devices and create a good user experience.
 
 
  
