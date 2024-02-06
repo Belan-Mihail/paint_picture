@@ -14,6 +14,7 @@ import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import btnStyles from "../styles/Button.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -25,6 +26,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log(err);
     }
