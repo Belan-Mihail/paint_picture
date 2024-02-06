@@ -17,6 +17,7 @@ import { PictureOrderingFilterContext } from "../../context/PictureOrderingFilte
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ToTop from "../../components/ToTop";
+import { useCurrentUser } from "../../context/CurrentUserContext";
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
@@ -25,6 +26,7 @@ function PicturesPage({ message, filter = "" }) {
   const [query, setQuery] = useState("");
   const { PictureOrderingFilter } =
     useContext(PictureOrderingFilterContext);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPictures = async () => {
@@ -49,7 +51,7 @@ function PicturesPage({ message, filter = "" }) {
       clearTimeout(timer);
     };
     
-  }, [filter, query, pathname, PictureOrderingFilter]);
+  }, [filter, query, pathname, PictureOrderingFilter, currentUser]);
 
   return (
     <Row className="h-100">
