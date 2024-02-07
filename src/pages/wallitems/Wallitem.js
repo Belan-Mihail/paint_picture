@@ -21,6 +21,7 @@ const Wallitem = (props) => {
     message,
     id,
     setProfileWallItems,
+    current_profile,
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -43,12 +44,12 @@ const Wallitem = (props) => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+  }, [profile_id, updated_at]);
 
   return (
     <div>
       <hr />
-      <Media data-aos="fade-left" data-aos-duration="1000">
+      <Media >
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={40} />
         </Link>
@@ -63,6 +64,7 @@ const Wallitem = (props) => {
               profileImage={profile_image}
               setProfileWallItems={setProfileWallItems}
               setShowEditForm={setShowEditForm}
+              current_profile={current_profile}
               
             />
           ) : (
