@@ -194,6 +194,7 @@ function ProfilePage() {
           profile_id={currentUser.profile_id}
           profileImage={profile_image}
           setProfileWallItems={setProfileWallItems}
+          
         />
       ) : profileWallItems.results.length ? (
         "Messages"
@@ -204,8 +205,6 @@ function ProfilePage() {
             <Wallitem
               key={wallitem.id}
               {...wallitem}
-              setProfileWallItems={setProfileWallItems}
-              
             />
           ))}
           dataLength={profileWallItems.results.length}

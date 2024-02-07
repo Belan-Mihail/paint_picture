@@ -7,7 +7,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import btnStyles from "../../styles/Button.module.css";
 
 import Avatar from "../../components/Avatar";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -20,8 +19,6 @@ function WallitemCreateForm(props) {
     setMessage(event.target.value);
   };
 
-  
-  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,8 +28,12 @@ function WallitemCreateForm(props) {
     formData.append("profile", current_profile);
 
     try {
-      await axiosReq.post("/wallitems/", formData);
-      history.push(`/`);
+      const {data} = await axiosReq.post("/wallitems/", formData);
+      setProfileWallItems((profileWallItems) => ({
+        ...profileWallItems,
+        results: [data, ...profileWallItems.results],
+      }));
+      setMessage('');
     } catch (err) {
       // console.log(err);
     }

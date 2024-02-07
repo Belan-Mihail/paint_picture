@@ -15,15 +15,15 @@ function GreetingModal() {
       if (visited) {
         setViewPopup(false);
       } else {
-        localStorage["alreadyVisited"] = true;
         setViewPopup(true);
+        localStorage["alreadyVisited"] = true;
         AOS.init();
         AOS.refresh();
       }
     }, 1500);
 
     return () => clearTimeout(timeoutId);
-  }, []);
+  }, [visited]);
 
   const PopupIsVisible = (
     <div className={styles.Modal} data-aos="fade-down">
