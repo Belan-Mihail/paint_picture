@@ -931,3 +931,36 @@ Once on your profile page, scroll down to the profile owner's posts section | Yo
 <img src="docs/testing/manual-testing/user-story-11.jpg">
 <img src="docs/testing/manual-testing/user-story-11-1.jpg">
 </details>
+
+
+
+____
+
+12. As User I can post enlarged avatar picture on profile page so that other users can see the full picture of my avatar
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any page of the site, click on the small picture of your profile avatar | You will be taken to your profile page where an enlarged avatar of your profile is located. | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-12.jpg">
+<img src="docs/testing/manual-testing/user-story-12-1.jpg">
+</details>
+
+
+____
+
+13. As User I can see user statistics on the site on profile page so that I can know how many posts a user has added, how many people he has followed and how many people have followed him
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any home page, the click on any avatar that interests you | you can see the user statistics you are interested in | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-13.jpg">
+<img src="docs/testing/manual-testing/user-story-13-1.jpg">
+</details>
