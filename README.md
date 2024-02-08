@@ -33,6 +33,8 @@ Developer: Bilan Mykhailo
    8. [Features](#features)
       1. [Features Components](#features-components)
       2. [Features Pages](#features-pages)
+   9. [Testing](#testing)
+      1. [Manual testing of user stories](#manual-testing-of-user-stories)
 
 
 ## About
@@ -715,4 +717,26 @@ _____
 (**User stories covered: 10**)
 <details><summary>Edit Password Page</summary>
 <img src="docs/features/edit-password-page.jpg">
+</details>
+
+
+## Testing
+ 
+### Manual testing of user stories
+
+1. As User I can registrate on the site so that I can use the full functionality of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+On the main page of the site, click on the sign up link located in the right corner of the navigation menu | The user lands on the sign up page| Works as expected |
+Fill out the sign up form and click the sign up button | You will be redirected to the sign in page | Works as expected |
+Fill out the sign in form and click the sign in button | You will log into the site and be redirected to the home page| Works as expected |
+  
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-01.jpg">
+<img src="docs/testing/manual-testing/user-story-01-1.jpg">
+<img src="docs/testing/manual-testing/user-story-01-2.jpg">
+<img src="docs/testing/manual-testing/user-story-01-3.jpg">
 </details>
