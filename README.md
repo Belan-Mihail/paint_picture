@@ -993,3 +993,41 @@ Go to the home page or any profile page | You can see a list of popular profiles
 <details><summary>Screenshot</summary>
 <img src="docs/testing/manual-testing/user-story-15.jpg">
 </details>
+
+
+______
+16. As Authenticated User I can add a post-picture so that I can add my content to the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any page of the site, click on the add link and select the picture tab | You will be taken to the page for adding picture. | Works as expected |
+Fill in the required fields and click create | Your picture will be added and and you will be taken to the picture page | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-16.jpg">
+<img src="docs/testing/manual-testing/user-story-16-1.jpg">
+<img src="docs/testing/manual-testing/user-story-16-2.jpg">
+</details>
+
+
+____
+
+17. As User I can edit my post-pictures so that I can change the content of the content I add
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site's home page, click on the image of your post | You will be taken to the picture page | Works as expected |
+Click on the three dots and select the edit tab | You will be taken to the picture editing page | Works as expected |
+Fill in the required fields that you want to change and click the edit button | Your picture will be updated | Works as expected |
+
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-17.jpg">
+<img src="docs/testing/manual-testing/user-story-17-1.jpg">
+<img src="docs/testing/manual-testing/user-story-17-2.jpg">
+<img src="docs/testing/manual-testing/user-story-17-3.jpg">
+</details>
