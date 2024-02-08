@@ -486,3 +486,28 @@ The API for this Front-End application was built with the Django REST Framework.
 <img src="docs/features/navbar-add-plan-picture.jpg">
 <img src="docs/features/navbar-select-category.jpg">
 </details>
+
+
+___
+
+`GreetingModal`
+- appears on the home page when user first visit the site
+- contains brief information about the site as well as links to the page for sign up and sign in
+(**User stories covered: 7**)
+
+<details><summary>GreetingModal</summary>
+<img src="docs/features/greeting-modal.jpg">
+</details>
+
+
+____
+
+`Asset`
+- appears on the many pages of the site.
+- can display an image, text (used to notify the user about the lack of results) and a spinner (used during fetching server data for the main component)
+(**User stories covered: 5, 45**)
+
+<details><summary>Asset</summary>
+<img src="docs/features/asset-spinner.jpg">
+<img src="docs/features/asset-image-and-text.jpg">
+</details>
