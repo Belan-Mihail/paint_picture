@@ -956,11 +956,40 @@ ____
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-While on any home page, the click on any avatar that interests you | you can see the user statistics you are interested in | Works as expected |
+While on any home page, click on any avatar that interests you | you can see the user statistics you are interested in | Works as expected |
 
 
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/manual-testing/user-story-13.jpg">
 <img src="docs/testing/manual-testing/user-story-13-1.jpg">
+</details>
+
+
+_____
+14. As User I can see greeting when hovering over avatar so that I can see the user's greeting
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any home page, hover on any avatar that interests you | you can see the user greeting if it exsist | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-14.jpg">
+</details>
+
+
+_____
+
+15. As User I can see popular profiles so that I can understand which users are the most interesting
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to the home page or any profile page | You can see a list of popular profiles | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-15.jpg">
 </details>
