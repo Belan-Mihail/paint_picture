@@ -30,6 +30,9 @@ Developer: Bilan Mykhailo
          2. [Front-End Pages](#front-end-pages)
    7. [Back-End](#back-end)
       1. [Django Rest Framework](#django-rest-framework)
+   8. [Features](#features)
+      1. [Features Components](#features-components)
+      2. [Features Pages](#features-pages)
 
 
 ## About
@@ -577,4 +580,43 @@ ____
 <details><summary>ToTop</summary>
 <img src="docs/features/totop.jpg">
 <img src="docs/features/totop2.jpg">
+</details>
+
+
+
+### Features Pages
+
+`Home page`
+- The page includes many components (for example: NavBar, SwitchMode, PictureFilteringMode, PicturesPage, PopularProfiles) and is located at the application's source address
+- Сontains a field for searching images by author or title (**User stories covered: 31, 28**)
+- Contains the output of all site posts with the infinity scroll function (**User stories covered: 27, 44, 45**)
+- Contains the output of popular profiles. (**User stories covered: 15**)
+- The page is responsive and displays well in various screen extensions (**User stories covered: 46**)
+
+<details><summary>Home Page</summary>
+<img src="docs/features/homepage.jpg">
+<img src="docs/features/homepage-ipad.jpg">
+<img src="docs/features/homepage-iphone.jpg">
+</details>
+
+
+____
+`Sign Up Page`
+- This page consists of sign up form for user to create new account.
+- Contains a welcome image and a form with username, password, and password confirmation fields. The form has field validation
+- This page is not available to authorized users. a redirect is used for this
+(**User stories covered: 1, 42, 43**)
+<details><summary>Sign Up</summary>
+<img src="docs/features/signup.jpg">
+</details>
+
+
+____
+`Sign In Page`
+- This page consists of sign inform for user to log in.
+- Contains a welcome image and a form with username and password fields. The form has field validation
+- This page is not available to authorized users. a redirect is used for this
+(**User stories covered: 1, 42, 43**)
+<details><summary>Sign Up</summary>
+<img src="docs/features/signin.jpg">
 </details>
