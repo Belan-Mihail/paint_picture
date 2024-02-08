@@ -866,8 +866,8 @@ _____
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
 While on the site, click on your profile avatar in the upper left corner | You will be taken to your profile page | Works as expected |
-Click on the three dots in the right-left corner and select the edit profile icon | You will be taken to the profile editing page | Works as expected |
-Enter the updated data in the appropriate fields and click the save button | Your profile information will be changed | Works as expected |
+Click on the three dots in the right-left corner and select the edit profile  | You will be taken to the profile editing page | Works as expected |
+Enter the updated data in the appropriate fields and click the save button | Your profile data will be changed | Works as expected |
 
 
 
@@ -877,4 +877,57 @@ Enter the updated data in the appropriate fields and click the save button | You
 <img src="docs/testing/manual-testing/user-story-09-2.jpg">
 <img src="docs/testing/manual-testing/user-story-09-3.jpg">
 <img src="docs/testing/manual-testing/user-story-09-4.jpg">
+</details>
+
+
+___
+
+10. As User I can edit username and password so that I can change my data specified during registration
+
+Change username
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site, click on your profile avatar in the upper left corner | You will be taken to your profile page | Works as expected |
+Click on the three dots in the right-left corner and select the edit username | You will be taken to the username editing page | Works as expected |
+Enter the updated data in the appropriate fields and click the save button | Your username will be changed | Works as expected |
+
+
+<details><summary>Screenshot Username</summary>
+<img src="docs/testing/manual-testing/user-story-10.jpg">
+<img src="docs/testing/manual-testing/user-story-10-1.jpg">
+<img src="docs/testing/manual-testing/user-story-10-2.jpg">
+<img src="docs/testing/manual-testing/user-story-10-3.jpg">
+<img src="docs/testing/manual-testing/user-story-10-4.jpg">
+</details>
+
+
+Change password
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site, click on your profile avatar in the upper left corner | You will be taken to your profile page | Works as expected |
+Click on the three dots in the right-left corner and select the edit password | You will be taken to the password editing page | Works as expected |
+Enter the updated data in the appropriate fields and click the save button | Your password will be changed | Works as expected |
+
+
+<details><summary>Screenshot Password</summary>
+<img src="docs/testing/manual-testing/user-story-10p.jpg">
+<img src="docs/testing/manual-testing/user-story-10-1p.jpg">
+<img src="docs/testing/manual-testing/user-story-10-2p.jpg">
+<img src="docs/testing/manual-testing/user-story-10-3p.jpg">
+</details>
+
+
+____
+
+11. As User I can view my own post-pictures on my profile page so that I can see the content I added
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Once on your profile page, scroll down to the profile owner's posts section | You can see your post pictures | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-11.jpg">
+<img src="docs/testing/manual-testing/user-story-11-1.jpg">
 </details>
