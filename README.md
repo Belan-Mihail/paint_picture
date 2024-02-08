@@ -771,3 +771,37 @@ Go to any page of the site | At the top of the site you will find a navigation m
 <img src="docs/testing/manual-testing/user-story-03-2.jpg">
 
 </details>
+
+
+_____
+
+4. As User I can I want the main functionality to be displayed on the navbar (adding a post, adding plans, logging in. logging out) so that I can use the basic functionality on any page of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+As an authorized user, go to any page of the site | At the top of the site you will find a navigation menu with all the listed functions | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-04.jpg">
+
+</details>
+
+
+_____
+
+5. As User I can the site responded to my actions so that I feel the complete interaction with me as a user
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Navigate to different pages of the site | AAll key components are animated to enhance the user experience | Works as expected |
+While on any page of the site, hover your cursor over any component | The hovered component's shadow will change from turquoise to purple to enhance user interaction and feedback on user actions | Works as expected |
+When on any page of the site, hover your cursor over a button or link | How to respond to a custom action: a link or button increases in size or changes its color | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-05.jpg">
+<img src="docs/testing/manual-testing/user-story-05-1.jpg">
+<img src="docs/testing/manual-testing/user-story-05-2.jpg">
+
+</details>
