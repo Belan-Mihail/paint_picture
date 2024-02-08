@@ -793,7 +793,7 @@ _____
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-Navigate to different pages of the site | AAll key components are animated to enhance the user experience | Works as expected |
+Navigate to different pages of the site | All key components are animated to enhance the user experience | Works as expected |
 While on any page of the site, hover your cursor over any component | The hovered component's shadow will change from turquoise to purple to enhance user interaction and feedback on user actions | Works as expected |
 When on any page of the site, hover your cursor over a button or link | How to respond to a custom action: a link or button increases in size or changes its color | Works as expected |
 
@@ -835,4 +835,46 @@ Open the site for the first time | A welcome modal window with general informati
 
 <details><summary>Screenshot</summary>
 <img src="docs/testing/manual-testing/user-story-07.jpg">
+</details>
+
+
+____
+
+8. As User I can get a profile after registration so that I can use my profile page after registration
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+On the main page of the site, click on the sign up link located in the right corner of the navigation menu | The user lands on the sign up page| Works as expected |
+Fill out the sign up form and click the sign up button | You will be redirected to the sign in page | Works as expected |
+Fill out the sign in form and click the sign in button | You will log into the site and be redirected to the home page| Works as expected |
+Click on your avatar located in the upper right corner | You will be taken to your own profile page created automatically after registration | Works as expected |
+  
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-08.jpg">
+<img src="docs/testing/manual-testing/user-story-08-1.jpg">
+<img src="docs/testing/manual-testing/user-story-08-2.jpg">
+<img src="docs/testing/manual-testing/user-story-08-3.jpg">
+<img src="docs/testing/manual-testing/user-story-08-4.jpg">
+</details>
+
+
+_____
+
+9. As User I can edit my profile so that I can change my details
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site, click on your profile avatar in the upper left corner | You will be taken to your profile page | Works as expected |
+Click on the three dots in the right-left corner and select the edit profile icon | You will be taken to the profile editing page | Works as expected |
+Enter the updated data in the appropriate fields and click the save button | Your profile information will be changed | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-09.jpg">
+<img src="docs/testing/manual-testing/user-story-09-1.jpg">
+<img src="docs/testing/manual-testing/user-story-09-2.jpg">
+<img src="docs/testing/manual-testing/user-story-09-3.jpg">
+<img src="docs/testing/manual-testing/user-story-09-4.jpg">
 </details>
