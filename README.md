@@ -681,3 +681,38 @@ ____
 <img src="docs/features/profile-page-owner-pictures.jpg">
 <img src="docs/features/profile-page-wall.jpg">
 </details>
+
+
+_____
+`Edit Profile Page`
+- This page consists form to edit profile data.
+- Contains a form with bio, nickname, greeting and image fields.
+- Previously entered data is initially available in the corresponding fields
+(**User stories covered: 9**)
+<details><summary>Edit Profile Page</summary>
+<img src="docs/features/edit-profile-page.jpg">
+</details>
+
+
+_____
+
+`Edit Username Page`
+- This page consists form to edit username.
+- Contains a form with single username field.
+- Previously entered data is initially available in the corresponding field
+(**User stories covered: 10**)
+<details><summary>Edit Username Page</summary>
+<img src="docs/features/edit-username-page.jpg">
+</details>
+
+
+
+_____
+`Edit Password Page`
+- This page consists form to edit password.
+- Contains a form with password and confirm password fields.
+- Previously entered data is initially available in the corresponding fields
+(**User stories covered: 10**)
+<details><summary>Edit Password Page</summary>
+<img src="docs/features/edit-password-page.jpg">
+</details>
