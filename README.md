@@ -805,3 +805,34 @@ When on any page of the site, hover your cursor over a button or link | How to r
 <img src="docs/testing/manual-testing/user-story-05-2.jpg">
 
 </details>
+
+
+
+______
+
+6. As User I can change the color theme of the site so that I can choose the site color scheme that suits me best
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any page of the site, hin the left corner there is a select menu for choosing one of the three available color schemes for the site | choose any of the available color schemes | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-06.jpg">
+<img src="docs/testing/manual-testing/user-story-06-1.jpg">
+<img src="docs/testing/manual-testing/user-story-06-2.jpg">
+</details>
+
+_____
+
+7. As User I can when I first visit the site, I will receive a description of the site's contents so that I will understand the theme of the site and my interest in it
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Open the site for the first time | A welcome modal window with general information about the subject of the site will appear | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-07.jpg">
+</details>
