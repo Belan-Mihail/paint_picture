@@ -440,4 +440,21 @@ ___
 - PicturePage.js -This file is intended for detail of one picture (**User stories covered: 19, 21, 22, 25**)
 - PicturesPage.js -This file returns the list of pictures (**User stories covered: 27, 44, 45**)
 ___
-
+- Comment.js - This file returns the comments (**User stories covered: 24, 39, 41**)
+- CommentEditForm.js - This file handles the comment edit form (**User stories covered: 40**)
+- CommentCreateForm.js - This file handles the create comment form (**User stories covered: 39**)
+___
+- Profile.js - This file returns the profile section (**User stories covered: 12, 13**)
+- ProfilePage.js - This file returns the entire Profile page. this is the file responsible for displaying the user’s plans, wall items, posts and his statistics on the site (**User stories covered: 8, 11, 12, 13**)
+- PopularProfiles.js - This file returns the users of the site as per the pictures count they posted (**User stories covered: 15**)
+- ProfileEditForm.js - This file handles the profile edit form (**User stories covered: 17**)
+- UsernameForm.js - This file handles the username change form (**User stories covered: 10**)
+- UserPasswordForm.js - This file handles the password change form (**User stories covered: 10**)
+___
+- Plan.js - This file returns the plans (**User stories covered: 38**)
+- PlanEditForm.js - This file handles the plans edit form (**User stories covered: 37**)
+- PlanCreateForm.js - This file handles the create plans form (**User stories covered: 36**)
+___
+- WallItem.js - This file returns the plans (**User stories covered: 35**)
+- WallItemEditForm.js - This file handles the plans edit form (**User stories covered: 34**)
+- WallItemCreateForm.js - This file handles the create plans form (**User stories covered: 33**)
