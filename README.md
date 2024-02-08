@@ -415,3 +415,15 @@ I used React for this application for several reasons:
 - `<Avatar />` - resuable component, used to render profile images in the UI. Passed props allow for setting image source and size, adjust image dimensions depending on where the component is rendered. This component also displays the user's greeting. Example of use include the `<NavBar />` component, Picture page or Profile page. (**User stories covered: 12, 14**)
 
 - `<Greeting Modal />` - a component that is used to display general information about the site when user first visit it. (**User stories covered: 7**)
+
+- `<ModeSwitch />` - a component that is used to switch the color scheme of the site with available values: light, turquoise and orange. This component appears on every page of the site under the navigation component. (**User stories covered: 6**)
+
+- `<DropdownMenu />` - reusable component, used to render the dropdown menu which is used to provide the user with the ability to edit or delete their own pictures, plans, wallitems and comments, and also edit their profile or change profile password. (**User stories covered: 5, 9, 10, 17, 19,34, 37, 40**)
+
+- `<NavBar />` - reusable component with the content depending on the login status of the user. For logged in user it shows icon link to add picture and plan, home page and user avatar/picture. For those who are not logged in, it displays icon links to sign up or log in instead of the avatar. The component is used on each page of the app. (**User stories covered: 1, 2, 3, 4 16, 36, 42, 43**)
+
+- `<NotFound />` - specific component for displaying a 404 graphic error message with a return to menu button when user enters the url which does not exist. (**User stories covered: 5**)
+
+- `<PictureOrderingFilter />` reusable component which will allow user to set the order of display of pictures depending on the number of likes (high and low) and also depending on the number of comments (high and low) (**User stories covered: 29, 30**)
+
+- `<ToTop />` reusable component which will allow user rise to the top of the page after, which increases the level of usability of the site. this component is displayed on pages where the user can “go down a lot” for example: Pictures Page, Profile Page  (**User stories covered: 5**)
