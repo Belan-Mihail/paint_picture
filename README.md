@@ -511,3 +511,31 @@ ____
 <img src="docs/features/asset-spinner.jpg">
 <img src="docs/features/asset-image-and-text.jpg">
 </details>
+
+
+____
+
+`Avatar`
+- appears on the many pages of the site.
+- used to render profile images in the UI. Passed props allow for setting image source and size, adjust image dimensions depending on where the component is rendered. 
+- also displays the user's greeting if it consist.
+(**User stories covered: 12, 14**)
+
+<details><summary>Avatar</summary>
+<img src="docs/features/avatar.jpg">
+</details>
+
+
+
+____
+
+`ModeSwitch`
+- appears on all pages of the site.
+that is used to switch the color scheme of the site with available values: light, turquoise and orange.
+(**User stories covered: 6**)
+
+<details><summary>ModeSwitch</summary>
+<img src="docs/features/modeswitch-light.jpg">
+<img src="docs/features/modeswitch-turquoise.jpg">
+<img src="docs/features/modeswitch-orange.jpg">
+</details>
