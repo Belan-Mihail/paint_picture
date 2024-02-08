@@ -1128,3 +1128,53 @@ Once on the main page, scroll down to view various pictures | Each picture has i
 <img src="docs/testing/manual-testing/user-story-23.jpg">
 <img src="docs/testing/manual-testing/user-story-23-1.jpg">
 </details>
+
+
+_____
+
+24. As User I can see number of comments which a picture-post has so that I can see which posts are the most popular
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Once on the main page, scroll down to view various pictures | Each picture has its own number of comments | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-24.jpg">
+<img src="docs/testing/manual-testing/user-story-24-1.jpg">
+</details>
+
+
+
+_____
+
+25. As User I can see picture-post detail so that I can view a specific picture-post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Being on the home page, select any picture and click on the image | You will be taken to the picture page | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-25.jpg">
+<img src="docs/testing/manual-testing/user-story-25-1.jpg">
+</details>
+
+
+
+_____
+
+26. As User I can see date of picture-post so that I can understand the relevance of the content
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Once on the main page, scroll down to view various pictures | Each picture has its own date | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-26.jpg">
+<img src="docs/testing/manual-testing/user-story-26-1.jpg">
+</details>
+
+
+_____
