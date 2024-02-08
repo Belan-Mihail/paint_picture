@@ -740,3 +740,34 @@ Fill out the sign in form and click the sign in button | You will log into the s
 <img src="docs/testing/manual-testing/user-story-01-2.jpg">
 <img src="docs/testing/manual-testing/user-story-01-3.jpg">
 </details>
+
+
+___
+
+2. As User I can Logout from the site so that I can prevent others from using my site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+As an authorized user, while on any page of the site, click on the sign out button in the navigation menu | The exit will be carried out | Works as expected |
+
+  
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-02.jpg">
+<img src="docs/testing/manual-testing/user-story-02-1.jpg">
+
+</details>
+
+
+____
+3. As User I can see Navbar on every page of the site so that I can easily go to another page on the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to any page of the site | At the top of the site you will find a navigation menu | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-03.jpg">
+<img src="docs/testing/manual-testing/user-story-03-1.jpg">
+<img src="docs/testing/manual-testing/user-story-03-2.jpg">
+
+</details>
