@@ -1031,3 +1031,34 @@ Fill in the required fields that you want to change and click the edit button | 
 <img src="docs/testing/manual-testing/user-story-17-2.jpg">
 <img src="docs/testing/manual-testing/user-story-17-3.jpg">
 </details>
+
+
+_____
+
+18. As User I can see notifications about empty fields so that I can understand which field should not be empty
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to any page of the site where you need to fill out a data form (for example, the sign up page) and after filling out the data, click the button (sign up) | If any required field is not filled in, you will see a warning. | Works as expected |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-18.jpg">
+</details>
+
+
+____
+
+19. As User I can delete my own post-picture so that I can delete my post-picture if I want to
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site's home page, click on the image of your post | You will be taken to the picture page | Works as expected |
+Click on the three dots and select the delete icon | Your picture will be delete  | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-19.jpg">
+<img src="docs/testing/manual-testing/user-story-19-1.jpg">
+<img src="docs/testing/manual-testing/user-story-19-2.jpg">
+</details>
