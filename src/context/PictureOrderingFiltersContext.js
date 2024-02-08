@@ -3,11 +3,11 @@ import React, { useState, createContext } from "react";
 const PictureOrderingFilterContext = createContext();
 
 function PictureOrderingFilterProvider({ children }) {
-  const [PictureOrderingFilter, setPictureOrderingFilter] = useState("");
+  const [PictureOrderingFilterCont, setPictureOrderingFilterCont] = useState("");
 
   return (
     <PictureOrderingFilterContext.Provider
-      value={{ PictureOrderingFilter, setPictureOrderingFilter }}
+      value={{ PictureOrderingFilterCont, setPictureOrderingFilterCont }}
     >
       {children}
     </PictureOrderingFilterContext.Provider>

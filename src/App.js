@@ -17,7 +17,6 @@ import PlanCreateForm from "./pages/plans/PlanCreateForm.js";
 import PlanEditForm from "./pages/plans/PlanEditForm.js";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm.js";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm.js";
-import PictureOrderingFilter from "./components/PictureOrderingFilter.js";
 import { ThemesModeContext } from "./context/ThemesModeContext.js";
 import { useContext } from "react";
 import ModeSwitch from "./components/ModeSwitch.js";
@@ -46,8 +45,8 @@ function App() {
       <NavBar />
 
       <Container className={styles.MainContainer}>
-        <Row>
-          <PictureOrderingFilter />
+        <Row className="py-2 p-0 p-lg-2 " lg={8}>
+          
           <ModeSwitch />
         </Row>
         <GreetingModal />

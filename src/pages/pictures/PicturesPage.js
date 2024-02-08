@@ -16,15 +16,16 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import { PictureOrderingFilterContext } from "../../context/PictureOrderingFiltersContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ToTop from "../../components/ToTop";
+import  ToTop  from "../../components/ToTop";
 import { useCurrentUser } from "../../context/CurrentUserContext";
+import  PictureOrderingFilter  from '../../components/PictureOrderingFilter'
 
 function PicturesPage({ message, filter = "" }) {
   const [pictures, setPictures] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
-  const { PictureOrderingFilter } =
+  const { PictureOrderingFilterCont } =
     useContext(PictureOrderingFilterContext);
   const currentUser = useCurrentUser();
 
@@ -32,7 +33,7 @@ function PicturesPage({ message, filter = "" }) {
     const fetchPictures = async () => {
       try {
         const { data } = await axiosReq.get(
-          `/pictures/?${filter}search=${query}&ordering=${PictureOrderingFilter}`
+          `/pictures/?${filter}search=${query}&ordering=${PictureOrderingFilterCont}`
         );
         setPictures(data);
         setHasLoaded(true);
@@ -51,11 +52,13 @@ function PicturesPage({ message, filter = "" }) {
       clearTimeout(timer);
     };
     
-  }, [filter, query, pathname, PictureOrderingFilter, currentUser]);
+  }, [filter, query, pathname, PictureOrderingFilterCont, currentUser]);
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 " lg={8} data-aos="fade-right" data-aos-duration="1000">     
+      
+      <Col className="py-2 p-0 p-lg-2 " lg={8} data-aos="fade-right" data-aos-duration="1000">   
+      <PictureOrderingFilter />  
       <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
