@@ -591,7 +591,7 @@ ____
 - The page includes many components (for example: NavBar, SwitchMode, PictureFilteringMode, PicturesPage, PopularProfiles) and is located at the application's source address
 - Сontains a field for searching pictures by author or title (**User stories covered: 32**)
 - Contains the output of all site posts with the infinity scroll function (**User stories covered: 27, 44, 45**)
-- Contains the output of popular profiles. (**User stories covered: 15**)
+- Contains the output of popular profiles. When you hover over a user's avatar, a greeting message is shown (**User stories covered: 14, 15**)
 - The page is responsive and displays well in various screen extensions (**User stories covered: 46**)
 
 <details><summary>Home Page</summary>
@@ -626,9 +626,9 @@ ____
 ____
 `Add/Edit Picture Page`
 
-- This page consists of form for add/edit picture and be able only for logged user.
+- These pages consist of form for add/edit picture and are only available to logged user.
 - Contains a form with title, description, category and image fields. 
-- On the editing page, previously entered information is initially available in the corresponding fields
+- On the editing page, previously entered data is initially available in the corresponding fields
 (***User stories covered: 16, 17, 21**)
 <details><summary>Add/Edit Picture Page</summary>
 <img src="docs/features/add-picture-page.jpg">
@@ -640,10 +640,44 @@ _____
 
 `Picture Detail Page`
 - This page picture detail.
-- A component is available for the authors of the image to delete or edit the image.
+- A component MoreDropdown is available for the authors of the image to delete or edit the image.
 - Under the picture there is a form for adding comments and a list of existing comments is displayed.
-- There are also popular profiles on the page
-(**User stories covered: 15, 19, 20, 22, 23, 24, 25, 26**)
+- Fields have validation
+- Contains the output of popular profiles. When you hover over a user's avatar, a welcome greeting is shown
+(**User stories covered: 14, 15, 19, 20, 22, 23, 24, 25, 26**)
 <details><summary>Picture Detail Page</summary>
 <img src="docs/features/picture-detail.jpg">
+</details>
+
+
+____
+
+`Add/Edit PLan Page`
+
+- These pages consist of form for add/edit plan and are only available to logged user.
+- Contains a form with plans title, plan description, plan date and until fields. 
+- On the editing page, previously entered data is initially available in the corresponding fields
+(***User stories covered: 36, 37**)
+<details><summary>Add/Edit PLan Page</summary>
+<img src="docs/features/add-plan-page.jpg">
+<img src="docs/features/edit-plan-page.jpg">
+</details>
+
+
+
+____
+`Profile Page`
+
+- Contains a flipping card. On one side of the card there is an avatar, name and statistics of the user on the site information. On the other side there is a short biography of the user and a button (follow/unfollow)
+- Also this page contains profile owner's plans, if they are added.
+- Below the plans there is a button that switches the display of posts-pictures of the profile owner or his wall
+- The profile owner's wall is a place for posting public messages, a form for additions, which is located above the messages. To edit or delete messages, use the MoreDropdown component (available for the message owners)
+- For the convenience of the user, there is a ToTop component on the page
+(**User stories covered: 8, 11, 12, 13, 33, 34, 35, 36, 37, 38**)
+<details><summary>Profile Page</summary>
+<img src="docs/features/profile-page-front.jpg">
+<img src="docs/features/profile-page-back.jpg">
+<img src="docs/features/profile-page-plans.jpg">
+<img src="docs/features/profile-page-owner-pictures.jpg">
+<img src="docs/features/profile-page-wall.jpg">
 </details>
