@@ -26,6 +26,7 @@ Developer: Bilan Mykhailo
         3. [Tools & Programs](#tools--programs)
    6. [Front-End](#front-end)
       1. [React](#react)
+         1. [Front-End Components](#front-end-components)
 
 
 ## About
@@ -406,3 +407,11 @@ I used React for this application for several reasons:
 - React Bootstrap - excellent choice for improving user experience, used for styling and responsiveness. It comes with ready-to-use React built components. They are implemented with accessibility in mind, which is a vital factor when creating a front-end application. I used plain Bootstrap in my previous projects, so it was an easy choice to use React Bootstrap in this app.
 - Most used library for developing social networking and media content applications 
 - Reusability of components - no need to write various codes for the same features
+
+#### Front-End Components
+
+- `<Asset />` - a multi-purpose component used to display a number of elements while the main component receives data from the server. it includes: a loading spinner from React Bootstrap, image with source and alt attribute or a message consisting of a paragraph. (**User stories covered: 45**)
+
+- `<Avatar />` - resuable component, used to render profile images in the UI. Passed props allow for setting image source and size, adjust image dimensions depending on where the component is rendered. This component also displays the user's greeting. Example of use include the `<NavBar />` component, Picture page or Profile page. (**User stories covered: 12, 14**)
+
+- `<Greeting Modal />` - a component that is used to display general information about the site when user first visit it. (**User stories covered: 7**)
