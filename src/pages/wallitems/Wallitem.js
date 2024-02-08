@@ -6,11 +6,10 @@ import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../context/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import  WallitemEditForm  from './WallitemEditForm'
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import WallitemEditForm from "./WallitemEditForm";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const Wallitem = (props) => {
   const {
@@ -21,8 +20,6 @@ const Wallitem = (props) => {
     message,
     id,
     setProfileWallItems,
-    current_profile,
-    
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -31,12 +28,10 @@ const Wallitem = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/wallitems/${id}/`);
       history.goBack();
-      
     } catch (err) {
       // console.log(err);
     }
@@ -50,7 +45,7 @@ const Wallitem = (props) => {
   return (
     <div>
       <hr />
-      <Media >
+      <Media>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} height={40} />
         </Link>
@@ -60,14 +55,10 @@ const Wallitem = (props) => {
           {showEditForm ? (
             <WallitemEditForm
               id={id}
-              profile_id={profile_id}
               message={message}
               profileImage={profile_image}
               setProfileWallItems={setProfileWallItems}
               setShowEditForm={setShowEditForm}
-              current_profile={current_profile}
-              
-              
             />
           ) : (
             <p>{message}</p>
@@ -81,7 +72,7 @@ const Wallitem = (props) => {
         )}
       </Media>
     </div>
-  )
-}
+  );
+};
 
-export default Wallitem
+export default Wallitem;

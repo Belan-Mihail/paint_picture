@@ -206,6 +206,7 @@ function ProfilePage() {
               key={wallitem.id}
               {...wallitem}
               current_profile = {id}
+              setProfileWallItems={setProfileWallItems}
             />
           ))}
           dataLength={profileWallItems.results.length}

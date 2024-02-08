@@ -5,11 +5,10 @@ import Alert from "react-bootstrap/Alert";
 import btnStyles from "../../styles/Button.module.css";
 
 import { axiosRes } from "../../api/axiosDefaults";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useHistory } from "react-router";
+
 
 const WallitemEditForm = (props) => {
-  const { id, message, setShowEditForm, setProfileWallItems, current_profile, profile_id } = props;
+  const { id, message, setShowEditForm, setProfileWallItems } = props;
 
   const [messageData, setMessageData] = useState(message);
 
@@ -17,55 +16,31 @@ const WallitemEditForm = (props) => {
     setMessageData(event.target.value);
   };
 
-  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-
-    formData.append("message", messageData);
-    formData.append("profile", current_profile);
-
-
     try {
-      await axiosReq.put(`/wallitems/${id}/`, formData);
-        history.push(`/profiles/${profile_id}/`);
-        
-        setShowEditForm(false);
+      await axiosRes.put(`/wallitems/${id}/`, { message: messageData });
+      setProfileWallItems((prevprofileWallItems) => ({
+        ...prevprofileWallItems,
+        results: prevprofileWallItems.results.map((wallItem) => {
+          return wallItem.id === id
+            ? {
+                
+                ...wallItem,
+                message: messageData,
+                updated_at: "now",
+                
+              }
+            : wallItem;
+        }),
+      }));
     } catch (err) {
-
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
-    }
-  };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     await axiosRes.put(`/wallitems/${id}/`, { message: messageData });
-  //     setProfileWallItems((prevprofileWallItems) => ({
-  //       ...prevprofileWallItems,
-  //       results: prevprofileWallItems.results.map((wallItem) => {
-  //         return wallItem.id === id
-  //           ? {
-                
-  //               ...wallItem,
-  //               message: messageData,
-  //               updated_at: "now",
-                
-  //             }
-  //           : wallItem;
-  //       }),
-  //     }));
-  //   } catch (err) {
-  //     setErrors(err);
+      setErrors(err);
       
-  //   }
-  //   setShowEditForm(false);
-  // };
-
-  
+    }
+    setShowEditForm(false);
+  };
 
   const [errors, setErrors] = useState({});
 
