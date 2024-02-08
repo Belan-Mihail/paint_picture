@@ -1062,3 +1062,38 @@ Click on the three dots and select the delete icon | Your picture will be delete
 <img src="docs/testing/manual-testing/user-story-19-1.jpg">
 <img src="docs/testing/manual-testing/user-story-19-2.jpg">
 </details>
+
+____
+20. As User I can determine the category of the picture so that the category of the image will be determined, making it searchable by the specified category
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to the page for adding a picture by clicking on the add link and selecting the pictures tab | You will be taken to the adding picture page | Works as expected |
+Select the category of your picture, fill another required fields and click "create" | The corresponding category will be assigned to the picture  | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-20.jpg">
+<img src="docs/testing/manual-testing/user-story-20-1.jpg">
+<img src="docs/testing/manual-testing/user-story-20-2.jpg">
+</details>
+
+
+____
+21. As User I can change picture category so that I can change the wrong category
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on the site's home page, click on the image of your post | You will be taken to the picture page | Works as expected |
+Click on the three dots and select the edit tab | You will be taken to the picture editing page | Works as expected |
+Select another category, fill another required fields and click "edit" | The corresponding category will be assigned to the picture  | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-21.jpg">
+<img src="docs/testing/manual-testing/user-story-21-1.jpg">
+<img src="docs/testing/manual-testing/user-story-21-2.jpg">
+<img src="docs/testing/manual-testing/user-story-21-3.jpg">
+</details>
