@@ -96,7 +96,7 @@ The key functionality aspects:
 19. As User I can delete my own post-picture so that I can delete my post-picture if I want to
 20. As User I can determine the category of the picture so that the category of the image will be determined, making it searchable by the specified category
 21. As User I can change picture category so that I can change the wrong category
-22. As UserI want each category to have its own color so that I can easily distinguish the post category
+22. As User I want each category to have its own color so that I can easily distinguish the post category
 23. As User I can see the number of likes a picture-post has so that I can see which posts are the most popular
 24. As User I can see number of comments which a picture-post has so that I can see which posts are the most popular
 25. As User I can see picture-post detail so that I can view a specific picture-post
@@ -122,7 +122,7 @@ The key functionality aspects:
 
 42. As a site owner I can provide full access to logged in user so that they can interact with the pages more independently
 43. As a site owner I can restrict the interaction with website so that an unauthorised user cannot make changes in the app
-44. As a site ownerI can when loading for the first time, display only the last 20 picture-posts so that I can avoid overloading the server and speed up the loading of the site
+44. As a site ownerI can when loading for the first time, display only the last 10 picture-posts so that I can avoid overloading the server and speed up the loading of the site
 45. As a site owner I can use infinite scroll so that I can achieve display of new picture-posts after the user views previously loaded picture-posts
 46. As a site owner, I would want the site to be fully responsive so that users can use it across multiple devices and create a good user experience.
 
@@ -1096,4 +1096,35 @@ Select another category, fill another required fields and click "edit" | The cor
 <img src="docs/testing/manual-testing/user-story-21-1.jpg">
 <img src="docs/testing/manual-testing/user-story-21-2.jpg">
 <img src="docs/testing/manual-testing/user-story-21-3.jpg">
+</details>
+
+
+____
+22. As User I want each category to have its own color so that I can easily distinguish the post category
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Once on the main page, scroll down to view various pictures |Each category has its own color | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-22.jpg">
+<img src="docs/testing/manual-testing/user-story-22-1.jpg">
+<img src="docs/testing/manual-testing/user-story-22-2.jpg">
+</details>
+
+
+_____
+
+23. As User I can see the number of likes a picture-post has so that I can see which posts are the most popular
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Once on the main page, scroll down to view various pictures | Each picture has its own number of likes | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-23.jpg">
+<img src="docs/testing/manual-testing/user-story-23-1.jpg">
 </details>
