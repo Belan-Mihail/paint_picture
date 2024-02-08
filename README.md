@@ -28,6 +28,8 @@ Developer: Bilan Mykhailo
       1. [React](#react)
          1. [Front-End Components](#front-end-components)
          2. [Front-End Pages](#front-end-pages)
+   7. [Back-End](#back-end)
+      1. [Django Rest Framework](#django-rest-framework)
 
 
 ## About
@@ -458,3 +460,10 @@ ___
 - WallItem.js - This file returns the plans (**User stories covered: 35**)
 - WallItemEditForm.js - This file handles the plans edit form (**User stories covered: 34**)
 - WallItemCreateForm.js - This file handles the create plans form (**User stories covered: 33**)
+
+## Back-End 
+
+### Django REST Framework
+
+The API for this Front-End application was built with the Django REST Framework. The repository with a README file for the Back-End project can be found ([here](https://github.com/Belan-Mihail/drf_api_paint_picture)).
+
