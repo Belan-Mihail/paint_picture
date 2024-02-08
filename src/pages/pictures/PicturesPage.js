@@ -55,7 +55,7 @@ function PicturesPage({ message, filter = "" }) {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2 " lg={8} data-aos="fade-right" data-aos-duration="1000">
+      <Col className="py-2 p-0 p-lg-2 " lg={8} data-aos="fade-right" data-aos-duration="1000">     
       <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form

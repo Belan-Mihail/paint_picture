@@ -539,3 +539,24 @@ that is used to switch the color scheme of the site with available values: light
 <img src="docs/features/modeswitch-turquoise.jpg">
 <img src="docs/features/modeswitch-orange.jpg">
 </details>
+
+
+____
+`MoreDropdown`
+- appears on the many pages of the site.
+- used to render the dropdown menu which allows user to edit or delete their own pictures, plans, wallitems and comments, and also edit their profile or change profile password
+(**User stories covered: 5, 9, 10, 17, 19,34, 37, 40**)
+
+<details><summary>MoreDropdown</summary>
+<img src="docs/features/moredropdown.jpg">
+<img src="docs/features/moredropdown2.jpg">
+</details>
+
+
+____
+`PictureOrderingFilter`
+- component is used to set the order of display of pictures depending on the number of likes (up and down) and also depending on the number of comments (up and down)
+(**User stories covered: 29, 30**)
+<details><summary>PictureOrderingFilter</summary>
+<img src="docs/features/pictureorderingfilter.jpg">
+</details>

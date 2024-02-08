@@ -6,7 +6,6 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { axiosRes } from "../../api/axiosDefaults";
 
-
 const WallitemEditForm = (props) => {
   const { id, message, setShowEditForm, setProfileWallItems } = props;
 
@@ -15,7 +14,6 @@ const WallitemEditForm = (props) => {
   const handleChange = (event) => {
     setMessageData(event.target.value);
   };
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,18 +24,15 @@ const WallitemEditForm = (props) => {
         results: prevprofileWallItems.results.map((wallItem) => {
           return wallItem.id === id
             ? {
-                
                 ...wallItem,
                 message: messageData,
                 updated_at: "now",
-                
               }
             : wallItem;
         }),
       }));
     } catch (err) {
       setErrors(err);
-      
     }
     setShowEditForm(false);
   };
