@@ -467,3 +467,22 @@ ___
 
 The API for this Front-End application was built with the Django REST Framework. The repository with a README file for the Back-End project can be found ([here](https://github.com/Belan-Mihail/drf_api_paint_picture)).
 
+## Features
+
+### Features Components
+
+`Navbar`
+- Featured and consistent on the all pages (**User stories covered: 3**)
+- Contains direct links to sign-up and log-in pages for unlogged users and links to sign-out page to logged users. (**User stories covered: 1, 2, 42, 43**)
+- Contains direct links to add picture and add plan pages (**User stories covered: 36, 16**)
+- Contains a drop-down menu for displaying pictures by category, as well as links to user pictures for to pages with pictures of users of which the user is a subscriber and pictures that the user liked (**User stories covered: 31, 28**)
+- The nav bar is fully responsive and changes to a toggler (hamburger menu) on smaller size screens (**User stories covered: 46**)
+
+<details><summary>Navbar</summary>
+<img src="docs/features/navbar-logged.jpg">
+<img src="docs/features/navbar-unlogged.jpg">
+<img src="docs/features/navbar-ipad.jpg">
+<img src="docs/features/navbar-iphone.jpg">
+<img src="docs/features/navbar-add-plan-picture.jpg">
+<img src="docs/features/navbar-select-category.jpg">
+</details>
