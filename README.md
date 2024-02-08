@@ -24,6 +24,8 @@ Developer: Bilan Mykhailo
         1. [Languages](#languages)
         2. [Libraries, frameworks and dependencies](#libraries-frameworks-and-dependencies)
         3. [Tools & Programs](#tools--programs)
+   6. [Front-End](#front-end)
+      1. [React](#react)
 
 
 ## About
@@ -391,3 +393,16 @@ Paint Picture app handles data with full CRUD Functionality:
   - [ESLint](https://eslint.org/) used to validate JSX code
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) used to validate performance, accessibility, best practice and SEO of the app
   - [Wave](https://wave.webaim.org/) - used to evaluate application accessibility
+
+## Front-End
+
+### React
+
+The library for web and native user interfaces ([source](https://react.dev/)).
+
+I used React for this application for several reasons:
+- Speed - applying React significantly increases the page loading speed and reducing the wait, which affects user experience and satisfaction
+- Flexibility - the React code is easier to maintain and is flexible due to its modular structure, compared to other front-end frameworks
+- React Bootstrap - excellent choice for improving user experience, used for styling and responsiveness. It comes with ready-to-use React built components. They are implemented with accessibility in mind, which is a vital factor when creating a front-end application. I used plain Bootstrap in my previous projects, so it was an easy choice to use React Bootstrap in this app.
+- Most used library for developing social networking and media content applications 
+- Reusability of components - no need to write various codes for the same features

@@ -22,6 +22,7 @@ const Wallitem = (props) => {
     id,
     setProfileWallItems,
     current_profile,
+    
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
@@ -65,6 +66,7 @@ const Wallitem = (props) => {
               setProfileWallItems={setProfileWallItems}
               setShowEditForm={setShowEditForm}
               current_profile={current_profile}
+              
               
             />
           ) : (

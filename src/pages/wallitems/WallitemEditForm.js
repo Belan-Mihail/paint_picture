@@ -20,7 +20,7 @@ const WallitemEditForm = (props) => {
   const history = useHistory();
 
   const handleSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     const formData = new FormData();
 
     formData.append("message", messageData);
@@ -30,6 +30,7 @@ const WallitemEditForm = (props) => {
     try {
       await axiosReq.put(`/wallitems/${id}/`, formData);
         history.push(`/profiles/${profile_id}/`);
+        
         setShowEditForm(false);
     } catch (err) {
 
