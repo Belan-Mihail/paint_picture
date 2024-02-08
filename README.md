@@ -589,7 +589,7 @@ ____
 
 `Home page`
 - The page includes many components (for example: NavBar, SwitchMode, PictureFilteringMode, PicturesPage, PopularProfiles) and is located at the application's source address
-- Сontains a field for searching images by author or title (**User stories covered: 31, 28**)
+- Сontains a field for searching pictures by author or title (**User stories covered: 32**)
 - Contains the output of all site posts with the infinity scroll function (**User stories covered: 27, 44, 45**)
 - Contains the output of popular profiles. (**User stories covered: 15**)
 - The page is responsive and displays well in various screen extensions (**User stories covered: 46**)
@@ -606,7 +606,7 @@ ____
 - This page consists of sign up form for user to create new account.
 - Contains a welcome image and a form with username, password, and password confirmation fields. The form has field validation
 - This page is not available to authorized users. a redirect is used for this
-(**User stories covered: 1, 42, 43**)
+(**User stories covered: 1, 18, 42, 43**)
 <details><summary>Sign Up</summary>
 <img src="docs/features/signup.jpg">
 </details>
@@ -617,7 +617,33 @@ ____
 - This page consists of sign inform for user to log in.
 - Contains a welcome image and a form with username and password fields. The form has field validation
 - This page is not available to authorized users. a redirect is used for this
-(**User stories covered: 1, 42, 43**)
-<details><summary>Sign Up</summary>
+(**User stories covered: 1, 18, 42, 43**)
+<details><summary>Sign In</summary>
 <img src="docs/features/signin.jpg">
+</details>
+
+
+____
+`Add/Edit Picture Page`
+
+- This page consists of form for add/edit picture and be able only for logged user.
+- Contains a form with title, description, category and image fields. 
+- On the editing page, previously entered information is initially available in the corresponding fields
+(***User stories covered: 16, 17, 21**)
+<details><summary>Add/Edit Picture Page</summary>
+<img src="docs/features/add-picture-page.jpg">
+<img src="docs/features/edit-picture-page.jpg">
+</details>
+
+
+_____
+
+`Picture Detail Page`
+- This page picture detail.
+- A component is available for the authors of the image to delete or edit the image.
+- Under the picture there is a form for adding comments and a list of existing comments is displayed.
+- There are also popular profiles on the page
+(**User stories covered: 15, 19, 20, 22, 23, 24, 25, 26**)
+<details><summary>Picture Detail Page</summary>
+<img src="docs/features/picture-detail.jpg">
 </details>
