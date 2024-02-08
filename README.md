@@ -560,3 +560,21 @@ ____
 <details><summary>PictureOrderingFilter</summary>
 <img src="docs/features/pictureorderingfilter.jpg">
 </details>
+
+
+____
+`NotFound` 
+- it used for displaying a 404 graphic error message with a return to menu button when user enters the url which does not exist.
+  (**User stories covered: 5**)
+<details><summary>NotFound</summary>
+<img src="docs/features/notfound.jpg">
+</details>
+
+
+____
+`ToTop`
+- it allow user rise to the top of the page after, which increases the level of usability of the site. this component is displayed on pages where the user can “go down a lot” for example: Pictures Page, Profile Page (**User stories covered: 5**)
+<details><summary>ToTop</summary>
+<img src="docs/features/totop.jpg">
+<img src="docs/features/totop2.jpg">
+</details>
