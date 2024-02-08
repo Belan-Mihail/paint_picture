@@ -558,6 +558,7 @@ ____
 
 ____
 `PictureOrderingFilter`
+- appears on Home Page.
 - component is used to set the order of display of pictures depending on the number of likes (up and down) and also depending on the number of comments (up and down)
 (**User stories covered: 29, 30**)
 <details><summary>PictureOrderingFilter</summary>
