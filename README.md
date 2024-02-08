@@ -27,6 +27,7 @@ Developer: Bilan Mykhailo
    6. [Front-End](#front-end)
       1. [React](#react)
          1. [Front-End Components](#front-end-components)
+         2. [Front-End Pages](#front-end-pages)
 
 
 ## About
@@ -427,3 +428,16 @@ I used React for this application for several reasons:
 - `<PictureOrderingFilter />` reusable component which will allow user to set the order of display of pictures depending on the number of likes (high and low) and also depending on the number of comments (high and low) (**User stories covered: 29, 30**)
 
 - `<ToTop />` reusable component which will allow user rise to the top of the page after, which increases the level of usability of the site. this component is displayed on pages where the user can “go down a lot” for example: Pictures Page, Profile Page  (**User stories covered: 5**)
+
+#### Front-End Pages
+___
+- SignInForm.js - This file handles the Log in form (**User stories covered: 4, 42**)
+- SignUpForm.js - This file handles the Sign up form (**User stories covered: 1, 4, 43**)
+___
+- Picture.js - This file is designed to display the picture as a section. It contains the functions of like or dislike and picture editing.(**User stories covered: 17, 20, 23, 24, 26**)
+- PictureCreateForm.js - This file handles the create picture form (**User stories covered: 16**)
+- PictureEditForm.js - This file handles the edit picture form (**User stories covered: 17, 18, 28**)
+- PicturePage.js -This file is intended for detail of one picture (**User stories covered: 19, 21, 22, 25**)
+- PicturesPage.js -This file returns the list of pictures (**User stories covered: 27, 44, 45**)
+___
+
