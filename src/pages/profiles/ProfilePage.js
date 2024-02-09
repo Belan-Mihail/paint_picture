@@ -81,6 +81,9 @@ function ProfilePage() {
     AOS.refresh();
   }, [id, setProfileData]);
 
+  /* 
+    Displays the profile 
+  */
   const mainProfile = (
     <>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
@@ -114,6 +117,7 @@ function ProfilePage() {
               <Col className={styles.Content}>{profile.content}</Col>
             )}
             <Col className={styles.ProfileButton}>
+              {/* display follow/unfollow button only for not profile owner */}
               {currentUser &&
                 !is_owner &&
                 (profile?.following_id ? (
@@ -138,6 +142,9 @@ function ProfilePage() {
     </>
   );
 
+  /* 
+    Displays current profile pictures if its exsist 
+  */
   const mainProfilePosts = (
     <>
       <hr />
@@ -166,6 +173,9 @@ function ProfilePage() {
     </>
   );
 
+  /* 
+    Displays current profile plans if its exsist 
+  */
   const mainProfilePlans = (
     <>
       <hr />
@@ -190,6 +200,9 @@ function ProfilePage() {
     </>
   );
 
+  /* 
+    Displays current profile wallitems if its exsist 
+  */
   const mainProfileWall = (
     <>
       <hr />
@@ -237,12 +250,14 @@ function ProfilePage() {
         data-aos="fade-right"
         data-aos-duration="1000"
       >
+        {/* PopularProfiles for mobile */}
         <PopularProfiles mobile />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
               {mainProfile}
               {mainProfilePlans}
+              {/* display owners profile posts or wall */}
               {!showWall ? (
                 <>
                   <Row>
@@ -284,6 +299,7 @@ function ProfilePage() {
         data-aos="fade-left"
         data-aos-duration="1000"
       >
+        {/* PopularProfiles for desktop */}
         <PopularProfiles />
       </Col>
       <ToTop />

@@ -55,9 +55,11 @@ function PicturePage() {
         data-aos="fade-right"
         data-aos-duration="1000"
       >
+        {/* PopularProfiles for mobile screen */}
         <PopularProfiles mobile />
         <Picture {...picture.results[0]} setPictures={setPicture} PicturePage />
         <Container className={appStyles.Content}>
+          {/* display comments form for log in users*/}
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -69,6 +71,7 @@ function PicturePage() {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
+          {/* if comments exsist - display comments */}
           {comments.results.length ? (
             <InfiniteScroll
               children={comments.results.map((comment) => (
@@ -97,6 +100,7 @@ function PicturePage() {
         data-aos="fade-left"
         data-aos-duration="1000"
       >
+        {/* PopularProfiles for desktop */}
         <PopularProfiles />
       </Col>
       <ToTop />
