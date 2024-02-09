@@ -1405,7 +1405,54 @@ refill in the required fields and click save | the updated comment will appear o
 <img src="docs/testing/manual-testing/user-story-40.jpg">
 <img src="docs/testing/manual-testing/user-story-40-1.jpg">
 <img src="docs/testing/manual-testing/user-story-40-2.jpg">
+<img src="docs/testing/manual-testing/user-story-40-3.jpg">
 </details>
 
 
 _____
+41. As User I can delete Comments so that I can delete my opinion about other users' pictures-post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, select the picture you are interested in and click on the link image | you will be taken to the picture page | Works as expected |
+scroll down | under the picture  existing comments will also be displayed | Works as expected |
+select the comment you are interested in and by clicking threedots select delete tab | your comment will be deleted | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-41.jpg">
+<img src="docs/testing/manual-testing/user-story-41-1.jpg">
+<img src="docs/testing/manual-testing/user-story-41-2.jpg">
+</details>
+
+
+____
+
+42. As a site owner I can provide full access to logged in user so that they can interact with the pages more independently
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+open the home page as an unauthorized user | The navigation menu for an unauthorized user does not contain tabs for adding pictures or plans | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-42.jpg">
+</details>
+
+____
+
+43. As a site owner I can restrict the interaction with website so that an unauthorised user cannot make changes in the app
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, as an unauthorized user select the picture you are interested in and click on the link image  | you will be taken to the picture page | Works as expected |
+scroll down till the end of page | the form for adding comments will not be on the picture page | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-43.jpg">
+<img src="docs/testing/manual-testing/user-story-43.jpg">
+</details>
+
+____
