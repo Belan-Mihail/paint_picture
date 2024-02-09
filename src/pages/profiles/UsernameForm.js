@@ -28,7 +28,9 @@ const UsernameForm = () => {
 
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-
+  /* 
+    initial AOS animation and check current user profile id
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -39,6 +41,9 @@ const UsernameForm = () => {
     }
   }, [currentUser, history, id]);
 
+  /* 
+    used to send user data and user username 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -58,7 +63,12 @@ const UsernameForm = () => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-4" md={6} data-aos="flip-down" data-aos-duration="1000">
+      <Col
+        className="py-2 mx-auto text-center mt-4"
+        md={6}
+        data-aos="flip-down"
+        data-aos-duration="1000"
+      >
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>

@@ -30,6 +30,9 @@ const SignUpForm = () => {
 
   const history = useHistory();
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -37,6 +40,9 @@ const SignUpForm = () => {
     });
   }
 
+  /* 
+    used to create new user in database
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -47,6 +53,9 @@ const SignUpForm = () => {
     }
   };
 
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

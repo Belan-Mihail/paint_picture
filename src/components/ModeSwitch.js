@@ -23,6 +23,9 @@ function ModeSwitch() {
     setSelected(event.target.value);
   };
 
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     setThemesMode(selected);
     AOS.init();

@@ -46,6 +46,10 @@ function ProfilePage() {
   const [showWall, setShowWall] = useState(false);
   const profile_image = currentUser?.profile_image;
 
+  /* 
+    initial AOS animation and get profiles, pictures, plans and wallitems 
+    data based on current profile id
+  */
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -68,7 +72,6 @@ function ProfilePage() {
         setProfilePlans(profilePlans);
         setProfileWallItems(profileWallItems);
         setHasLoaded(true);
-        
       } catch (err) {
         // console.log(err);
       }
@@ -82,7 +85,11 @@ function ProfilePage() {
     <>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="justify-content-center">
-        <Col className={styles.Card} data-aos="zoom-in" data-aos-duration="1000">
+        <Col
+          className={styles.Card}
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
           <Col className={styles.Front}>
             <Image className={styles.ProfileImage} src={profile?.image} />
             <h3>{profile?.owner}</h3>
@@ -190,22 +197,22 @@ function ProfilePage() {
       <hr />
       {currentUser ? (
         <WallitemCreateForm
-          current_profile = {id}
+          current_profile={id}
           profile_id={currentUser.profile_id}
           profileImage={profile_image}
           setProfileWallItems={setProfileWallItems}
-          
         />
       ) : profileWallItems.results.length ? (
         "Messages"
       ) : null}
       {profileWallItems.results.length ? (
-        <InfiniteScroll className="overflow-hidden"
+        <InfiniteScroll
+          className="overflow-hidden"
           children={profileWallItems.results.map((wallitem) => (
             <Wallitem
               key={wallitem.id}
               {...wallitem}
-              current_profile = {id}
+              current_profile={id}
               setProfileWallItems={setProfileWallItems}
             />
           ))}
@@ -224,7 +231,12 @@ function ProfilePage() {
 
   return (
     <Row>
-      <Col className="py-2 p-0 p-lg-2" lg={8} data-aos="fade-right" data-aos-duration="1000">
+      <Col
+        className="py-2 p-0 p-lg-2"
+        lg={8}
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
         <PopularProfiles mobile />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
@@ -266,7 +278,12 @@ function ProfilePage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
+      <Col
+        lg={4}
+        className="d-none d-lg-block p-0 p-lg-2"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
         <PopularProfiles />
       </Col>
       <ToTop />

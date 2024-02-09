@@ -30,6 +30,9 @@ const UserPasswordForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setUserData({
       ...userData,
@@ -37,6 +40,9 @@ const UserPasswordForm = () => {
     });
   };
 
+  /* 
+    initial AOS animation and chec current user profile id
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -45,6 +51,9 @@ const UserPasswordForm = () => {
     }
   }, [currentUser, history, id]);
 
+   /* 
+    used to send user data and update user password 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

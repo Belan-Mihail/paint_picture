@@ -38,6 +38,9 @@ const NavBar = () => {
     }
   };
 
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

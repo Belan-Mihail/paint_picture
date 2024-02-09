@@ -16,11 +16,16 @@ function WallitemCreateForm(props) {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setMessage(event.target.value);
   };
 
-
+  /* 
+    used to send user data and create new wallitem
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -29,17 +34,19 @@ function WallitemCreateForm(props) {
     formData.append("profile", current_profile);
 
     try {
-      const {data} = await axiosReq.post("/wallitems/", formData);
+      const { data } = await axiosReq.post("/wallitems/", formData);
       setProfileWallItems((profileWallItems) => ({
         ...profileWallItems,
         results: [data, ...profileWallItems.results],
       }));
-      setMessage('');
+      setMessage("");
     } catch (err) {
       setErrors(err.response?.data);
     }
   };
-
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

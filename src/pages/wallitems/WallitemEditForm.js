@@ -11,10 +11,16 @@ const WallitemEditForm = (props) => {
 
   const [messageData, setMessageData] = useState(message);
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setMessageData(event.target.value);
   };
 
+   /* 
+    used to send user data and update wallitem based on its id 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

@@ -27,6 +27,9 @@ const Plan = (props) => {
     history.push(`/plans/${id}/edit`);
   };
 
+  /*
+    Handles deleting of the plan based on its id
+  */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/plans/${id}/`);

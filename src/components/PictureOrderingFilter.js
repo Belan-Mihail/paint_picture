@@ -26,6 +26,9 @@ function PictureOrderingFilter() {
     setSelected(event.target.value);
   };
 
+  /* 
+    initial AOS animation and handle changes setPictureOrderingFilterCont, selected
+  */
   useEffect(() => {
     setPictureOrderingFilterCont(selected);
     AOS.init();

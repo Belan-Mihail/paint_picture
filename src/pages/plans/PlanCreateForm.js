@@ -13,11 +13,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRedirect } from "../../hooks/useRedirect";
 
-
 const PlanCreateForm = (props) => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-  const { profile_id } = props
+  const { profile_id } = props;
 
   const [planData, setPlanData] = useState({
     plans_title: "",
@@ -30,6 +29,9 @@ const PlanCreateForm = (props) => {
 
   const history = useHistory();
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setPlanData({
       ...planData,
@@ -37,6 +39,9 @@ const PlanCreateForm = (props) => {
     });
   };
 
+  /* 
+    used to send user data and create new plan 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -48,7 +53,7 @@ const PlanCreateForm = (props) => {
 
     try {
       await axiosReq.post("/plans/", formData);
-        history.push(`/profiles/${profile_id}/`);
+      history.push(`/profiles/${profile_id}/`);
     } catch (err) {
       // console.log(err);
       if (err.response?.status !== 401) {
@@ -56,7 +61,9 @@ const PlanCreateForm = (props) => {
       }
     }
   };
-
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -64,7 +71,12 @@ const PlanCreateForm = (props) => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-4" md={6} data-aos="flip-down" data-aos-duration="1000">
+      <Col
+        className="py-2 mx-auto text-center mt-4"
+        md={6}
+        data-aos="flip-down"
+        data-aos-duration="1000"
+      >
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>

@@ -32,6 +32,9 @@ const PictureEditForm = () => {
   const history = useHistory();
   const { id } = useParams();
 
+  /* 
+    initial AOS animation and get picture data based on its id 
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -50,6 +53,9 @@ const PictureEditForm = () => {
     AOS.refresh();
   }, [history, id]);
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -57,6 +63,9 @@ const PictureEditForm = () => {
     });
   };
 
+  /* 
+    handles changes image
+  */
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -67,6 +76,9 @@ const PictureEditForm = () => {
     }
   };
 
+  /* 
+    used to send user data and update picture based on its id 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();

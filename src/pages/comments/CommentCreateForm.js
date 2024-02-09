@@ -15,10 +15,16 @@ function CommentCreateForm(props) {
   const [content, setContent] = useState("");
   const [errors, setErrors] = useState({});
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  /* 
+    used to send user data and create new comment 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

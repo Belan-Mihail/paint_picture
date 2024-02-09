@@ -32,6 +32,9 @@ const PictureCreateForm = () => {
   const imageInput = useRef(null);
   const history = useHistory();
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -39,6 +42,9 @@ const PictureCreateForm = () => {
     });
   };
 
+  /* 
+    handles changes image
+  */
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -49,6 +55,9 @@ const PictureCreateForm = () => {
     }
   };
 
+  /* 
+    used to send user data and create new picture 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -69,6 +78,9 @@ const PictureCreateForm = () => {
     }
   };
 
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

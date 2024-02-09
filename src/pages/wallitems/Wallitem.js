@@ -28,6 +28,9 @@ const Wallitem = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  /*
+    Handles deleting of the wallitem based on its id
+  */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/wallitems/${id}/`);
@@ -36,7 +39,9 @@ const Wallitem = (props) => {
       // console.log(err);
     }
   };
-
+/* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

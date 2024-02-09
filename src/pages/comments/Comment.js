@@ -25,6 +25,10 @@ const Comment = (props) => {
 
   const [showEditForm, setShowEditForm] = useState(false);
 
+  /*
+    Handles deleting of the comment based on its id
+    Decrements the number of current comments by 1
+  */
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);

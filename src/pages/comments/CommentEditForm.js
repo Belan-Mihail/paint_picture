@@ -11,10 +11,16 @@ function CommentEditForm(props) {
   const [formContent, setFormContent] = useState(content);
   const [errors, setErrors] = useState({});
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setFormContent(event.target.value);
   };
 
+  /* 
+    used to send user data and update comment based on its id 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {

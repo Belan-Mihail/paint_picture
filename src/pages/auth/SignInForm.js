@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Row  from "react-bootstrap/Row";
+import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -32,6 +32,9 @@ const SignInForm = () => {
 
   const history = useHistory();
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
@@ -39,18 +42,23 @@ const SignInForm = () => {
     });
   };
 
+  /* 
+    used to authorize the user on the site
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      setTokenTimestamp(data)
+      setTokenTimestamp(data);
       history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
   };
-
+  /* 
+    initial AOS animation 
+  */
   useEffect(() => {
     AOS.init();
     AOS.refresh();

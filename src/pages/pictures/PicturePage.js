@@ -17,7 +17,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ToTop from "../../components/ToTop";
 
-
 function PicturePage() {
   const { id } = useParams();
   const [picture, setPicture] = useState({ results: [] });
@@ -26,6 +25,9 @@ function PicturePage() {
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
 
+  /* 
+    initial AOS animation and get pictures and comments data from DB based on picture id
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -47,8 +49,13 @@ function PicturePage() {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8} data-aos="fade-right" data-aos-duration="1000">
-      <PopularProfiles mobile />
+      <Col
+        className="py-2 p-0 p-lg-2"
+        lg={8}
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+        <PopularProfiles mobile />
         <Picture {...picture.results[0]} setPictures={setPicture} PicturePage />
         <Container className={appStyles.Content}>
           {currentUser ? (
@@ -64,19 +71,18 @@ function PicturePage() {
           ) : null}
           {comments.results.length ? (
             <InfiniteScroll
-            children={comments.results.map((comment) => (
-              <Comment
-                key={comment.id}
-                {...comment}
-                setPost={setPicture}
-                setComments={setComments}
-              />
-            ))}
-            dataLength={comments.results.length}
-            loader={<Asset spinner />}
-            hasMore={!!comments.next}
-            next={() => fetchMoreData(comments, setComments)}
-
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setPost={setPicture}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
             />
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
@@ -85,13 +91,16 @@ function PicturePage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2" data-aos="fade-left" data-aos-duration="1000">
-      <PopularProfiles />
+      <Col
+        lg={4}
+        className="d-none d-lg-block p-0 p-lg-2"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      >
+        <PopularProfiles />
       </Col>
       <ToTop />
     </Row>
-    
-    
   );
 }
 

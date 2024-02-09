@@ -37,6 +37,9 @@ const ProfileEditForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  /* 
+    initial AOS animation and get profiles data based on its id
+  */
   useEffect(() => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
@@ -58,6 +61,9 @@ const ProfileEditForm = () => {
     AOS.refresh();
   }, [currentUser, history, id]);
 
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -65,6 +71,9 @@ const ProfileEditForm = () => {
     });
   };
 
+   /* 
+    used to send user data and update profiles data based on its id 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();

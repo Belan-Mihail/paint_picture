@@ -29,6 +29,10 @@ function PicturesPage({ message, filter = "" }) {
     useContext(PictureOrderingFilterContext);
   const currentUser = useCurrentUser();
 
+  /* 
+    initial AOS animation and get list of pictures based on filter and query property and ordering 
+    by PictureOrderingFilterCont if it exsist
+  */
   useEffect(() => {
     const fetchPictures = async () => {
       try {

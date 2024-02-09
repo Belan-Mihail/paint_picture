@@ -14,8 +14,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const PlanEditForm = (props) => {
-    const [errors, setErrors] = useState({});
-  const { profile_id } = props
+  const [errors, setErrors] = useState({});
+  const { profile_id } = props;
 
   const [planData, setPlanData] = useState({
     plans_title: "",
@@ -29,15 +29,18 @@ const PlanEditForm = (props) => {
   const history = useHistory();
   const { id } = useParams();
 
+  /* 
+    initial AOS animation and get plan data based on its id
+  */
   useEffect(() => {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/plans/${id}/`);
-        const { plans_title, plans_description, plans_date, owner, until } = data;
-        owner 
-        ? setPlanData({ plans_title, plans_description, plans_date, until })
-        : history.push(`/`)
-        
+        const { plans_title, plans_description, plans_date, owner, until } =
+          data;
+        owner
+          ? setPlanData({ plans_title, plans_description, plans_date, until })
+          : history.push(`/`);
       } catch (err) {
         // console.log(err);
       }
@@ -48,8 +51,9 @@ const PlanEditForm = (props) => {
     AOS.refresh();
   }, [history, id]);
 
-  
-
+  /* 
+    handles changes to form fields
+  */
   const handleChange = (event) => {
     setPlanData({
       ...planData,
@@ -57,6 +61,9 @@ const PlanEditForm = (props) => {
     });
   };
 
+   /* 
+    used to send user data and update plan based on its id 
+  */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -68,7 +75,7 @@ const PlanEditForm = (props) => {
 
     try {
       await axiosReq.put(`/plans/${id}/`, formData);
-        history.push(`/profiles/${profile_id}/`);
+      history.push(`/profiles/${profile_id}/`);
     } catch (err) {
       // console.log(err);
       if (err.response?.status !== 401) {
@@ -79,7 +86,12 @@ const PlanEditForm = (props) => {
 
   return (
     <Row>
-      <Col className="py-2 mx-auto text-center mt-4" md={6} data-aos="flip-down" data-aos-duration="1000">
+      <Col
+        className="py-2 mx-auto text-center mt-4"
+        md={6}
+        data-aos="flip-down"
+        data-aos-duration="1000"
+      >
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
@@ -158,7 +170,7 @@ const PlanEditForm = (props) => {
         </Container>
       </Col>
     </Row>
-  )
-}
+  );
+};
 
-export default PlanEditForm
+export default PlanEditForm;
