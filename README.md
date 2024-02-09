@@ -1178,3 +1178,29 @@ Once on the main page, scroll down to view various pictures | Each picture has i
 
 
 _____
+
+27. As User I can see all post-pictures on the home page so that I can immediately familiarize myself with the main content of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+Go to home page | All posts are available for viewing after fetching data from the server | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-27.jpg">
+</details>
+
+
+______
+
+28. As User I can filter picture-posts by category so that I can view picture-posts of the category I'm interested in
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any page, click on the Categories button located in the navigation menu and select the category you are interested in | You will be redirected to the main page of the site and all posts of the corresponding category will be available for viewing after fetching data from the server | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-28.jpg">
+<img src="docs/testing/manual-testing/user-story-28-1.jpg">
+</details>
