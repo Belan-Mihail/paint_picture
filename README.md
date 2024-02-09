@@ -43,6 +43,10 @@ Developer: Bilan Mykhailo
       1. [Deployment on Heroku](#deployment-on-heroku)
       2. [Cloning the repository](#cloning-the-repository)
       3. [Forking the GitHub Repository](#forking-the-github-repository)
+   12. [Credits](#credits)
+      1. [Images](#images)
+      2. [Code](#code)
+   13. [Acknowledgements](#acknowledgements)
 
 
 ## About
@@ -1541,6 +1545,7 @@ The website was tested on the following browsers:
 | The menu for filtering pictures by the number of likes and comments was initially displayed on all pages of the site, even where it was not intended thematically | the corresponding component has been changed, and the output location of such a component has also been changed |
 | The menu for filtering pictures by the number of likes and comments was initially displayed on all pages of the site, even where it was not intended thematically | the corresponding component has been changed, and the output location of such a component has also been changed |
 | The greeting that appeared when you hovered over the image of an avatar located in the navigation menu violated the structure of the navigation menu by moving the avatar below the level of other links | the hover function was changed which did not display a greeting if its value was null, and the corresponding value was passed to the avatar component that was rendered in the navigation menu |
+| during file validation, an empty file was found that did not contain more than one style, imported and used in a separate component | the corresponding style was added for the component element referencing this style module |
 
 
 ## Deployment, Cloning, Forking
@@ -1573,3 +1578,53 @@ steps created using description on [GitHub Docs](https://docs.github.com/en/repo
 1. Go to the GitHub repository
 2. Click on Fork button
 
+## Credits
+
+### Images
+
+- All images (except those indicated in paragraph 2) used on the site were created by me using the [Paint](https://getpaint.net/)
+- Pictures from user Alisa belong to my 7 year old daughter Alisa Bilan and were authorized by the author for use in the project. these pictures are also created using [Paint](https://getpaint.net/)
+
+
+### Code
+
+This project was inspired by the ['Moments'](https://github.com/Code-Institute-Solutions/moments) social media platform which was a final walk-through project with Code Institute. I have built my own styles and added extra functionality:
+- filtering of picture based on their category; 
+- ordering picture based of number of likes and comments;
+- added animation
+- many site elements have been modified (for example, profile card)
+- the models provided in the project were changed and new ones not used in the project were created
+- additional hover effects have been created for buttons and components
+- new components were created including contextual components
+- added color scheme change
+- added display of a welcome modal window with information about the site
+
+***But at the same time, I recognize more the influence of the educational project and the importance of this project***
+
+The ideas below were taken as the basis for some components, elements or effects of the site:
+
+[useHover hook](https://clouddevs.com/react/usehover-hook/) - the idea was used to create a hover effect on the avatar component to display a users greeting.
+
+[color schemes](https://medium.com/lets-make-something-up/creating-light-dark-mode-on-a-react-app-with-context-589a5465f639) - the idea was used to create functionality for changing the color scheme of the site
+
+
+[select-onchange](https://bobbyhadz.com/blog/react-select-onchange) - the idea was used to create functionality for changing the color scheme of the site and creating functionality for changing the display ordering of pictures
+
+[aos](https://aguidehub.com/blog/2023-04-05-how-to-install-and-use-aos-in-react-js/) - the material was studied to add AOS animation to the project
+
+[button shine](https://dev.to/designyff/button-with-shine-animation-step-by-step-guide-15l5) - the idea was used to create a beautiful hover effect for the follow unfollow buttons
+
+[popup](https://stackoverflow.com/questions/48882300/create-a-first-visit-popup-in-react-application) - The functionality of the welcome user window is based on this material
+
+[flip card](https://stackoverflow.com/questions/41461101/flip-a-3d-card-with-css) - the idea was used to create a flip profile card
+
+## Acknowledgements
+
+I would like to express my sincere gratitude:
+
+  - My mentor Mo Shami for his advice and support.
+  - Tutor support team for help in solving technical problems and advice.
+  - All the other institute employees and especially the student support team who helped throughout the journey 
+  - My daughter Alisa and my wife Snizhana for always giving me inspiration and strength to go forward. I especially thank Alisa for the wonderful pictures that I was allowed to use in this project.
+  - The government of the city of Hamburg and the employees of the job center Mitti for my opportunity to study at these courses.
+  - To all people who are in solidarity and support Ukraine
