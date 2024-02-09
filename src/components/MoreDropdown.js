@@ -14,7 +14,11 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const MoreDropdown = ({handleEdit, handleDelete}) => {
+/*
+  Dropdown menu for  owners to choose to edit or delete a picture, plan, wallitem or comment
+  Calls the handleEdit & handleDelete functions based on destructured props
+*/
+export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={ThreeDots} />
@@ -42,6 +46,10 @@ export const MoreDropdown = ({handleEdit, handleDelete}) => {
   );
 };
 
+/*
+  Dropdown menu on the profile page
+  displaying icons for edit profile, change username or password
+*/
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (

@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+/*
+  component used to show greeting modal greeting
+  the variable visited is used to display the component 
+  only on the first visit to the site 
+*/
 function GreetingModal() {
   const [viewPopup, setViewPopup] = useState(null);
   let visited = localStorage["alreadyVisited"];

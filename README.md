@@ -1546,6 +1546,7 @@ The website was tested on the following browsers:
 | The menu for filtering pictures by the number of likes and comments was initially displayed on all pages of the site, even where it was not intended thematically | the corresponding component has been changed, and the output location of such a component has also been changed |
 | The greeting that appeared when you hovered over the image of an avatar located in the navigation menu violated the structure of the navigation menu by moving the avatar below the level of other links | the hover function was changed which did not display a greeting if its value was null, and the corresponding value was passed to the avatar component that was rendered in the navigation menu |
 | during file validation, an empty file was found that did not contain more than one style, imported and used in a separate component | the corresponding style was added for the component element referencing this style module |
+| there were no auxiliary comments in the project files, which would impair understanding of the code | auxiliary comments were added to various elements and components |
 
 
 ## Deployment, Cloning, Forking

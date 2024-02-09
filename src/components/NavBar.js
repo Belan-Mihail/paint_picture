@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -16,12 +16,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { removeTokenTimestamp } from "../utils/utils";
 
+/*
+    Navbar components. Use on every site pages
+  */
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  /*
+    Handles current user logout
+  */
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
@@ -37,13 +43,15 @@ const NavBar = () => {
     AOS.refresh();
   }, []);
 
+  /*
+    Links to add picture or plan only for log in users
+  */
   const addPictureOrPlan = (
     <>
       <NavDropdown
         title="Add"
         id="basic-nav-dropdown"
         className={styles.NavLink}
-        
       >
         <NavDropdown.Item>
           <NavLink
@@ -70,9 +78,15 @@ const NavBar = () => {
     </>
   );
 
+  /*
+    Select category. 
+  */
   const selectCategory = (
     <Dropdown>
-      <Dropdown.Toggle className={btnStyles.WallCategoryButton} id="dropdown-basic">
+      <Dropdown.Toggle
+        className={btnStyles.WallCategoryButton}
+        id="dropdown-basic"
+      >
         Categories
       </Dropdown.Toggle>
 
@@ -85,8 +99,11 @@ const NavBar = () => {
         <Dropdown.Item href="/">all</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
-  )
+  );
 
+  /*
+    Navbar links for log in users
+  */
   const loggedInIcons = (
     <>
       <NavLink
@@ -119,6 +136,10 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
+  /*
+    Navbar links for log out users
+  */
   const loggedOutIcons = (
     <>
       <NavLink
@@ -141,11 +162,7 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar
-      expanded={expanded}
-      expand="md"
-      className={styles.NavBar}
-    >
+    <Navbar expanded={expanded} expand="md" className={styles.NavBar}>
       <Container>
         <NavLink
           to="/"
