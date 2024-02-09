@@ -1456,3 +1456,42 @@ scroll down till the end of page | the form for adding comments will not be on t
 </details>
 
 ____
+44. As a site owner I can when loading for the first time, display only the last 10 picture-posts so that I can avoid overloading the server and speed up the loading of the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+open the home page | Initially, no more than 10 images are loaded on the home page | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-44.jpg">
+</details>
+
+____
+
+45. As a site owner I can use infinite scroll so that I can achieve display of new picture-posts after the user views previously loaded picture-posts
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+open the home page and scroll down the scroll bar as quickly as possible | additional data fetching will be performed on the 10th picture and additional pictures will appear on the main page | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-45.jpg">
+</details>
+
+_____
+46. As a site owner, I would want the site to be fully responsive so that users can use it across multiple devices and create a good user experience.
+
+while on the site, resize the window | the site will adaptively change in proportion to the screen size | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-46.jpg">
+<img src="docs/testing/manual-testing/user-story-46-1.jpg">
+<img src="docs/testing/manual-testing/user-story-46-2.jpg">
+</details>
