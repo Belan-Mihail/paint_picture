@@ -1,5 +1,4 @@
-
-import styles from '../../styles/CommentCreateEditForm.module.css'
+import styles from "../../styles/CommentCreateEditForm.module.css";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -7,13 +6,14 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import btnStyles from "../../styles/Button.module.css";
-
+import Alert from "react-bootstrap/Alert";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {
   const { picture, setPicture, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     setContent(event.target.value);
@@ -40,7 +40,7 @@ function CommentCreateForm(props) {
       }));
       setContent("");
     } catch (err) {
-      // console.log(err);
+      setErrors(err.response?.data);
     }
   };
 
@@ -61,9 +61,13 @@ function CommentCreateForm(props) {
           />
         </InputGroup>
       </Form.Group>
+      {errors.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <button
         className={`${btnStyles.Button} ${btnStyles.CommentButton} btn d-block ml-auto`}
-        
         type="submit"
       >
         add comment
@@ -73,4 +77,3 @@ function CommentCreateForm(props) {
 }
 
 export default CommentCreateForm;
-

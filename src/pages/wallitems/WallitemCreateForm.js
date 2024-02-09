@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
-
+import Alert from "react-bootstrap/Alert";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import btnStyles from "../../styles/Button.module.css";
@@ -14,6 +14,7 @@ function WallitemCreateForm(props) {
   const { profileImage, profile_id, setProfileWallItems, current_profile } =
     props;
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -35,7 +36,7 @@ function WallitemCreateForm(props) {
       }));
       setMessage('');
     } catch (err) {
-      // console.log(err);
+      setErrors(err.response?.data);
     }
   };
 
@@ -65,6 +66,11 @@ function WallitemCreateForm(props) {
           />
         </InputGroup>
       </Form.Group>
+      {errors.message?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <button
         className={`${btnStyles.Button} ${btnStyles.CommentButton} btn d-block ml-auto`}
         type="submit"
