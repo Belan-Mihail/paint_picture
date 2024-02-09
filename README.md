@@ -1204,3 +1204,32 @@ While on any page, click on the Categories button located in the navigation menu
 <img src="docs/testing/manual-testing/user-story-28.jpg">
 <img src="docs/testing/manual-testing/user-story-28-1.jpg">
 </details>
+
+
+___
+
+29. As User I can filter picture-posts by number of likes so that I can filter the most interesting posts for viewing
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Homepage, select the appropriate condition in the select menu located in the upper left above the search field | After fetching the data, the pictures will be ordered by the number of likes | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-29.jpg">
+<img src="docs/testing/manual-testing/user-story-29-1.jpg">
+</details>
+
+___
+
+30. As User I can filter picture-posts by number of comments so that I can see the most commented picture-posts
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Homepage, select the appropriate condition in the select menu located in the upper left above the search field | After fetching the data, the pictures will be ordered by the number of likes | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-30.jpg">
+<img src="docs/testing/manual-testing/user-story-30-1.jpg">
+</details>
