@@ -1323,3 +1323,35 @@ find your message by clicking on the three dots select the delete tab | your mes
 
 
 _____
+36. As User I can create Plans so that I can tell other users about my plans
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, click on the add link in the navigation menu and select the plans tab | You will be taken to a page containing a form to create a plan | Works as expected |
+fill in the required fields and click save | the saved plan will appear on the user profile page |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-36.jpg">
+<img src="docs/testing/manual-testing/user-story-36-1.jpg">
+<img src="docs/testing/manual-testing/user-story-36-2.jpg">
+
+</details>
+
+____
+
+37. As User I can edit Plans so that I can change my own plans
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Profile page, find  plan needs to edit nad by clicking on the three dots select the edit tab | You will be taken to a page containing a form to edit a plan | Works as expected |
+refill in the required fields and click save | the updated plan will appear on the user profile page |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-37.jpg">
+<img src="docs/testing/manual-testing/user-story-37-1.jpg">
+<img src="docs/testing/manual-testing/user-story-37-2.jpg">
+</details>
