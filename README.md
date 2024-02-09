@@ -39,6 +39,10 @@ Developer: Bilan Mykhailo
       3. [Device testing](#device-testing)
       4. [Browser comptibility](#browser-compatibility)
    10. [Bugs](#bugs)
+   11. [Deployment, Cloning, Forking](#deployment-cloning-forking)
+      1. [Deployment on Heroku](#deployment-on-heroku)
+      2. [Cloning the repository](#cloning-the-repository)
+      3. [Forking the GitHub Repository](#forking-the-github-repository)
 
 
 ## About
@@ -1539,4 +1543,33 @@ The website was tested on the following browsers:
 | The greeting that appeared when you hovered over the image of an avatar located in the navigation menu violated the structure of the navigation menu by moving the avatar below the level of other links | the hover function was changed which did not display a greeting if its value was null, and the corresponding value was passed to the avatar component that was rendered in the navigation menu |
 
 
+## Deployment, Cloning, Forking
+
+### Deployment on Heroku
+
+Before: Create Procfile (!important with capital P) with: web: serve -s build
+
+1. Go to [Heroku](https://heroku.com/). Login or create an account at Heroku
+2. Click "create new app" button
+3. Add an app name
+4. Select region
+5. Click "create app" button
+6. Open Deploy Tab and choose GITHUB deployment method 
+7. Choose repositories you want to connect and click "connect" button
+8. Then click "Deploy Branch" button
+
+### Cloning the repository
+1. On GitHub.com, navigate to the main page of the repository.
+2. click "Code" button.
+3. Select HTTPS, SSH, or Github CLI.
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY) 
+7. Press Enter to create your local clone. 
+
+steps created using description on [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button
 
