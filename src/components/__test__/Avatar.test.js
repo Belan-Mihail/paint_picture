@@ -16,7 +16,7 @@ describe("Avatar renders", () => {
     expect(renderAvatar).not.toBeNull();
   });
 
-  test("renders avatar component prop text if define ", () => {
+  test("renders avatar component prop text if define", () => {
     const renderComponent = () =>
       render(
         <Router>

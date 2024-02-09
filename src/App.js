@@ -18,7 +18,7 @@ import PlanEditForm from "./pages/plans/PlanEditForm.js";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm.js";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm.js";
 import { ThemesModeContext } from "./context/ThemesModeContext.js";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import ModeSwitch from "./components/ModeSwitch.js";
 import Row from "react-bootstrap/Row";
 import GreetingModal from "./components/GreetingModal.js";

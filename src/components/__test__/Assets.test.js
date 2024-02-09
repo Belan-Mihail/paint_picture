@@ -9,7 +9,7 @@ describe("Asset renders", () => {
     expect(renderAsset).not.toBeNull();
   });
 
-  test("renders Asset component prop message if define ", () => {
+  test("renders Asset component prop message if define", () => {
     const renderComponent = () =>
       render(
         <Router>
@@ -25,7 +25,7 @@ describe("Asset renders", () => {
     expect(renderAsset.container.querySelector(".Spinner")).toBeNull();
   });
 
-  test("renders Asset component prop src if it is define and alt if message prop is define ", () => {
+  test("renders Asset component prop src if it is define and alt if message prop is define", () => {
     const renderComponent = () =>
       render(
         <Router>
@@ -40,7 +40,7 @@ describe("Asset renders", () => {
     expect(assetImageAlt).toBeInTheDocument();
   });
 
-  test("renders Asset component prop spinner if true ", () => {
+  test("renders Asset component prop spinner if true", () => {
     const renderComponent = () =>
       render(
         <Router>
@@ -53,7 +53,7 @@ describe("Asset renders", () => {
     expect(renderAsset.container.querySelector(".Spinner")).toBeInTheDocument();
   });
 
-  test("renders Asset component prop spinner if false ", () => {
+  test("renders Asset component prop spinner if false", () => {
     const renderComponent = () =>
       render(
         <Router>
