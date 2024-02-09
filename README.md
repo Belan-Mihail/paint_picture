@@ -2,7 +2,7 @@
 
 Developer: Bilan Mykhailo
 
-![Mockup image]()
+![Mockup image](/docs/mock.jpg)
 
 [View live website](https://paint-picture-frontend-29a39ba64062.herokuapp.com/)
 
@@ -35,6 +35,9 @@ Developer: Bilan Mykhailo
       2. [Features Pages](#features-pages)
    9. [Testing](#testing)
       1. [Manual testing of user stories](#manual-testing-of-user-stories)
+      2. [Automated Testing](#automated-testing)
+      3. [Device testing](#device-testing)
+      4. [Browser comptibility](#browser-compatibility)
 
 
 ## About
@@ -1495,3 +1498,31 @@ while on the site, resize the window | the site will adaptively change in propor
 <img src="docs/testing/manual-testing/user-story-46-1.jpg">
 <img src="docs/testing/manual-testing/user-story-46-2.jpg">
 </details>
+
+### Automated testing
+
+- In addition to manual testing, partially automatic testing was also carried out. Automated testing was done using module: react testing library. A total of 17 automated tests were created.
+
+<details><summary>Autometed tests report</summary>
+<img src="docs/testing/automatic-testing/tests-report.jpg">
+</details>
+
+### Device testing
+
+The website was tested on the following devices:
+
+   - Iphone 7;
+   - Iphone 12 Pro;
+   - Samsung np355v5c-a02ru
+
+
+In addition, the website was tested using Google Chrome Developer Tools Device Toggeling option for all available device options.
+
+### Browser compatibility
+
+The website was tested on the following browsers:
+
+   - Google Chrome;
+   - Yandex Browser;
+   - Mozilla Firefox;
+
