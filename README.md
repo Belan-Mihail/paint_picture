@@ -1279,3 +1279,47 @@ enter your message in the text field and click the add messages button | a new m
 <img src="docs/testing/manual-testing/user-story-33-3.jpg">
 <img src="docs/testing/manual-testing/user-story-33-4.jpg">
 </details>
+
+____
+
+34. As User I can edit WallItem so that I can edit public messages on the wall
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, click on the avatar of the user you are interested in | you will be taken to the respective user's profile page | Works as expected |
+scroll down to the show wall button and click on it | the profile owner’s wall with all messages will be displayed on the screen | Works as expected |
+find your message by clicking on the three dots select the edit tab | an editing form will appear | Works as expected |
+enter a new message in the text field and click the add messages button | the updated message will appear on the profile owner's wall | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-34.jpg">
+<img src="docs/testing/manual-testing/user-story-34-1.jpg">
+<img src="docs/testing/manual-testing/user-story-34-2.jpg">
+<img src="docs/testing/manual-testing/user-story-34-3.jpg">
+<img src="docs/testing/manual-testing/user-story-34-4.jpg">
+<img src="docs/testing/manual-testing/user-story-34-5.jpg">
+</details>
+
+
+_____
+35. As User I can delete WallItem so that I can delete my own public messages on the wall
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, click on the avatar of the user you are interested in | you will be taken to the respective user's profile page | Works as expected |
+scroll down to the show wall button and click on it | the profile owner’s wall with all messages will be displayed on the screen | Works as expected |
+find your message by clicking on the three dots select the delete tab | your message will delete from profile owner's wall | Works as expected |
+
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-35.jpg">
+<img src="docs/testing/manual-testing/user-story-35-1.jpg">
+<img src="docs/testing/manual-testing/user-story-35-2.jpg">
+<img src="docs/testing/manual-testing/user-story-35-3.jpg">
+<img src="docs/testing/manual-testing/user-story-35-4.jpg">
+</details>
+
+
+_____
