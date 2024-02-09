@@ -1233,3 +1233,49 @@ While on Homepage, select the appropriate condition in the select menu located i
 <img src="docs/testing/manual-testing/user-story-30.jpg">
 <img src="docs/testing/manual-testing/user-story-30-1.jpg">
 </details>
+
+_____
+31. As User I can I can filter picture-posts based on the likes I gave so that I can see picture-posts that I like
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on any page of the site, click on the likes link in the navigation menu | You will be taken to the home page, where after fetching the pictures that have been rated by the user will be displayed | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-31.jpg">
+<img src="docs/testing/manual-testing/user-story-31-1.jpg">
+</details>
+
+
+____
+32. As User I can Search picture-posts by title and author's name so that I can find certain picture-posts
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, you can conduct a query in the search field located above the first picture | you can conduct a query in the search field located above the first picture of the post on the home page after fetching, pictures will be displayed with the name of the author or the titles of which correspond to the search query | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-32.jpg">
+</details>
+
+____
+
+33. As User I can create WallItem so that I can leave public messages on the wall
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, click on the avatar of the user you are interested in | you will be taken to the respective user's profile page | Works as expected |
+scroll down to the show wall button and click on it | the profile owner’s wall with a form for adding a message will be displayed on the screen | Works as expected |
+enter your message in the text field and click the add messages button | a new message will appear on the profile owner’s wall | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-33.jpg">
+<img src="docs/testing/manual-testing/user-story-33-1.jpg">
+<img src="docs/testing/manual-testing/user-story-33-2.jpg">
+<img src="docs/testing/manual-testing/user-story-33-3.jpg">
+<img src="docs/testing/manual-testing/user-story-33-4.jpg">
+</details>
