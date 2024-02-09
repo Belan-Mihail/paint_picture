@@ -38,6 +38,7 @@ Developer: Bilan Mykhailo
       2. [Automated Testing](#automated-testing)
       3. [Device testing](#device-testing)
       4. [Browser comptibility](#browser-compatibility)
+   10. [Bugs](#bugs)
 
 
 ## About
@@ -1525,4 +1526,17 @@ The website was tested on the following browsers:
    - Google Chrome;
    - Yandex Browser;
    - Mozilla Firefox;
+
+## Bugs
+
+| **Bug** | **Fix** |
+| ------- | ------- |
+| There were no error warnings in the comments and wallitems | Error warnings have been added to the corresponding components |
+| After updating a message on a user's wall, the updated message did not appear until the page was refreshed | A variable setProfileWallItems was passed into the EditWallitemForm component as props, which was subsequently used in the submit function for rendering the Wallitem component |
+| After creating the first message on the wall, the user was not displayed on the screen | This bug occurred due to the animation of messages on the wall. The animation has been removed from this component |
+| The menu for filtering pictures by the number of likes and comments was initially displayed on all pages of the site, even where it was not intended thematically | the corresponding component has been changed, and the output location of such a component has also been changed |
+| The menu for filtering pictures by the number of likes and comments was initially displayed on all pages of the site, even where it was not intended thematically | the corresponding component has been changed, and the output location of such a component has also been changed |
+| The greeting that appeared when you hovered over the image of an avatar located in the navigation menu violated the structure of the navigation menu by moving the avatar below the level of other links | the hover function was changed which did not display a greeting if its value was null, and the corresponding value was passed to the avatar component that was rendered in the navigation menu |
+
+
 
