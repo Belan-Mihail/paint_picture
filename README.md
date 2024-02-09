@@ -1345,7 +1345,7 @@ ____
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-While on Profile page, find  plan needs to edit nad by clicking on the three dots select the edit tab | You will be taken to a page containing a form to edit a plan | Works as expected |
+While on Profile page, find  plan needs to edit and by clicking on the three dots select the edit tab | You will be taken to a page containing a form to edit a plan | Works as expected |
 refill in the required fields and click save | the updated plan will appear on the user profile page |
 
 
@@ -1355,3 +1355,57 @@ refill in the required fields and click save | the updated plan will appear on t
 <img src="docs/testing/manual-testing/user-story-37-1.jpg">
 <img src="docs/testing/manual-testing/user-story-37-2.jpg">
 </details>
+
+
+____
+38. As User I can delete Plans so that I can delete plans that are no longer relevant to me
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Profile page, find  plan needs to delete and by clicking on the three dots select the delete tab | our plan will delete | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-38.jpg">
+<img src="docs/testing/manual-testing/user-story-38-1.jpg">
+</details>
+
+
+____
+39. As User I can create Comments so that I can express your opinion about other users' pictures-post
+
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, select the picture you are interested in and click on the link image | you will be taken to the picture page | Works as expected |
+scroll down | under the picture there will be a form for adding comments, and existing comments will also be displayed | Works as expected |
+fill out the form and click on the submit button | your comment will appear on the page | Works as expected |
+
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-39.jpg">
+<img src="docs/testing/manual-testing/user-story-39-1.jpg">
+<img src="docs/testing/manual-testing/user-story-39-2.jpg">
+</details>
+
+
+_____
+
+40. As User I can edit Comments so that I can change my opinion about other users' pictures-post
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+While on Home page, select the picture you are interested in and click on the link image | you will be taken to the picture page | Works as expected |
+scroll down | under the picture  existing comments will also be displayed | Works as expected |
+fill out the form and click on the submit button | your comment will appear on the page | Works as expected |
+find  comment needs to edit and by clicking on the three dots select the edit tab | the comment editing form will become available | Works as expected |
+refill in the required fields and click save | the updated comment will appear on the user profile page |
+
+<details><summary>Screenshot</summary>
+<img src="docs/testing/manual-testing/user-story-40.jpg">
+<img src="docs/testing/manual-testing/user-story-40-1.jpg">
+<img src="docs/testing/manual-testing/user-story-40-2.jpg">
+</details>
+
+
+_____
