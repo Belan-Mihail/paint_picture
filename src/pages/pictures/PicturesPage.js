@@ -69,7 +69,9 @@ function PicturesPage({ message, filter = "" }) {
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
+          <Form.Label className="d-none" id="searchLabel">search</Form.Label>
           <Form.Control
+            aria-labelledby="searchLabel"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             type="text"

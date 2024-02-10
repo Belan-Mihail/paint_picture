@@ -1,6 +1,4 @@
 .Picture {
-  /* background-color: #ffffff;
-    border: 1px solid #dadadf; */
   border-radius: 2px;
   margin-bottom: 16px;
   text-align: center;
@@ -12,10 +10,6 @@
     border: 2px solid orange;
   }
 
-/* .Post figure,
-  h5 {
-    margin: 0 0;
-  } */
 
 .Heart {
   color: #f85032;

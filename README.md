@@ -33,20 +33,26 @@ Developer: Bilan Mykhailo
    8. [Features](#features)
       1. [Features Components](#features-components)
       2. [Features Pages](#features-pages)
-   9. [Testing](#testing)
+   9. [Validation](#validation)
+      1. [HTML Validation](#html-validation)
+      2. [CSS Validation](#css-validation)
+      3. [JavaScript JSX Validation](#javascript-jsx-validation)
+      4. [Lighthouse Validation](#lighthouse-validation)
+      5. [Wave Validation](#wave-validation)
+   10. [Testing](#testing)
       1. [Manual testing of user stories](#manual-testing-of-user-stories)
       2. [Automated Testing](#automated-testing)
       3. [Device testing](#device-testing)
       4. [Browser comptibility](#browser-compatibility)
-   10. [Bugs](#bugs)
-   11. [Deployment, Cloning, Forking](#deployment-cloning-forking)
+   11. [Bugs](#bugs)
+   12. [Deployment, Cloning, Forking](#deployment-cloning-forking)
       1. [Deployment on Heroku](#deployment-on-heroku)
       2. [Cloning the repository](#cloning-the-repository)
       3. [Forking the GitHub Repository](#forking-the-github-repository)
-   12. [Credits](#credits)
+   13. [Credits](#credits)
       1. [Images](#images)
       2. [Code](#code)
-   13. [Acknowledgements](#acknowledgements)
+   14. [Acknowledgements](#acknowledgements)
 
 
 ## About
@@ -729,6 +735,145 @@ _____
 (**User stories covered: 10**)
 <details><summary>Edit Password Page</summary>
 <img src="docs/features/edit-password-page.jpg">
+</details>
+
+## Validation
+
+### HTML Validation
+
+The W3C Markup Validation Service was used to validate the HTML of the website. No errors were identified. 
+
+<details><summary>HTML Validation</summary> 
+<img src="docs/validation/html/html-validation.jpg"> 
+</details>
+
+
+### CSS Validation
+
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website. All CSS modules pass the validation with no errors.
+
+<details><summary>CSS Validation</summary> 
+<img src="docs/validation/css/css-validation.jpg"> 
+</details>
+
+### JavaScript JSX Validation 
+
+All JavaScript files were validated using ESLint JavaScript validator. All files pass the validation with no errors. 
+
+<details><summary>JS Validation</summary> 
+<img src="docs/validation/js/js-validation.jpg"> 
+</details>
+
+### Lighthouse Validation
+
+NOTE: The results of testing individual pages of the Lighthouse project (in terms of performance) may be underestimated and contradictory, primarily due to the fact that the computer used for testing was quite old (2010), which could affect the results. In addition, unfortunately, I had problems with the Internet connection throughout the entire work with the project, which could also negatively affect the results when testing performance. Additionally, performance degradation on individual pages may be due to the functionality of user-loaded images. Hosting a project on Heroku may affect results (server response time, caching, and network latency). Also, additional external libraries reduce the response of the site. At the same time, the performance level of all pages remains quite high
+
+
+Lighthouse was used to test the performance, accessibility, best practice and SEO of the site. 
+
+<details><summary>Home page</summary>
+<img src="docs/validation/lighthouse/home-page.jpg">
+</details>
+
+<details><summary>Profile page</summary>
+<img src="docs/validation/lighthouse/profile-page.jpg">
+</details>
+
+<details><summary>Picture Detail page</summary>
+<img src="docs/validation/lighthouse/picture-detail-page.jpg">
+</details>
+
+<details><summary>Create Picture page</summary>
+<img src="docs/validation/lighthouse/create-picture-page.jpg">
+</details>
+
+<details><summary>Edit Picture page</summary>
+<img src="docs/validation/lighthouse/edit-picture-page.jpg">
+</details>
+
+<details><summary>Create Plan page</summary>
+<img src="docs/validation/lighthouse/create-plan-page.jpg">
+</details>
+
+<details><summary>Edit plan page</summary>
+<img src="docs/validation/lighthouse/edit-plan-page.jpg">
+</details>
+
+<details><summary>Signin page</summary>
+<img src="docs/validation/lighthouse/signin-page.jpg">
+</details>
+
+<details><summary>Signup page</summary>
+<img src="docs/validation/lighthouse/signup-page.jpg">
+</details>
+
+<details><summary>404 page</summary>
+<img src="docs/validation/lighthouse/404-page.jpg">
+</details>
+
+### Wave Validation
+
+The WAVE WebAIM web accessibility evaluation tool was used to test the websites accessibility.
+All pages pass the validation with no errors.
+
+<details><summary>Home page</summary>
+<img src="docs/validation/wave/home-page.jpg">
+</details>
+
+<details><summary>Home page(with modal)</summary>
+<img src="docs/validation/wave/home-page-with-modal.jpg">
+</details>
+
+<details><summary>Profile page(with posts)</summary>
+<img src="docs/validation/wave/profile-page-with-posts.jpg">
+</details>
+
+<details><summary>Profile page(with wall)</summary>
+<img src="docs/validation/wave/profile-page-with-wall.jpg">
+</details>
+
+<details><summary>Edit Profile page</summary>
+<img src="docs/validation/wave/edit-profile-page.jpg">
+</details>
+
+<details><summary>Edit Username page</summary>
+<img src="docs/validation/wave/edit-username-page.jpg">
+</details>
+
+<details><summary>Edit Password page</summary>
+<img src="docs/validation/wave/edit-password-page.jpg">
+</details>
+
+<details><summary>Picture Detail page</summary>
+<img src="docs/validation/wave/picture-detail-page.jpg">
+</details>
+
+<details><summary>Create Picture page</summary>
+<img src="docs/validation/wave/create-picture-page.jpg">
+</details>
+
+<details><summary>Edit Picture page</summary>
+<img src="docs/validation/wave/edit-picture-page.jpg">
+</details>
+
+<details><summary>Create Plan page</summary>
+<img src="docs/validation/wave/create-plan-page.jpg">
+</details>
+
+<details><summary>Edit plan page</summary>
+<img src="docs/validation/wave/edit-plan-page.jpg">
+</details>
+
+<details><summary>Signin page</summary>
+<img src="docs/validation/wave/signin-page.jpg">
+</details>
+
+<details><summary>Signup page</summary>
+<img src="docs/validation/wave/signup-page.jpg">
+</details>
+
+<details><summary>404 page</summary>
+<img src="docs/validation/wave/404-page.jpg">
 </details>
 
 
@@ -1547,6 +1692,7 @@ The website was tested on the following browsers:
 | The greeting that appeared when you hovered over the image of an avatar located in the navigation menu violated the structure of the navigation menu by moving the avatar below the level of other links | the hover function was changed which did not display a greeting if its value was null, and the corresponding value was passed to the avatar component that was rendered in the navigation menu |
 | during file validation, an empty file was found that did not contain more than one style, imported and used in a separate component | the corresponding style was added for the component element referencing this style module |
 | there were no auxiliary comments in the project files, which would impair understanding of the code | auxiliary comments were added to various elements and components |
+| During WAVE validation, contrasting errors in the logo and text colors of some buttons were identified | the color styles of these elements have been clarified to avoid errors |
 
 
 ## Deployment, Cloning, Forking
