@@ -94,7 +94,7 @@ function ProfilePage() {
           data-aos-duration="1000"
         >
           <Col className={styles.Front}>
-            <Image className={styles.ProfileImage} src={profile?.image} />
+            <Image className={styles.ProfileImage} src={profile?.image} alt="avatar"/>
             <h3>{profile?.owner}</h3>
             {profile?.name && <span>Nickname:{profile?.name}</span>}
             <div className={styles.ProfileInfoFront}>

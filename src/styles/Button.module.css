@@ -17,6 +17,8 @@
 
 .Main {
   background: #02be3a;
+  color: #030230;
+  
 }
 
 .Main:hover,
@@ -28,12 +30,12 @@
 
 .CommentButton {
   background: #f78215;
-  color: #fff;
+  color: #030230;
 }
 
 .CommentButton:hover {
   transform: scale(1.05);
-  color: #fff;
+  color: #030230;
 }
 
 .SaveButton {
@@ -87,6 +89,7 @@
   background: #f78215;
   position: relative;
   overflow: hidden;
+  color: #030230;
 }
 
 .Unfollow:hover,
@@ -95,6 +98,7 @@
 .Unfollow:focus {
   background: #f78215 !important;
   border: 2px solid #8224e5;
+  color: #030230;
 }
 
 .Unfollow::before {

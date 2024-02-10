@@ -65,7 +65,7 @@ const Plan = (props) => {
             until
           </Col>
         )}
-        {plans_date && <Col className="text-center">{plans_date}</Col>}
+        {plans_date && <Col className={`${styles.PlansDate} text-center`}>{plans_date}</Col>}
       </Row>
       <hr className={styles.PlansDivider}></hr>
     </Container>

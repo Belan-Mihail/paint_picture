@@ -1,6 +1,11 @@
 .PlansTitle {
   background: #f78215;
   font-weight: 700;
+  color: #030230;
+}
+.PlansDate{
+  
+  font-weight: 600;
 }
 
 .PlansDivider {
@@ -8,7 +13,8 @@
 }
 
 .Until {
-  color: red;
+  color: rgb(146, 2, 2);
+  font-weight: 600;
 }
 
 .DescRow {
