@@ -102,8 +102,9 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
+        <Form.Label id="bioLabel">Bio</Form.Label>
         <Form.Control
+          aria-labelledby="bioLabel"
           as="textarea"
           rows={7}
           onChange={handleChange}
@@ -117,8 +118,9 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Greeting</Form.Label>
+        <Form.Label id="greetingLabel">Greeting</Form.Label>
         <Form.Control
+          aria-labelledby="greetingLabel"
           as="input"
           name="greeting"
           value={greeting}
@@ -132,8 +134,9 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Nickname</Form.Label>
+        <Form.Label id="nicknameLabel">Nickname</Form.Label>
         <Form.Control
+          aria-labelledby="nicknameLabel"
           as="input"
           name="name"
           value={name}
@@ -167,7 +170,7 @@ const ProfileEditForm = () => {
             <Form.Group>
               {image && (
                 <figure>
-                  <Image className={appStyles.Image} src={image} fluid />
+                  <Image className={appStyles.Image} src={image} fluid alt="avatar"/>
                 </figure>
               )}
 
@@ -175,12 +178,14 @@ const ProfileEditForm = () => {
                 <Form.Label
                   className={`${btnStyles.Button} ${btnStyles.Main} btn my-auto`}
                   htmlFor="image-upload"
+                  id="imageLabel"
                 >
                   Change the image
                 </Form.Label>
               </div>
               <Form.File
                 id="image-upload"
+                aria-labelledby="imageLabel"
                 ref={imageFile}
                 accept="image/*"
                 onChange={(e) => {

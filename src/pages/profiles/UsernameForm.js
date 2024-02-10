@@ -72,8 +72,9 @@ const UsernameForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
-              <Form.Label>Change username</Form.Label>
+              <Form.Label id="changeUsernameLabel">Change username</Form.Label>
               <Form.Control
+                aria-labelledby="changeUsernameLabel"
                 placeholder="username"
                 type="text"
                 value={username}

@@ -48,7 +48,9 @@ const WallitemEditForm = (props) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group className="pr-1">
+      <Form.Label className="d-none" id="messageLabel">Message</Form.Label>
         <Form.Control
+          aria-labelledby="messageLabel"
           className={styles.Form}
           as="textarea"
           rows={2}

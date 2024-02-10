@@ -89,9 +89,10 @@ const PictureCreateForm = () => {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label id="titleLabel">Title</Form.Label>
         <Form.Control
           type="text"
+          aria-labelledby="titleLabel"
           name="title"
           value={title}
           onChange={handleChange}
@@ -104,9 +105,10 @@ const PictureCreateForm = () => {
       ))}
 
       <Form.Group>
-        <Form.Label>Description</Form.Label>
+        <Form.Label id="descriptionLabel">Description</Form.Label>
         <Form.Control
           as="textarea"
+          aria-labelledby="descriptionLabel"
           rows={6}
           name="description"
           value={description}
@@ -120,9 +122,10 @@ const PictureCreateForm = () => {
       ))}
 
       <Form.Group controlId="picture_category">
-        <Form.Label>Category</Form.Label>
+        <Form.Label aria-labelledby="categoryLabel">Category</Form.Label>
         <Form.Control
           as="select"
+          id="categoryLabel"
           name="picture_category"
           value={picture_category}
           onChange={handleChange}
@@ -163,12 +166,13 @@ const PictureCreateForm = () => {
               {image ? (
                 <>
                   <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
+                    <Image className={appStyles.Image} src={image} rounded alt="picture" />
                   </figure>
                   <div>
                     <Form.Label
                       className={`${btnStyles.Button} ${btnStyles.Main}`}
                       htmlFor="image-upload"
+                      id="imageLabel"
                     >
                       Change the image
                     </Form.Label>
@@ -178,6 +182,7 @@ const PictureCreateForm = () => {
                 <Form.Label
                   className="d-flex justify-content-center"
                   htmlFor="image-upload"
+                  id="imageLabel"
                 >
                   <Asset
                     src={Upload}
@@ -187,6 +192,7 @@ const PictureCreateForm = () => {
               )}
               <Form.File
                 id="image-upload"
+                aria-labelledby="imageLabel"
                 accept="image/*"
                 ref={imageInput}
                 onChange={handleChangeImage}

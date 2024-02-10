@@ -95,8 +95,9 @@ const PlanEditForm = (props) => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
-              <Form.Label>Plan Title</Form.Label>
+              <Form.Label id="titleLabel">Plan Title</Form.Label>
               <Form.Control
+                aria-labelledby="titleLabel"
                 name="plans_title"
                 type="text"
                 value={plans_title}
@@ -109,8 +110,9 @@ const PlanEditForm = (props) => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Plan Description</Form.Label>
+              <Form.Label id="descriptionLabel">Plan Description</Form.Label>
               <Form.Control
+                aria-labelledby="descriptionLabel"
                 name="plans_description"
                 type="text"
                 value={plans_description}
@@ -123,8 +125,9 @@ const PlanEditForm = (props) => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Plan Date</Form.Label>
+              <Form.Label id="dateLabel">Plan Date</Form.Label>
               <Form.Control
+                aria-labelledby="dateLabel"
                 name="plans_date"
                 type="date"
                 value={plans_date}
@@ -137,8 +140,9 @@ const PlanEditForm = (props) => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Add until</Form.Label>
+              <Form.Label aria-labelledby="untilLabel">Add until</Form.Label>
               <Form.Control
+                id="untilLabel"
                 name="until"
                 as="select"
                 value={until}

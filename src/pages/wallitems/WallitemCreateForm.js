@@ -64,7 +64,9 @@ function WallitemCreateForm(props) {
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
+          <Form.Label className="d-none" id="messageLabel">Message</Form.Label>
           <Form.Control
+            aria-labelledby="messageLabel"
             placeholder="my message..."
             as="textarea"
             value={message}

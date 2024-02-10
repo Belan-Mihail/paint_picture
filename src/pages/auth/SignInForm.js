@@ -81,9 +81,10 @@ const SignInForm = () => {
             <h1>Sign In</h1>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="username">
-                <Form.Label className="d-none">username</Form.Label>
+                <Form.Label className="d-none" id="usernameLabel">username</Form.Label>
                 <Form.Control
                   className={styles.Input}
+                  aria-labelledby="usernameLabel"
                   type="text"
                   placeholder="Username"
                   name="username"
@@ -98,10 +99,11 @@ const SignInForm = () => {
               ))}
 
               <Form.Group controlId="password">
-                <Form.Label className="d-none">Password</Form.Label>
+                <Form.Label className="d-none" id="passwordLabel">Password</Form.Label>
                 <Form.Control
                   className={styles.Input}
                   type="password"
+                  aria-labelledby="passwordLabel"
                   placeholder="Password"
                   name="password"
                   value={password}

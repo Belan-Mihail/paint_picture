@@ -57,8 +57,10 @@ function CommentCreateForm(props) {
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
+          <Form.Label className="d-none" id="commentLabel">Comment</Form.Label>
           <Form.Control
             className={styles.Form}
+            aria-labelledby="commentLabel"
             placeholder="my comment..."
             as="textarea"
             value={content}

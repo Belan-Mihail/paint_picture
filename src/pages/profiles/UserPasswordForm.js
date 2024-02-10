@@ -71,8 +71,9 @@ const UserPasswordForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>New password</Form.Label>
+              <Form.Label id="newPasswordLabel">New password</Form.Label>
               <Form.Control
+                aria-labelledby="newPasswordLabel"
                 placeholder="new password"
                 type="password"
                 name="new_password1"
@@ -86,8 +87,9 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+              <Form.Label id="confirmPasswordLabel">Confirm password</Form.Label>
               <Form.Control
+                aria-labelledby="confirmPasswordLabel"
                 placeholder="confirm new password"
                 type="password"
                 name="new_password2"
