@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 const ToTop = () => {
   return (
     <Button
+      aria-label='toTop'
       className={btnStyles.ToTop}
       onClick={() => {
         window.scrollTo(0, 0);

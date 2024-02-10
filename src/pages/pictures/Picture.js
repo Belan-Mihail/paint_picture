@@ -160,7 +160,7 @@ const Picture = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/pictures/${id}`}>
+          <Link to={`/pictures/${id}`} aria-label='comments'>
             <i className="far fa-comments" />
           </Link>
           {comments_count}
