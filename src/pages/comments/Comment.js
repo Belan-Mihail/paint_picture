@@ -7,6 +7,7 @@ import { useCurrentUser } from "../../context/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 import CommentEditForm from "./CommentEditForm";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Comment = (props) => {
   const {
@@ -22,6 +23,7 @@ const Comment = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
 
   const [showEditForm, setShowEditForm] = useState(false);
 
@@ -32,6 +34,7 @@ const Comment = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`);
+      history.goBack();
       setPicture((prevPicture) => ({
         results: [
           {

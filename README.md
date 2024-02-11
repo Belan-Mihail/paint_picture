@@ -1695,6 +1695,7 @@ The website was tested on the following browsers:
 | during file validation, an empty file was found that did not contain more than one style, imported and used in a separate component | the corresponding style was added for the component element referencing this style module |
 | there were no auxiliary comments in the project files, which would impair understanding of the code | auxiliary comments were added to various elements and components |
 | During WAVE validation, contrasting errors in the logo and text colors of some buttons were identified | the color styles of these elements have been clarified to avoid errors |
+| after the final deployment it was discovered that the comment after deletion remains on the page until it is reloaded | the comment model has been supplemented with the history go back function |
 
 
 ## Deployment, Cloning, Forking
