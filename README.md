@@ -40,24 +40,24 @@ Developer: Bilan Mykhailo
       4. [Lighthouse Validation](#lighthouse-validation)
       5. [Wave Validation](#wave-validation)
    10. [Testing](#testing)
-      1. [Manual testing of user stories](#manual-testing-of-user-stories)
-      2. [Automated Testing](#automated-testing)
-      3. [Device testing](#device-testing)
-      4. [Browser comptibility](#browser-compatibility)
+       1. [Manual testing of user stories](#manual-testing-of-user-stories)
+       2. [Automated Testing](#automated-testing)
+       3. [Device testing](#device-testing)
+       4. [Browser comptibility](#browser-compatibility)
    11. [Bugs](#bugs)
    12. [Deployment, Cloning, Forking](#deployment-cloning-forking)
-      1. [Deployment on Heroku](#deployment-on-heroku)
-      2. [Cloning the repository](#cloning-the-repository)
-      3. [Forking the GitHub Repository](#forking-the-github-repository)
+       1. [Deployment on Heroku](#deployment-on-heroku)
+       2. [Cloning the repository](#cloning-the-repository)
+       3. [Forking the GitHub Repository](#forking-the-github-repository)
    13. [Credits](#credits)
-      1. [Images](#images)
-      2. [Code](#code)
+       1. [Images](#images)
+       2. [Code](#code)
    14. [Acknowledgements](#acknowledgements)
 
 
 ## About
 
-PainPicture is a platform where users can share pictures they made with Paint.
+PaintPicture is a platform where users can share pictures they made with Paint.
 Everyone can like or comment other users' pictures. Users can also create Wall, create and share your plans and follow their favourite user. 
 
 ## Project Goals
@@ -491,6 +491,8 @@ ___
 The API for this Front-End application was built with the Django REST Framework. The repository with a README file for the Back-End project can be found ([here](https://github.com/Belan-Mihail/drf_api_paint_picture)).
 
 ## Features
+
+NOTE: During WAVE validation, contrast errors were identified in the colors of the logo and text of some buttons. To avoid errors, the color styles of these elements have been clarified. Therefore, in some screenshots the colors of individual elements have differences
 
 ### Features Components
 
